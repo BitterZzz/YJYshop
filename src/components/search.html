@@ -51,9 +51,9 @@
 </head>
 <body>
      <div id="tabs">
-           <ul id="top" onclick="topshow">
+           <ul id="top" onclick="topshow()">
              <a href="#" href="javascript:void(0)"  class="txt">
-               <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt="">
+               <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067767382133504915164.jpg" alt="">
              </a>
            </ul>
            <ul id="main" onclick="showDiv()">
@@ -85,7 +85,6 @@
      </div>
 
      <div id="alter">
-              </div>
              <div class="alter_t">
                 <ul>
                   <li id="writeHref">商品地址<input type="text" id="textHref" placeholder="地址"></li>
@@ -111,9 +110,10 @@
              </div>
       </div>
        <div id="show">
-             <li id="writeHref">地址路径：<input type="text" placeholder="地址" id="textHref"></li>
-             <li id="writeSrc">图片路径：<input type="text" placeholder="路径" id="textSrc"></li>
-             <button type="submit" id="btnO"></button>
+              <h2>banner 轮播图</h2>
+             <li id="writeHref">地址路径：<input type="text" placeholder="地址" id="textHrefshow"></li>
+             <li id="writeSrc">图片路径：<input type="text" placeholder="路径" id="textSrcshow"></li>
+             <button type="submit" id="btntop">保存</button>
        </div>
      <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
      <script>
@@ -161,27 +161,29 @@
         function showDiv(){
           $("#alter").show()
         }
-        // $(function () {
 
-        //     $("#show").hide();
+        
+        $(function () {
 
-        //     $("#btnO").click(function(){
-        //           var textHref = $("#textHref").val();
-        //           var textSrc = $("#textSrc").val();
+            $("#show").hide();
+
+            $("#btntop").click(function(){
+                  var textHref = $("#textHrefshow").val();
+                  var textSrc = $("#textSrcshow").val();
                   
-        //           $("#top a").attr("href",textHref);
-        //           $("#top img").attr("src", textSrc);
+                  $("#top a").attr("href",textHref); 
+                  $("#top img").attr("src", textSrc);
                  
 
-        //           $("#show").hide();
-        //     })
+                  $("#show").hide();
+            })
 
-        //     })
+            })
 
        
-        // function topshow(){
-        //   $("#show").show()
-        // }
+        function topshow(){
+          $("#show").show()
+        }
         
      </script>
 </body>
