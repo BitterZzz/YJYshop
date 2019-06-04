@@ -1,186 +1,486 @@
 <template>
-<div>
-  <div id="tabs">
-           <ul id="top" onclick="topshow()">
-             <a  href="javascript:void(0)"  class="txt">
-               <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067767382133504915164.jpg" alt="">
-             </a>
-           </ul>
-           <ul id="main" onclick="showDiv()">
-                   <li id="newDivOne">
-                     <a  href="javascript:void(0)">
-                         <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
-                         <span>林肯新源1</span>
-                     </a>
-                   </li>
-                    <li id="newDivTwo">
-                      <a  href="javascript:void(0)">
-                          <img src="https://www.eg-live.com/Storage/Shop/1/Products/1476/1_350.png" alt="" srcset="">
-                          <span>林肯新源2</span>
+      <div id="tabs">
+        <!-- 头部 banner -->
+           <div class="top">
+              <van-swipe :autoplay="3000" indicator-color="white">
+                <van-swipe-item>
+                  <a href="#"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067714992735718495819.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a href="#"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067770982156542113367.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a href="#"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067772488416188480798.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a href="#"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067705602050617339807.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+              </van-swipe>
+              <div class="header">
+                 <a href="#"><img src="../assets/img/sicon.png"/></a>
+                <van-icon name="search"/><input type="text" placeholder="输入关键字搜索">
+                 <a href="#"><img src="../assets/img/gicon.png"/></a>
+              </div>
+           </div>
+           <!-- 标题 -->
+           <div class="title">
+             <p><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></p>
+             <p><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></p>
+             <p><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></p>
+           </div>
+           <div class="Hr">
+                <hr/>
+           </div>
+           <!-- nav 分类 -->
+           <div class="nav">
+              <li>
+                <a href="#" class="list">
+                  <img src="../assets/img/classify.png" alt="" srcset="">
+                </a>
+                <a href="#">
+                  分类
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list">
+                  <img src="../assets/img/roll.png" alt="" srcset="">
+                </a>
+                <a href="#">
+                  新人领券
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list">
+                  <img src="../assets/img/group.png" alt="" srcset="">
+                </a>
+                <a href="#">
+                 拼团
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../assets/img/mine.png" alt="" srcset="">
+                </a>
+                <a href="#">
+                  个人中心
+                </a>
+              </li>
+           </div>
+           <!-- 热门分区-->
+           <div id="hot_partition">
+               <div class="hot_title">
+                 <h2>热门分区</h2>
+               </div>
+               <div class="hot_top">
+                    <a class="steak" href="#">
+                          <h5>牛排机专区</h5>
+                          <p>牛排好伴侣</p>
+                          <img src="../assets/img/steak.png" alt="" srcset=""/>
+                    </a>
+                    <a class="bread" href="#">
+                          <h5>面包机专区</h5>
+                          <p>宜居云面包机随心DIY</p>
+                          <img src="https://www.eg-live.com/Storage/Shop/1/Products/1198/1_150.png" alt="" srcset=""/>
+                    </a>
+               </div>
+               <div class="hot_bottom">
+                  <a href="#" class="fresh">
+                          <h5>生鲜牛排专区</h5>
+                          <p>澳洲进口 天然原切</p>
+                          <img src="../assets/img/fresh.png" alt="" srcset=""/>
+                  </a>
+                  <a href="#" class="food">
+                          <h5>五谷杂粮专区</h5>
+                          <p>原生态无污染 放心食材</p>
+                          <img src="../assets/img/food.png" alt="" srcset=""/>
+                  </a>
+                  <a href="#" class="kitchen">
+                          <h5>厨电厨具专区</h5>
+                          <p>韩国进口 饭麦石不粘锅</p>
+                          <img src="../assets/img/kitchen.png" alt="" srcset=""/>
+                  </a>
+               </div>
+           </div>
+           <!-- 精选专题 -->
+           <div id="choic_special">
+                  <h2>精选专题</h2>
+                  <div class="chioc_banner">
+                    <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt="">
+                  </div>
+                  <div class="chiod_list">
+                    <li> 
+                      <a href="#">
+                            <h6>超值任选</h6>
+                            <p>68元任选10件</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
                       </a>
                     </li>
-                     <li id="newDivThree">
-                        <a  href="javascript:void(0)">
-                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1493/1_350.png" alt="" srcset="">
-                            <span>林肯新源3</span>
-                        </a>
-                      </li>
-                      <li id="newDivFour">
-                          <a  href="javascript:void(0)">
-                              <img src="https://www.eg-live.com/Storage/Shop/1/Products/1354/1_350.png" alt="" srcset="">
-                              <span>林肯新源4</span>
-                          </a>
-                        </li>
-           </ul>
-     </div>
-
-     <div id="alter">
-             <div class="alter_t">
-                <ul>
-                  <li id="writeHref">商品地址<input type="text" id="textHref" placeholder="地址"></li>
-                  <li id="writeSrc">图片地址<input type="text" id="textSrc" placeholder="路径"></li>
-                  <li id="writeTitle">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitle" placeholder="标题"></li>
-                </ul> <br/><br/>
-                <ul>
-                    <li id="writeHrefTwo">商品地址<input type="text" id="textHrefTwo" placeholder="地址"></li>
-                    <li id="writeSrcTwo">图片地址<input type="text" id="textSrcTwo" placeholder="路径"></li>
-                    <li id="writeTitleTwo">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleTwo" placeholder="标题"></li>
-                  </ul>  <br/><br/>
-                  <ul> 
-                      <li id="writeHrefThree">商品地址<input type="text" id="textHrefThree" placeholder="地址"></li>
-                      <li id="writeSrcThree">图片地址<input type="text" id="textSrcThree" placeholder="路径"></li>
-                      <li id="writeTitleThree">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleThree" placeholder="标题"></li>
-                    </ul> <br/><br/>
-                    <ul>
-                        <li id="writeHrefFour">商品地址<input type="text" id="textHrefFour" placeholder="地址"></li>
-                        <li id="writeSrcFour">图片地址<input type="text" id="textSrcFour" placeholder="路径"></li>
-                        <li id="writeTitleFour">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleFour" placeholder="标题"></li>
-                    </ul>   
-                <button type="submit" id="btn">保存</button>
-             </div>
+                    <li> 
+                      <a href="#">
+                            <h6>面包粉</h6>
+                            <p>最高199减100</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                   <li> 
+                      <a href="#">
+                            <h6>五朵梅</h6>
+                            <p>五谷杂粮粥…</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                    <li> 
+                      <a href="#">
+                            <h6>牛排限时秒杀</h6>
+                            <p>澳洲牛排8.8</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                  </div>
+           </div>
+           <!-- 为你推荐 -->
+           <div id="fory_recommend">
+             <h2>为你推荐</h2>
+           </div>
       </div>
-       <div id="show">
-              <h2>banner 轮播图</h2>
-             <li id="writeHref">地址路径：<input type="text" placeholder="地址" id="textHrefshow"></li>
-             <li id="writeSrc">图片路径：<input type="text" placeholder="路径" id="textSrcshow"></li>
-             <button type="submit" id="btntop">保存</button>
-       </div>
-</div>
 </template>
 
 <script>
-$(function () {
-
-    $("#alter").hide();
-
-    $("#btn").click(function(){
-           var textHref = $("#textHref").val();
-           var textSrc = $("#textSrc").val();
-           var textTitle = $("#textTitle").val();
-
-           var textHref1 = $("#textHrefTwo").val();
-           var textSrc1 = $("#textSrcTwo").val();
-           var textTitle1 = $("#textTitleTwo").val();
-
-           var textHref2 = $("#textHrefThree").val();
-           var textSrc2 = $("#textSrcThree").val();
-           var textTitle2 = $("#textTitleThree").val();
-
-           var textHref3 = $("#textHrefFour").val();
-           var textSrc3 = $("#textSrcFour").val();
-           var textTitle3 = $("#textTitleFour").val();
-
-           $("#newDivOne a").attr("href",textHref);
-           $("#newDivOne img").attr("src", textSrc);
-           $("#newDivOne span").text(textTitle);
-           
-           $("#newDivTwo a").attr("href",textHref1);
-           $("#newDivTwo img").attr("src", textSrc1);
-           $("#newDivTwo span").text(textTitle1);
-
-           $("#newDivThree a").attr("href",textHref2);
-           $("#newDivThree img").attr("src", textSrc2);
-           $("#newDivThree span").text(textTitle2);
-
-           $("#newDivFour a").attr("href",textHref3);
-           $("#newDivFour img").attr("src", textSrc3);
-           $("#newDivFour span").text(textTitle3);
-
-          $("#alter").hide();
-    })
-    
-  })
-  function showDiv(){
-    $("#alter").show()
-  }
-
-  
-  $(function () {
-
-      $("#show").hide();
-
-      $("#btntop").click(function(){
-            var textHref = $("#textHrefshow").val();
-            var textSrc = $("#textSrcshow").val();
-            
-            $("#top a").attr("href",textHref); 
-            $("#top img").attr("src", textSrc);
-           
-
-            $("#show").hide();
-      })
-
-      })
-
- 
-  function topshow(){
-    $("#show").show()
-  }
 export default {
-  name:'app-tabs',
-  
+ name:"app-tabs"
 }
 </script>
 
 <style lang="scss" scoped>
- *{
-         margin: 0;
-         padding: 0;
-       }
-       li{
-         list-style: none;
-       }
-       a{
-         text-decoration: none;
-       }
-       #top{
-       cursor: pointer;
-       width: 375px;
-       border: 1px solid red;
-       
-       }
-       #top .txt{
-         display: block;
-         width: 375px;
-        
-       }
-       #top img{
-         width: 100%;
-       }
-      
-       #main img{
-           width: 100%;
-       }
-       #main{
-        display: flex;
-        margin: 10px 0;
-        border: 1px solid blue;
-        width: 375px;
-       }
-  
-       
-      #main img{
-            width: 93.25px;
-            height: 93.25px;
+  #tabs{
+         background: #E8E8E8;
+         overflow: hidden;
+         font-family: PingFangSC-Regular;
+    .top{
+      width: 100%;
+      height: 210px;
+      .van-swipe{
+          height: 210px;
+          .van-swipe__indicators{
+            display:flex;
+            position: absolute;
+            bottom:10px;
+            left: 80%;
           }
+     }
+      .header{
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 44px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+              input{
+                width: 258px;
+                height: 30px;
+                padding-left: 31px;
+                box-sizing: border-box;
+                font-size: 12px;
+                color: #999;
+                border: none;
+                border-radius: 2px;
+              }
+              a{
+                display: block;
+                width: 44px;
+                height: 44px;
+              }
+              .van-icon{
+                display: block;
+                width: 13px;
+                height: 13px;
+                position: absolute;
+                left: 70px;
+                font-size: 13px;
+                top: 16px;
+              }
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .title{
+      width: 100%;
+      height: 35px;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+        img{
+           width: 14px;
+           height: 14px;
+           position: relative;
+           top: 3px;
+           left: -8px;
+        }
+        p:nth-of-type(3) img{
+          width: 11.3px;
+          height: 14px;
+        }
+        span{
+          font-size: 13px;
+          color: #333;
+        }
+    }
+    .Hr{
+      background: #ffffff;
+       hr{
+         width: 340px;
+         border:1px solid #E8E8E8;
+         margin: 0 auto;
+       }
+    }
+    .nav{
+      width: 100%;
+      height: 115px;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+       a{
+         display: block;
+       }
+        img{
+          width: 66px;
+          height: 66px;
+        }
+        li{
+          text-align: center;
+             a:nth-of-type(2){
+               font-family: PingFangSC-Regular;
+               min-width: 50px;
+               height: 14px;
+               line-height: 14px;
+               letter-spacing: 0;
+               font-size: 14px;
+               color: #333;
+               text-align: center;
+
+             }
+        }
+    }
+    #hot_partition{
+        .hot_title{
+          height: 46px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            h2{
+              font-family: PingFangSC-Regular;
+              font-size: 16px;
+              color: #333333;
+              line-height: 14px;
+             
+            }
+            h2::before{
+                  content: "";
+                  display: inline-block;
+                  position: relative;
+                  width: 4px;
+                  height: 16px;
+                  background: #FE3824;
+                  left: -6px;
+                  top: 2px;
+            }
+        }
+        .hot_top{
+          height: 120px;
+             .steak{
+                 width: 186px;
+                 height: 120px;
+                 float: left;
+                 background: #ffffff;
+                 position: relative;
+                     img{
+                       width: 82px;
+                       height: 66px;
+                       position: absolute;
+                       right: 18px;
+                       bottom: 8px;
+                     }
+                 
+             }
+             .bread{
+                width: 187px;
+                height: 120px;
+                float: right;
+                background: #ffffff;
+                position: relative;
+                   img{
+                       width: 72px;
+                       height: 72px;
+                       position: absolute;
+                       right: 15px;
+                       bottom: 2.5px;
+                     }
+             }
+             h5{
+               font-family: PingFangSC-Regular;
+                font-size: 14px;
+                color: #333333;
+                letter-spacing: -0.34px;
+                line-height: 14px;
+                margin:10px 0 7px 13px;
+             }
+             p{
+               font-family: PingFangSC-Regular;
+                font-size: 12px;
+                color: #666666;
+                letter-spacing: -0.29px;
+                line-height: 12px;
+                margin: 0 0 3px 13px;
+             }
+        }
+        .hot_bottom{
+          width: 100%;
+          height: 120px;
+          margin-top: 2px;
+          a{
+            background: #ffffff;
+          }
+          h5{
+            font-family: PingFangSC-Regular;
+            font-size: 14px;
+            color: #333333;
+            letter-spacing: -0.34px;
+            line-height: 14px;
+            margin:10px 0 7px 10px;
+            }
+            p{
+              font-family: PingFangSC-Regular;
+              font-size: 12px;
+              color: #666666;
+              letter-spacing: -0.29px;
+              line-height: 16px;
+              margin: 0 0 0px 10px;
+            }
+             .fresh{
+                float: left;
+                width: 171px;
+                height: 120px;
+                position: relative;
+                  img{
+                    width: 82px;
+                    height: 56px;
+                    position: absolute;
+                    right: 14px;
+                    bottom: 7px;
+                  }
+             }
+             .food{
+                float: left;
+                width: 100px;
+                height: 120px;
+                margin-left: 2px;
+                position: relative;
+                   img{
+                    width: 53px;
+                    height: 53px;
+                    position: absolute;
+                    right: 8px;
+                    bottom: 9px;
+                   }
+             }
+             .kitchen{
+                float: right;
+                width: 100px;
+                height: 120px;
+                position: relative;
+                      img{
+                    width: 73px;
+                    height: 31px;
+                    position: absolute;
+                    right: 8px;
+                    bottom: 16px;
+                      }
+             }
+        }
+    }
+    #choic_special{
+          h2{
+            width: 100%;
+            height: 44px;
+            font-family: PingFangSC-Regular;
+            font-size: 16px;
+            color: #333333;
+            line-height: 44px;
+            text-align: center;
+          }
+          h2::before{
+                  content: "";
+                  display: inline-block;
+                  position: relative;
+                  width: 4px;
+                  height: 16px;
+                  background: #FE3824;
+                  left: -6px;
+                  top: 2px;
+            }
+          }
+         .chioc_banner{
+          width: 100%;
+          height: 150px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+         }
+         .chiod_list{
+           width: 100%;
+           height: 162px;
+           background: #ffffff;
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+               a{
+                 display: block;
+                 width: 90px;
+                 text-align: center;
+               }
+               h6{
+                 font-size: 12px;
+                 color: #333333;
+                 letter-spacing: -0.29px;
+                 line-height: 12px;
+               }
+               P{
+                 margin: 6px 0 10px 0;
+                 font-size: 14px;
+                 color: #FE3824;
+                 letter-spacing: -0.34px;
+                 line-height: 14px;
+               }
+              img{
+                width: 90px;
+                height: 90px;
+              }
+         }
+   }
+    #fory_recommend{
+        h2{
+          width: 100%;
+          height: 46px;
+          line-height: 46px;
+          text-align: center;
+          font-size: 16px;
+          color: #333333;
+        }
+        h2::before{
+                  content: "";
+                  display: inline-block;
+                  position: relative;
+                  width: 4px;
+                  height: 16px;
+                  background: #FE3824;
+                  left: -6px;
+                  top: 2px;
+          }
+    }
 </style>
