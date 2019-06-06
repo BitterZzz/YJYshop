@@ -1,80 +1,99 @@
-$(function () {
+// $(function () {
 
-    $("#alter").hide();
+//     $("#alter").hide();
 
-    $("#btn").click(function(){
-           var textHref = $("#textHref").val();
-           var textSrc = $("#textSrc").val();
-           var textTitle = $("#textTitle").val();
+//     $("#btn").click(function(){
+//            var textHref = $("#textHref").val();
+//            var textSrc = $("#textSrc").val();
+//            var textTitle = $("#textTitle").val();
 
-           var textHref1 = $("#textHrefTwo").val();
-           var textSrc1 = $("#textSrcTwo").val();
-           var textTitle1 = $("#textTitleTwo").val();
+//            var textHref1 = $("#textHrefTwo").val();
+//            var textSrc1 = $("#textSrcTwo").val();
+//            var textTitle1 = $("#textTitleTwo").val();
 
-           var textHref2 = $("#textHrefThree").val();
-           var textSrc2 = $("#textSrcThree").val();
-           var textTitle2 = $("#textTitleThree").val();
+//            var textHref2 = $("#textHrefThree").val();
+//            var textSrc2 = $("#textSrcThree").val();
+//            var textTitle2 = $("#textTitleThree").val();
 
-           var textHref3 = $("#textHrefFour").val();
-           var textSrc3 = $("#textSrcFour").val();
-           var textTitle3 = $("#textTitleFour").val();
+//            var textHref3 = $("#textHrefFour").val();
+//            var textSrc3 = $("#textSrcFour").val();
+//            var textTitle3 = $("#textTitleFour").val();
 
-           $("#newDivOne a").attr("href",textHref);
-           $("#newDivOne img").attr("src", textSrc);
-           $("#newDivOne span").text(textTitle);
+//            $("#newDivOne a").attr("href",textHref);
+//            $("#newDivOne img").attr("src", textSrc);
+//            $("#newDivOne span").text(textTitle);
            
-           $("#newDivTwo a").attr("href",textHref1);
-           $("#newDivTwo img").attr("src", textSrc1);
-           $("#newDivTwo span").text(textTitle1);
+//            $("#newDivTwo a").attr("href",textHref1);
+//            $("#newDivTwo img").attr("src", textSrc1);
+//            $("#newDivTwo span").text(textTitle1);
 
-           $("#newDivThree a").attr("href",textHref2);
-           $("#newDivThree img").attr("src", textSrc2);
-           $("#newDivThree span").text(textTitle2);
+//            $("#newDivThree a").attr("href",textHref2);
+//            $("#newDivThree img").attr("src", textSrc2);
+//            $("#newDivThree span").text(textTitle2);
 
-           $("#newDivFour a").attr("href",textHref3);
-           $("#newDivFour img").attr("src", textSrc3);
-           $("#newDivFour span").text(textTitle3);
+//            $("#newDivFour a").attr("href",textHref3);
+//            $("#newDivFour img").attr("src", textSrc3);
+//            $("#newDivFour span").text(textTitle3);
 
-          $("#alter").hide();
-    })
+//           $("#alter").hide();
+//     })
     
-  })
-  function showDiv(){
-    $("#alter").show()
-  }
+//   })
+//   function showDiv(){
+//     $("#alter").show()
+//   }
 
   
-  $(function () {
+//   $(function () {
 
-      $("#show").hide();
+//       $("#show").hide();
 
-      $("#btntop").click(function(){
-            var textHref = $("#textHrefshow").val();
-            var textSrc = $("#textSrcshow").val();
+//       $("#btntop").click(function(){
+//             var textHref = $("#textHrefshow").val();
+//             var textSrc = $("#textSrcshow").val();
             
-            $("#top a").attr("href",textHref); 
-            $("#top img").attr("src", textSrc);
+//             $("#top a").attr("href",textHref); 
+//             $("#top img").attr("src", textSrc);
            
 
-            $("#show").hide();
-      })
+//             $("#show").hide();
+//       })
 
-      })
+//       })
 
  
-  function topshow(){
-    $("#show").show()
-  }
+//   function topshow(){
+//     $("#show").show()
+//   }
   
-function test(){
-   this.a = 1;
-   this.b = function(){
-      console.log(this.a)
-   }
-}
-test.prototype = {
-  b:function(){
-     this.a =2;
-     console.log(this.a)
-  }
-}
+// function test(){
+//    this.a = 1;
+//    this.b = function(){
+//       console.log(this.a)
+//    }
+// }
+// test.prototype = {
+//   b:function(){
+//      this.a =2;
+//      console.log(this.a)
+//   }
+// }
+
+jQuery(document).ready(function($) {
+  var isLateralNavAnimating = false;
+  //o打开或关闭导航菜单
+  $('.cd-nav-trigger').on('click', function(event) {
+      event.preventDefault();
+      //若动画正在进行，则停止 
+      if (!isLateralNavAnimating) {
+          if ($(this).parents('.csstransitions').length > 0)
+              isLateralNavAnimating = true;
+
+          $('body').toggleClass('navigation-is-open');
+          $('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+              //动画结束
+              isLateralNavAnimating = false;
+          });
+      }
+  });
+});

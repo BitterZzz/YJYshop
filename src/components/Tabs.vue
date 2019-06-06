@@ -260,13 +260,42 @@
                  </li>
               </ul>
            </div>
-            <div class="footer"></div>
+           <div class="footer"></div>
+            <transition enter-active-class="slideInRight" leave-active-class="slideOutLeft">
+                <div class="suspend">
+                    <a class="hint" @click="selectMenu" :class="{active: showMenu}"><img src="../assets/img/unfold.png" alt="" /> 导航</a>
+                    <ul class="susNav">
+                      <li>
+                        <a href="#"><img src="../assets/img/carts.png" alt="" /></a>
+                        <a href="#">购物车</a>
+                      </li>
+                      <li>
+                        <a href="#"><img src="../assets/img/home.png" alt="" /></a>
+                        <a href="#">首页</a>
+                      </li>
+                      <li>
+                        <a href="#"><img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/Navigation/icon_user.png" alt=""/></a>
+                        <a href="#">个人中心</a>
+                      </li>
+                    </ul>
+                </div>
+           </transition>
       </div>
 </template>
-
 <script>
 export default {
- name:"app-tabs"
+ name:"app-tabs",
+ data(){
+  return{
+    //  显示悬浮窗
+    showMenu: false,
+   }
+ },
+ methods:{
+   selectMenu(){
+      this.showMenu = !this.showMenu;
+   }
+ }
 }
 </script>
 
@@ -720,5 +749,63 @@ export default {
       margin: 14px 0;
       width: 100%;
       border-bottom: 1px dashed #333;
+    }
+    .suspend:active{
+                    transform: translateX(-160px)
+                  }
+    
+    .suspend{
+          display: flex;
+          cursor: pointer;
+          width: 206px;
+          position: fixed;
+          right: -160px;
+          bottom: 100px;
+          transition: transform 300ms;
+         .hint{
+             width: 46px;
+             height: 40px;
+             line-height: 40px;
+             background-color: rgba(74,74,74,0.8);
+             margin-top: 9px;
+             font-size: 11px;
+             color: #FFFFFF;
+             letter-spacing: 0;
+             border-radius: 5px 0px 0px 5px;
+              img{
+                width: 11px;
+                height: 12px;
+              }
+         }
+
+         .susNav{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           background: #ffffff;
+           width: 160px;
+           height: 60px;
+           padding: 10px 0px;
+           box-sizing: border-box;
+           border-radius: 5px 0px 0px 5px;
+            li{
+
+              text-align: center;
+              width: 48px;
+              height: 41px;
+            }
+             a{
+               display: block;
+               font-size: 10px;
+                color: #333333;
+                letter-spacing: 0;
+                text-align: center;
+             }
+            img{
+               width: 30px;
+               height: 30px;
+            }
+         }
+        
     }
 </style>
