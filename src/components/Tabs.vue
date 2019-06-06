@@ -24,9 +24,9 @@
            </div>
            <!-- 标题 -->
            <div class="title">
-             <p><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></p>
-             <p><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></p>
-             <p><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></p>
+             <a><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></a>
+             <a><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></a>
+             <a><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></a>
            </div>
            <div class="Hr">
                 <hr/>
@@ -141,7 +141,126 @@
            <!-- 为你推荐 -->
            <div id="fory_recommend">
              <h2>为你推荐</h2>
+              <ul class="fory_box">
+                 <li class="box_left">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+                 <li class="box_right">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+              </ul>
            </div>
+            <div id="fory_recommend">
+              <ul class="fory_box">
+                 <li class="box_left">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+                 <li class="box_right">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend">
+              <ul class="fory_box">
+                 <li class="box_left">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+                 <li class="box_right">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend">
+              <ul class="fory_box">
+                 <li class="box_left">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+                 <li class="box_right">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend">
+              <ul class="fory_box">
+                 <li class="box_left">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+                 <li class="box_right">
+                    <a href="#" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                    <p>¥1598.00</p>
+                    <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                 </li>
+              </ul>
+           </div>
+            <div class="footer"></div>
       </div>
 </template>
 
@@ -482,5 +601,124 @@ export default {
                   left: -6px;
                   top: 2px;
           }
+        .fory_box{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 5px;
+             .box_left{
+                width: 185px;
+                height: 264px;
+                background: #ffffff;
+               
+                  img{
+                        width: 100%;
+                        height: 100%;
+                       }
+                  .pattern{
+                     display: block;
+                     width: 185px;
+                     height: 185px; 
+                  }
+                  .desc{
+                     display: block;
+                     width: 163px;
+                     height: 32px;
+                     font-size: 14px;
+                     color: #333333;
+                     letter-spacing: -0.34px;
+                     line-height: 16px;
+                     margin-left: 15px;
+                  }
+                  p{
+                    min-width: 48.56px;
+                    height: 22px;
+                    font-size: 18px;
+                    color: #FE3824;
+                    letter-spacing: -0.43px;
+                    line-height: 18px;
+                    margin: 5px 0 3px 15px;
+                  }
+                  span{
+                    display: block;
+                    width: 41px;
+                    height: 12px;
+                    font-size: 12px;
+                    color: #666666;
+                    letter-spacing: -0.29px;
+                    line-height: 12px;
+                    margin: 0 0 0 15px;
+                    
+                  }
+                  .cart{
+                    display: block;
+                    width: 44px;
+                    height: 44px;
+                    float: right;
+                    position: relative;
+                    top: -41px;
+                    left: -3px;
+                  }
+             }
+             .box_right{
+                width: 185px;
+                height: 264px;
+                background: #ffffff;
+                float: right;
+                  img{
+                        width: 100%;
+                        height: 100%;
+                       }
+                 .pattern{
+                     display: block;
+                     width: 185px;
+                     height: 185px; 
+                  }
+                  .desc{
+                     display: block;
+                     width: 163px;
+                     height: 32px;
+                     font-size: 14px;
+                     color: #333333;
+                     letter-spacing: -0.34px;
+                     line-height: 16px;
+                     margin-left: 15px;
+                  }
+                  p{
+                    min-width: 48.56px;
+                    height: 22px;
+                    font-size: 18px;
+                    color: #FE3824;
+                    letter-spacing: -0.43px;
+                    line-height: 18px;
+                    margin: 5px 0 3px 15px;
+                  }
+                  span{
+                    display: block;
+                    width: 41px;
+                    height: 12px;
+                    font-size: 12px;
+                    color: #666666;
+                    letter-spacing: -0.29px;
+                    line-height: 12px;
+                    margin: 0 0 0 15px;
+                    
+                  }
+                  .cart{
+                    display: block;
+                    width: 44px;
+                    height: 44px;
+                    float: right;
+                    position: relative;
+                    top: -41px;
+                    left: -3px;
+                  }
+             }
+        }
+    }
+    .footer{
+      margin: 14px 0;
+      width: 100%;
+      border-bottom: 1px dashed #333;
     }
 </style>

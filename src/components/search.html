@@ -5,187 +5,289 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-   <style>
-       *{
-         margin: 0;
-         padding: 0;
-       }
-       li{
-         list-style: none;
-       }
-       a{
-         text-decoration: none;
-       }
-       #top{
-       cursor: pointer;
-       width: 375px;
-       border: 1px solid red;
-       
-       }
-       #top .txt{
-         display: block;
-         width: 375px;
-        
-       }
-       #top img{
-         width: 100%;
-       }
-      
-       #main img{
-           width: 100%;
-       }
-       #main{
-        display: flex;
-        margin: 10px 0;
-        border: 1px solid blue;
-        width: 375px;
-       }
-  
-       
-      #main img{
-            width: 93.25px;
-            height: 93.25px;
-          }
-      
-   </style>
+  <link rel="stylesheet" href="../assets/css/rest.css">
+  <link rel="stylesheet" href="../assets/css/search.css">
+  <link rel="stylesheet" href="../assets/css/compile.css">
+
 </head>
 <body>
-     <div id="tabs">
-           <ul id="top" onclick="topshow()">
-             <a href="#" href="javascript:void(0)"  class="txt">
-               <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067767382133504915164.jpg" alt="">
-             </a>
-           </ul>
-           <ul id="main" onclick="showDiv()">
-                   <li id="newDivOne">
-                     <a href="#" href="javascript:void(0)">
-                         <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
-                         <span>林肯新源1</span>
-                     </a>
-                   </li>
-                    <li id="newDivTwo">
-                      <a href="#" href="javascript:void(0)">
-                          <img src="https://www.eg-live.com/Storage/Shop/1/Products/1476/1_350.png" alt="" srcset="">
-                          <span>林肯新源2</span>
-                      </a>
-                    </li>
-                     <li id="newDivThree">
-                        <a href="#" href="javascript:void(0)">
-                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1493/1_350.png" alt="" srcset="">
-                            <span>林肯新源3</span>
-                        </a>
-                      </li>
-                      <li id="newDivFour">
-                          <a href="#" href="javascript:void(0)">
-                              <img src="https://www.eg-live.com/Storage/Shop/1/Products/1354/1_350.png" alt="" srcset="">
-                              <span>林肯新源4</span>
-                          </a>
-                        </li>
-           </ul>
-     </div>
+   <div id="head">
+     <a href="#">编辑模板</a> 
+   </div>
+   <div id="Tabs">
+        <div class="txt">
+            <input type="text" placeholder="请输入关键字">
+        </div>
+        <div class="banner" onclick="bannerShow()">
+          <a href="javascript:void(0);">
+            <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067764483677454692922.jpg" alt="" srcset="">
+          </a>
+        </div>
+        <div class="title">
+            <a><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></a>
+            <a><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></a>
+            <a><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></a>
+        </div>
+         <!-- nav 分类 -->
+         <div class="nav">
+            <li>
+              <a href="#" class="list">
+                <img src="../assets/img/classify.png" alt="" srcset="">
+              </a>
+              <a href="#">
+                分类
+              </a>
+            </li>
+            <li>
+              <a href="#" class="list">
+                <img src="../assets/img/roll.png" alt="" srcset="">
+              </a>
+              <a href="#">
+                新人领券
+              </a>
+            </li>
+            <li>
+              <a href="#" class="list">
+                <img src="../assets/img/group.png" alt="" srcset="">
+              </a>
+              <a href="#">
+               拼团
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../assets/img/mine.png" alt="" srcset="">
+              </a>
+              <a href="#">
+                个人中心
+              </a>
+            </li>
+         </div>
+         <!-- 热门分区-->
+         <div id="hot_partition">
+            <div class="hot_title">
+              <h2>热门分区</h2>
+            </div>
+            <div class="hot_top">
+                 <a class="steak" href="#">
+                       <h5>牛排机专区</h5>
+                       <p>牛排好伴侣</p>
+                       <img src="../assets/img/steak.png" alt="" srcset=""/>
+                 </a>
+                 <a class="bread" href="#">
+                       <h5>面包机专区</h5>
+                       <p>宜居云面包机随心DIY</p>
+                       <img src="https://www.eg-live.com/Storage/Shop/1/Products/1198/1_150.png" alt="" srcset=""/>
+                 </a>
+            </div>
+            <div class="hot_bottom">
+               <a href="#" class="fresh">
+                       <h5>生鲜牛排专区</h5>
+                       <p>澳洲进口 天然原切</p>
+                       <img src="../assets/img/fresh.png" alt="" srcset=""/>
+               </a>
+               <a href="#" class="food">
+                       <h5>五谷杂粮专区</h5>
+                       <p>原生态无污染 放心食材</p>
+                       <img src="../assets/img/food.png" alt="" srcset=""/>
+               </a>
+               <a href="#" class="kitchen">
+                       <h5>厨电厨具专区</h5>
+                       <p>韩国进口 饭麦石不粘锅</p>
+                       <img src="../assets/img/kitchen.png" alt="" srcset=""/>
+               </a>
+            </div>
 
-     <div id="alter">
-             <div class="alter_t">
-                <ul>
-                  <li id="writeHref">商品地址<input type="text" id="textHref" placeholder="地址"></li>
-                  <li id="writeSrc">图片地址<input type="text" id="textSrc" placeholder="路径"></li>
-                  <li id="writeTitle">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitle" placeholder="标题"></li>
-                </ul> <br/><br/>
-                <ul>
-                    <li id="writeHrefTwo">商品地址<input type="text" id="textHrefTwo" placeholder="地址"></li>
-                    <li id="writeSrcTwo">图片地址<input type="text" id="textSrcTwo" placeholder="路径"></li>
-                    <li id="writeTitleTwo">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleTwo" placeholder="标题"></li>
-                  </ul>  <br/><br/>
-                  <ul> 
-                      <li id="writeHrefThree">商品地址<input type="text" id="textHrefThree" placeholder="地址"></li>
-                      <li id="writeSrcThree">图片地址<input type="text" id="textSrcThree" placeholder="路径"></li>
-                      <li id="writeTitleThree">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleThree" placeholder="标题"></li>
-                    </ul> <br/><br/>
-                    <ul>
-                        <li id="writeHrefFour">商品地址<input type="text" id="textHrefFour" placeholder="地址"></li>
-                        <li id="writeSrcFour">图片地址<input type="text" id="textSrcFour" placeholder="路径"></li>
-                        <li id="writeTitleFour">&nbsp; 标 &nbsp;&nbsp;题 &nbsp;<input type="text" id="textTitleFour" placeholder="标题"></li>
-                    </ul>   
-                <button type="submit" id="btn">保存</button>
-             </div>
-      </div>
-       <div id="show">
-              <h2>banner 轮播图</h2>
-             <li id="writeHref">地址路径：<input type="text" placeholder="地址" id="textHrefshow"></li>
-             <li id="writeSrc">图片路径：<input type="text" placeholder="路径" id="textSrcshow"></li>
-             <button type="submit" id="btntop">保存</button>
-       </div>
-     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-     <script>
-        $(function () {
-
-          $("#alter").hide();
-
-          $("#btn").click(function(){
-                 var textHref = $("#textHref").val();
-                 var textSrc = $("#textSrc").val();
-                 var textTitle = $("#textTitle").val();
-
-                 var textHref1 = $("#textHrefTwo").val();
-                 var textSrc1 = $("#textSrcTwo").val();
-                 var textTitle1 = $("#textTitleTwo").val();
-
-                 var textHref2 = $("#textHrefThree").val();
-                 var textSrc2 = $("#textSrcThree").val();
-                 var textTitle2 = $("#textTitleThree").val();
-
-                 var textHref3 = $("#textHrefFour").val();
-                 var textSrc3 = $("#textSrcFour").val();
-                 var textTitle3 = $("#textTitleFour").val();
-
-                 $("#newDivOne a").attr("href",textHref);
-                 $("#newDivOne img").attr("src", textSrc);
-                 $("#newDivOne span").text(textTitle);
-                 
-                 $("#newDivTwo a").attr("href",textHref1);
-                 $("#newDivTwo img").attr("src", textSrc1);
-                 $("#newDivTwo span").text(textTitle1);
-
-                 $("#newDivThree a").attr("href",textHref2);
-                 $("#newDivThree img").attr("src", textSrc2);
-                 $("#newDivThree span").text(textTitle2);
-
-                 $("#newDivFour a").attr("href",textHref3);
-                 $("#newDivFour img").attr("src", textSrc3);
-                 $("#newDivFour span").text(textTitle3);
-
-                $("#alter").hide();
-          })
-          
-        })
-        function showDiv(){
-          $("#alter").show()
-        }
-
-        
-        $(function () {
-
-            $("#show").hide();
-
-            $("#btntop").click(function(){
-                  var textHref = $("#textHrefshow").val();
-                  var textSrc = $("#textSrcshow").val();
-                  
-                  $("#top a").attr("href",textHref); 
-                  $("#top img").attr("src", textSrc);
-                 
-
-                  $("#show").hide();
-            })
-
-            })
-
-       
-        function topshow(){
-          $("#show").show()
-        }
-        
-     </script>
+        </div>
+         <!-- 精选专题 -->
+         <div id="choic_special">
+            <h2>精选专题</h2>
+            <div class="chioc_banner">
+              <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt="">
+            </div>
+            <div class="chiod_list">
+              <li> 
+                <a href="#">
+                      <h6>超值任选</h6>
+                      <p>68元任选10件</p>
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                </a>
+              </li>
+              <li> 
+                <a href="#">
+                      <h6>面包粉</h6>
+                      <p>最高199减100</p>
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                </a>
+              </li>
+             <li> 
+                <a href="#">
+                      <h6>五朵梅</h6>
+                      <p>五谷杂粮粥…</p>
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                </a>
+              </li>
+              <li> 
+                <a href="#">
+                      <h6>牛排限时秒杀</h6>
+                      <p>澳洲牛排8.8</p>
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                </a>
+              </li>
+            </div>
+         </div>
+         <!-- 为你推荐 -->
+         <div id="fory_recommend">
+            <h2>为你推荐</h2>
+             <ul class="fory_box">
+                <li class="box_left">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+                <li class="box_right">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+             </ul>
+          </div>
+           <div id="fory_recommend">
+             <ul class="fory_box">
+                <li class="box_left">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+                <li class="box_right">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+             </ul>
+          </div>
+           <div id="fory_recommend">
+             <ul class="fory_box">
+                <li class="box_left">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+                <li class="box_right">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+             </ul>
+          </div>
+           <div id="fory_recommend">
+             <ul class="fory_box">
+                <li class="box_left">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+                <li class="box_right">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+             </ul>
+          </div>
+           <div id="fory_recommend">
+             <ul class="fory_box">
+                <li class="box_left">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+                <li class="box_right">
+                   <a href="#" class="pattern">
+                     <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                   </a>
+                   
+                   <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                   <p>¥1598.00</p>
+                   <span>已售:36</span>
+                   <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                </li>
+             </ul>
+          </div>
+   </div>
+   <div id="compile">
+        <div class="c_banner">
+          <h2>banner图设置</h2>
+          <div class="c_a">
+            跳转链接：<input type="text" name="" id="bannerHref"><br/>
+            显示图片：<input type="text" name="" id="bannerSrc"><br/>
+          </div>
+          <button type="submit" id="bannerBtn">保存</button>
+        </div>
+   </div>
+   <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script >
+   $(function(){
+     $(".c_banner").hide();
+     
+     $("#bannerBtn").click(function(){
+         var bannerHref = $("#BannerHref").val();
+         var banenrSrc = $("#bannerSrc").val();
+         
+         $(".banner a").attr("href",bannerHref);
+         $(".banner img").attr("src",banenrSrc);
+         
+         $(".c_banner").hide();
+     })
+     
+})
+  function bannerShow(){
+      $(".c_banner").show();
+  }   
+   </script>
 </body>
-
 </html>

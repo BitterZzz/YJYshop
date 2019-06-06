@@ -1,0 +1,13 @@
+#compile{
+     min-width: 0px;
+     min-height: 0px;
+     float: left;
+     border: 1px solid red;
+}
+
+.c_banner .c_a input{
+        margin: 5px auto;
+} 
+.c_banner  #bannerBtn{
+         margin-left:40%;
+}

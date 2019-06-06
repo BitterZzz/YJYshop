@@ -66,3 +66,15 @@ $(function () {
     $("#show").show()
   }
   
+function test(){
+   this.a = 1;
+   this.b = function(){
+      console.log(this.a)
+   }
+}
+test.prototype = {
+  b:function(){
+     this.a =2;
+     console.log(this.a)
+  }
+}
