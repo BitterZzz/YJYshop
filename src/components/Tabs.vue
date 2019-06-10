@@ -50,7 +50,7 @@
                 </a>
               </li>
               <li>
-                <a href="#" class="list">
+                <a href="#" class="list">   
                   <img src="../assets/img/group.png" alt="" srcset="">
                 </a>
                 <a href="#">
@@ -261,10 +261,11 @@
               </ul>
            </div>
            <div class="footer"></div>
-            <transition enter-active-class="slideInRight" leave-active-class="slideOutLeft">
+            
+            <transition name="" enter-active-class=" slideInRight" leave-active-class="slideInLeft">
                 <div class="suspend">
-                    <a class="hint" @click="selectMenu" :class="{active: showMenu}"><img src="../assets/img/unfold.png" alt="" /> 导航</a>
-                    <ul class="susNav">
+                   <a class="hint" @click="selectMenu"><img src="../assets/img/unfold.png" alt="" /> 导航</a>
+                    <ul class="susNav" v-if="showMenu">
                       <li>
                         <a href="#"><img src="../assets/img/carts.png" alt="" /></a>
                         <a href="#">购物车</a>
@@ -280,16 +281,22 @@
                     </ul>
                 </div>
            </transition>
+           <!-- 遮罩层 -->
+          <transition enter-active-class="fadeIn " leave-active-class="fadeOut">
+              <div class="cover" v-if="showMenu"></div>
+          </transition>
       </div>
 </template>
 <script>
+
+
 export default {
  name:"app-tabs",
  data(){
-  return{
-    //  显示悬浮窗
-    showMenu: false,
-   }
+    return{
+      //  显示悬浮窗
+      showMenu: false,
+    }
  },
  methods:{
    selectMenu(){
@@ -300,6 +307,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// .show-enter-active,.show-leave-active{
+//        transition:all 2s;
+//   }
+// .show-enter,.show-leave-to{
+//        transform: translateX(-160px)
+// }
+// .show-enter-to,.show-leave{
+//         // transform: translateX(160px)
+
+// }
   #tabs{
          background: #E8E8E8;
          overflow: hidden;
@@ -750,24 +767,25 @@ export default {
       width: 100%;
       border-bottom: 1px dashed #333;
     }
-    .suspend:active{
-                    transform: translateX(-160px)
-                  }
+    // .suspend:active{
+    //                 transform: translateX(-160px)
+    //               }
     
     .suspend{
           display: flex;
           cursor: pointer;
-          width: 206px;
+         
           position: fixed;
-          right: -160px;
+          right: 0px;
           bottom: 100px;
           transition: transform 300ms;
+          z-index: 2;
          .hint{
              width: 46px;
              height: 40px;
              line-height: 40px;
              background-color: rgba(74,74,74,0.8);
-             margin-top: 9px;
+             margin: 10px 0;
              font-size: 11px;
              color: #FFFFFF;
              letter-spacing: 0;
@@ -788,6 +806,7 @@ export default {
            padding: 10px 0px;
            box-sizing: border-box;
            border-radius: 5px 0px 0px 5px;
+          
             li{
 
               text-align: center;
@@ -808,4 +827,13 @@ export default {
          }
         
     }
+    .cover{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 2420.86px;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+  }
 </style>

@@ -51,6 +51,10 @@
     height: 100%;
 }
 
+.banner a{
+
+}
+
 .title{
     display: flex;
     height: 35px;

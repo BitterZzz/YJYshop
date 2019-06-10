@@ -1,13 +1,41 @@
 #compile{
-     min-width: 0px;
-     min-height: 0px;
      float: left;
-     border: 1px solid red;
+     margin: 15px 0 0 20px;
+     padding: 3px;
+     border: 2px solid #cccccc;
+     position: fixed;
+     top: 20%;
+     left: 40%;
 }
-
-.c_banner .c_a input{
+.c_banner div{
+        margin: 10px 0;
+}
+.c_banner div input{
         margin: 5px auto;
 } 
 .c_banner  #bannerBtn{
          margin-left:40%;
+}
+
+#compile .c_nav div{
+        border: 2px solid #cdcdcd;
+        margin: 10px 0;
+        padding: 3px;
+}
+
+.c_hotTop div{
+        border: 3px solid #cccccc;
+        padding: 3px;
+        margin: 10px 0;
+}
+
+.c_hotBottom{
+        border: 3px solid #cccccc;
+        padding: 3px;
+     
+}
+.c_hotBottom div{
+        border: 3px solid #cccccc;
+        padding: 3px;
+        margin: 10px 0;
 }

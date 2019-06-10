@@ -19,79 +19,88 @@
             <input type="text" placeholder="请输入关键字">
         </div>
         <div class="banner" onclick="bannerShow()">
-          <a href="javascript:void(0);">
+          <a class="b1" href="javascript:void(0);">
             <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067764483677454692922.jpg" alt="" srcset="">
           </a>
+          <a class="b2"  href="javascript:void(0);">
+            <img src="" alt="" srcset="">
+          </a>
+          <a class="b3"  href="javascript:void(0);">
+            <img src="" alt="" srcset="">
+          </a>
+          <a class="b4"  href="javascript:void(0);">
+            <img src="" alt="" srcset="">
+          </a>
         </div>
-        <div class="title">
-            <a><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></a>
-            <a><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></a>
-            <a><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></a>
+        <div class="title" onclick="titleShow()">
+            <a class="title_a" href="javascript:void(0);"><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></a>
+            <a class="title_b" href="javascript:void(0);"><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></a>
+            <a class="title_c" href="javascript:void(0);"><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></a>
         </div>
          <!-- nav 分类 -->
-         <div class="nav">
-            <li>
-              <a href="#" class="list">
+         <div class="nav" onclick="navShow()">
+            <li class="li_one">
+              <a href="javascript:void(0);" class="list">
                 <img src="../assets/img/classify.png" alt="" srcset="">
               </a>
-              <a href="#">
+              <a href="javascript:void(0);" class="nest">
                 分类
               </a>
             </li>
-            <li>
-              <a href="#" class="list">
+            <li class="li_two">
+              <a href="javascript:void(0);" class="list">
                 <img src="../assets/img/roll.png" alt="" srcset="">
               </a>
-              <a href="#">
+              <a href="javascript:void(0);" class="nest">
                 新人领券
               </a>
             </li>
-            <li>
-              <a href="#" class="list">
+            <li class="li_three">
+              <a href="javascript:void(0);" class="list">
                 <img src="../assets/img/group.png" alt="" srcset="">
               </a>
-              <a href="#">
+              <a href="javascript:void(0);" class="nest">
                拼团
               </a>
             </li>
-            <li>
-              <a href="#">
+            <li class="li_four">
+              <a href="javascript:void(0);" class="list">
                 <img src="../assets/img/mine.png" alt="" srcset="">
               </a>
-              <a href="#">
+              <a href="javascript:void(0);" class="nest">
                 个人中心
               </a>
             </li>
          </div>
          <!-- 热门分区-->
          <div id="hot_partition">
-            <div class="hot_title">
+            <div class="hot_title" onclick="hotTitle()">
               <h2>热门分区</h2>
             </div>
-            <div class="hot_top">
-                 <a class="steak" href="#">
+            <div class="hot_top" onclick="hotTop()">
+                 <a class="steak" href="javascript:void(0);">
                        <h5>牛排机专区</h5>
                        <p>牛排好伴侣</p>
                        <img src="../assets/img/steak.png" alt="" srcset=""/>
                  </a>
-                 <a class="bread" href="#">
+                 <a class="bread" href="javascript:void(0);">
                        <h5>面包机专区</h5>
                        <p>宜居云面包机随心DIY</p>
                        <img src="https://www.eg-live.com/Storage/Shop/1/Products/1198/1_150.png" alt="" srcset=""/>
                  </a>
             </div>
-            <div class="hot_bottom">
-               <a href="#" class="fresh">
+            <div class="hot_bottom" onclick="hotBottom()">
+               <a href="javascript:void(0);" class="fresh">
                        <h5>生鲜牛排专区</h5>
                        <p>澳洲进口 天然原切</p>
                        <img src="../assets/img/fresh.png" alt="" srcset=""/>
                </a>
-               <a href="#" class="food">
+               <a href="javascript:void(0);" class="food">
                        <h5>五谷杂粮专区</h5>
                        <p>原生态无污染 放心食材</p>
                        <img src="../assets/img/food.png" alt="" srcset=""/>
                </a>
-               <a href="#" class="kitchen">
+               <a href="javascript:void(0);" class="kitchen">
                        <h5>厨电厨具专区</h5>
                        <p>韩国进口 饭麦石不粘锅</p>
                        <img src="../assets/img/kitchen.png" alt="" srcset=""/>
@@ -101,9 +110,9 @@
         </div>
          <!-- 精选专题 -->
          <div id="choic_special">
-            <h2>精选专题</h2>
+            <h2 onclick="h2Show()">精选专题</h2>
             <div class="chioc_banner">
-              <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt="">
+             <a href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt=""></a> 
             </div>
             <div class="chiod_list">
               <li> 
@@ -261,33 +270,315 @@
    </div>
    <div id="compile">
         <div class="c_banner">
-          <h2>banner图设置</h2>
+          <h4>轮播图</h4>
           <div class="c_a">
             跳转链接：<input type="text" name="" id="bannerHref"><br/>
-            显示图片：<input type="text" name="" id="bannerSrc"><br/>
+            图片路径：<input type="text" name="" id="bannerSrc"><br/>
+          </div>
+
+          <div class="c_b">
+            跳转链接：<input type="text" name="" id="bHref"><br/>
+            图片路径：<input type="text" name="" id="bSrc"><br/>
+          </div>
+
+          <div class="c_c">
+            跳转链接：<input type="text" name="" id="cHref"><br/>
+            图片路径：<input type="text" name="" id="cSrc"><br/>
+          </div>
+
+          <div class="c_d">
+            跳转链接：<input type="text" name="" id="dHref"><br/>
+            图片路径：<input type="text" name="" id="dSrc"><br/>
           </div>
           <button type="submit" id="bannerBtn">保存</button>
+        </div>
+        <div class="c_title">
+                <div class="t_one">
+                   跳转链接：<input type="text" name="" id="oneHref">
+                   显示图片：<input type="text" id="oneSrc">
+                   内  容  : <input type="text" id="oneText" placeholder="输入内容">
+                </div>
+                <div class="t_two">
+                    跳转链接：<input type="text" name="" id="twoHref">
+                    显示图片：<input type="text" id="twoSrc">
+                    内  容  : <input type="text" id="twoText" placeholder="输入内容">
+                </div>
+                <div class="t_three">
+                    跳转链接：<input type="text" name="" id="twoHref">
+                    显示图片：<input type="text" id="threeSrc">
+                    内  容  : <input type="text" id="threeText" placeholder="输入内容">
+                </div>
+                <button type="submit" id="titleBtn">保存</button>
+        </div>
+        <div class="c_nav">
+            <div class="n_one">
+                跳转链接：<input type="text" name="" id="n_Href"><br/>
+                图片链接：<input type="text" name="" id="n_Src"><br/>
+                展示内容：<input type="text" name="" id="n_Text">
+            </div>
+            <div class="n_two">
+                跳转链接：<input type="text" name="" id="nt_Href"><br/>
+                图片链接：<input type="text" name="" id="nt_Src"><br/>
+                展示内容：<input type="text" name="" id="nt_Text">
+            </div>
+            <div class="n_three">
+                跳转链接：<input type="text" name="" id="nh_Href"><br/>
+                图片链接：<input type="text" name="" id="nh_Src"><br/>
+                展示内容：<input type="text" name="" id="nh_Text">
+            </div>
+            <div class="n_four">
+                跳转链接：<input type="text" name="" id="nf_Href"><br/>
+                图片链接：<input type="text" name="" id="nf_Src"><br/>
+                展示内容：<input type="text" name="" id="nf_Text">
+            </div>
+
+            <button type="submit" id="navBtn">保存</button>
+        </div>
+        <div class="c_hotTitle">
+            <h4>分区标题</h4>
+            <input type="text" name="" id="h_Text" placeholder="输入标题">
+            <button type="button" id="hottBtn">保存</button>
+        </div>
+        <div class="c_hotTop">
+            <h4>专区内容(一)</h4>
+            <div>
+               跳转链接：<input type="text" name="" id="steak_href"><br/>
+               商品标题：<input type="text" name="" id="steak_h5"><br/>
+               商品描述：<input type="text" name="" id="steak_p"><br/>
+               图片路径：<input type="text" name="" id="steak_src">
+            </div>
+            <div>
+                跳转链接：<input type="text" name="" id="bread_href"><br/>
+                商品标题：<input type="text" name="" id="bread_h5"><br/>
+                商品描述：<input type="text" name="" id="bread_p"><br/>
+                图片路径：<input type="text" name="" id="bread_src">
+             </div>
+
+            <button type="submit" id="steakBtn">保存</button>
+        </div>
+        <div class="c_hotBottom">
+            <h4>专区内容(二)</h4>
+            <div>
+                跳转链接：<input type="text" name="" id="fresh_href"><br/>
+                商品标题：<input type="text" name="" id="fresh_h5"><br/>
+                商品描述：<input type="text" name="" id="fresh_p"><br/>
+                图片路径：<input type="text" name="" id="fresh_src">
+            </div>
+            <div>
+                跳转链接：<input type="text" name="" id="food_href"><br/>
+                商品标题：<input type="text" name="" id="food_h5"><br/>
+                商品描述：<input type="text" name="" id="food_p"><br/>
+                图片路径：<input type="text" name="" id="food_src">
+            </div>
+            <div>
+              跳转链接：<input type="text" name="" id="kitchen_href"><br/>
+              商品标题：<input type="text" name="" id="kitchen_h5"><br/>
+              商品描述：<input type="text" name="" id="kitchen_p"><br/>
+              图片路径：<input type="text" name="" id="kitchen_src">
+            </div>
+            <button type="submit" id="freshBtn">保存</button>
+        </div>
+        <div class="c_chiocTitle">
+          <h4>精选标题</h4>
+          <input type="text" id="chioc_h2">
+          <button type="submit" id="h2Btn">保存</button>
         </div>
    </div>
    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
    <script >
    $(function(){
      $(".c_banner").hide();
-     
+     $(".c_title").hide();
+     $(".c_nav").hide();
+     $(".c_hotTitle").hide();
+     $(".c_hotTop").hide();
+     $(".c_hotBottom").hide();
+     $(".c_chiocTitle").hide();
+
      $("#bannerBtn").click(function(){
-         var bannerHref = $("#BannerHref").val();
+         var bannerHref = $("#bannerHref").val();
          var banenrSrc = $("#bannerSrc").val();
-         
-         $(".banner a").attr("href",bannerHref);
-         $(".banner img").attr("src",banenrSrc);
+
+         var bHref = $("#bHref").val();
+         var bSrc = $("#bSrc").val();
+
+         var cHref = $("#cHref").val();
+         var cSrc = $("#cSrc").val();
+
+         var dHref = $("#dHref").val();
+         var dSrc = $("#dSrc").val();
+
+         $(".b1").attr("href",bannerHref);
+         $(".b1 img").attr("src",banenrSrc);
+
+         $(".b2 ").attr("href",bHref);
+         $(".b2 img").attr("src",bSrc);
+
+         $(".b3").attr("href",cHref);
+         $(".b3 img").attr("src",cSrc);
+
+         $(".b4").attr("href",dHref);
+         $(".b4 img").attr("src",dSrc);
          
          $(".c_banner").hide();
      })
-     
+     $("#titleBtn").click(function(){
+         var oneHref = $("#oneHref").val()
+         var oneSrc = $("#oneSrc").val()
+         var onetext = $("#oneText").val()
+
+         var twoHref = $("#twoHref").val()
+         var twoSrc = $("#twoSrc").val()
+         var twotext = $("#twoText").val()
+
+         var threeHref = $("#threeHref").val()
+         var threeSrc = $("#threeSrc").val()
+         var threetext = $("#threeText").val()
+         
+
+        $(".title_a").attr("href",oneHref) 
+        $(".title_a img").attr("src",oneSrc)
+        $(".title_a span").text(onetext)
+
+        $(".title_b").attr("href",twoHref)
+        $(".title_b img").attr("src",twoSrc)
+        $(".title_b span").text(twotext)
+
+        $(".title_c").attr("href",threeHref)
+        $(".title_c img").attr("src",threeSrc)
+        $(".title_c span").text(threetext)
+        $(".c_title").hide();
+     })
+     $("#navBtn").click(function(){
+          var n_Href = $("#n_Href").val();
+          var n_Src = $("#n_Src").val();
+          var n_Text = $("#n_Text").val();
+
+          var nt_Href = $("#nt_Href").val();
+          var nt_Src = $("#nt_Src").val();
+          var nt_Text = $("#nt_Text").val();
+
+          var nh_Href = $("#nh_Href").val();
+          var nh_Src = $("#nh_Src").val();
+          var nh_Text = $("#nh_Text").val();
+
+          var nf_Href = $("#nf_Href").val();
+          var nf_Src = $("#nf_Src").val();
+          var nf_Text = $("#nf_Text").val();
+
+          $(".li_one .list").attr("href",n_Href)
+          $(".li_one .list img").attr("src",n_Src)
+          $(".li_one .nest").text(n_Text)
+
+          $(".li_two .list").attr("href",nt_Href)
+          $(".li_two .list img").attr("src",nt_Src)
+          $(".li_two .nest").text(nt_Text)
+
+          $(".li_three .list").attr("href",nh_Href)
+          $(".li_three .list img").attr("src",nh_Src)
+          $(".li_three .nest").text(nh_Text)
+
+          $(".li_four .list").attr("href",nf_Href)
+          $(".li_four .list img").attr("src",nf_Src)
+          $(".li_four .nest").text(nf_Text)
+          $(".c_nav").hide();
+     })
+     $("#hottBtn").click(function(){
+       var h_Text = $("#h_Text").val();
+
+       $(".hot_title h2").text(h_Text)
+
+     $(".c_hotTitle").hide();
+     })
+     $("#steakBtn").click(function(){
+        var steak_href = $("#steak_href").val();
+        var steak_h5 = $("#steak_h5").val();
+        var steak_p = $("#steak_p").val();
+        var steak_src = $("#steak_src").val();
+
+        var bread_href = $("#bread_href").val();
+        var bread_h5 = $("#bread_h5").val();
+        var bread_p = $("#bread_p").val();
+        var bread_src = $("#bread_src").val();
+
+
+        $(".steak").attr("href",steak_href)
+        $(".steak h5").text(steak_h5)
+        $(".steak p").text(steak_p)
+        $(".steak img").attr("src",steak_src)  
+
+        $(".bread").attr("href",bread_href)
+        $(".bread h5").text(bread_h5)
+        $(".bread p").text(bread_p)
+        $(".bread img").attr("src",bread_src)      
+
+            
+        
+        $(".c_hotTop").hide();
+     })
+     $("#freshBtn").click(function(){
+        var fresh_href = $("#fresh_href").val();
+        var fresh_h5 = $("#fresh_h5").val();
+        var fresh_p = $("#fresh_p").val();
+        var fresh_src = $("#fresh_src").val();
+
+        var food_href = $("#food_href").val();
+        var food_h5 = $("#food_h5").val();
+        var food_p = $("#food_p").val();
+        var food_src = $("#food_src").val();
+
+        var kitchen_href = $("#kitchen_href").val();
+        var kitchen_h5 = $("#kitchen_h5").val();
+        var kitchen_p = $("#kitchen_p").val();
+        var kitchen_src = $("#kitchen_src").val();
+
+
+        $(".fresh").attr("href",fresh_href)
+        $(".fresh h5").text(fresh_h5)
+        $(".fresh p").text(fresh_p)
+        $(".fresh img").attr("src",fresh_src)  
+
+        $(".food").attr("href",food_href)
+        $(".food h5").text(food_h5)
+        $(".food p").text(food_p)
+        $(".food img").attr("src",food_src)    
+
+        $(".kitchen").attr("href",kitchen_href)
+        $(".kitchen h5").text(kitchen_h5)
+        $(".kitchen p").text(kitchen_p)
+        $(".kitchen img").attr("src",kitchen_src)    
+
+        $(".c_hotBottom").hide();
+     })
+     $("#h2Btn").click(function(){
+        var chioc_h2 = $("#chioc_h2").val()
+
+        $("#choic_special h2").text(chioc_h2)
+        $(".c_chiocTitle").hide();
+     })
 })
   function bannerShow(){
       $(".c_banner").show();
   }   
+  function titleShow(){
+    $(".c_title").show()
+  }
+  function navShow(){
+    $(".c_nav").show()
+  }
+  function hotTitle(){
+    $(".c_hotTitle").show()
+  }
+  function hotTop(){
+    $(".c_hotTop").show()
+  }
+  function hotBottom(){
+    $(".c_hotBottom").show()
+  }
+  function h2Show(){
+    $(".c_chiocTitle").show();
+  }
+   
    </script>
 </body>
 </html>
