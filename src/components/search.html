@@ -111,7 +111,7 @@
          <!-- 精选专题 -->
          <div id="choic_special">
             <h2 onclick="h2Show()">精选专题</h2>
-            <div class="chioc_banner">
+            <div class="chioc_banner" onclick="chiocBanner()">
              <a href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt=""></a> 
             </div>
             <div class="chiod_list">
@@ -383,6 +383,13 @@
           <input type="text" id="chioc_h2">
           <button type="submit" id="h2Btn">保存</button>
         </div>
+        <div class="c_bannerShow">
+          <div>
+            跳转链接：<input type="text" name="" id="banner_a"><br/>
+            图片路径：<input type="file" name="" id="banner_img">
+          </div>
+           <button type="submit" id="bannerShowBtn">保存</button>
+        </div>
    </div>
    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
    <script >
@@ -394,6 +401,7 @@
      $(".c_hotTop").hide();
      $(".c_hotBottom").hide();
      $(".c_chiocTitle").hide();
+     $(".c_bannerShow").hide();
 
      $("#bannerBtn").click(function(){
          var bannerHref = $("#bannerHref").val();
@@ -556,6 +564,16 @@
         $("#choic_special h2").text(chioc_h2)
         $(".c_chiocTitle").hide();
      })
+     $("#bannerShowBtn").click(function(){
+        var banner_a = $("#banner_a").val()
+        var banner_img = $("#banner_img").val()
+
+        $(".chioc_banner a").attr("href",banner_a)
+        $(".chioc_banner a img").attr("src",banner_img)
+       
+    
+        $(".c_bannerShow").hide();
+     })
 })
   function bannerShow(){
       $(".c_banner").show();
@@ -573,12 +591,14 @@
     $(".c_hotTop").show()
   }
   function hotBottom(){
-    $(".c_hotBottom").show()
+    $(".c_hotBottom").show();                                                                                                                                                                                                                                                                            
   }
   function h2Show(){
     $(".c_chiocTitle").show();
   }
-   
+  function chiocBanner(){
+    $(".c_bannerShow").show();
+  }
    </script>
 </body>
 </html>

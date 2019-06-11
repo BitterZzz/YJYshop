@@ -262,9 +262,10 @@
            </div>
            <div class="footer"></div>
             
-            <transition name="" enter-active-class=" slideInRight" leave-active-class="slideInLeft">
+            
                 <div class="suspend">
-                   <a class="hint" @click="selectMenu"><img src="../assets/img/unfold.png" alt="" /> 导航</a>
+                   <a class="hint" @click="selectMenu"><img id="glyphiconSlideImg" src="../assets/img/unfold.png" alt="" /> 导航</a>
+                    <transition name="fade" enter-active-class="slideInLeft " leave-active-class="slideInRight">
                     <ul class="susNav" v-if="showMenu">
                       <li>
                         <a href="#"><img src="../assets/img/carts.png" alt="" /></a>
@@ -279,17 +280,32 @@
                         <a href="#">个人中心</a>
                       </li>
                     </ul>
+                      </transition>
                 </div>
-           </transition>
+         
            <!-- 遮罩层 -->
           <transition enter-active-class="fadeIn " leave-active-class="fadeOut">
               <div class="cover" v-if="showMenu"></div>
           </transition>
       </div>
 </template>
+
 <script>
-
-
+//  var slideFlag = false;
+    // $(".hint").on('click', function () {
+    //     if (!slideFlag) {
+    //         $(".susNav").animate({ right: "0px" });
+    //         $(".hint").text("导航");
+    //         $("#glyphiconSlideImg").attr("src", "/Areas/Mobile/Templates/Default/Images/Navigation/icon_packup.png");
+    //         LoadCartTipForSlideMenu();
+    //     } else {
+           
+    //         $(".susNav").animate({ right: "160px" });
+    //         $(".hint").text("导航");
+    //         $("#glyphiconSlideImg").attr("src", "/Areas/Mobile/Templates/Default/Images/Navigation/icon_unfold.png");
+    //     }
+    //     slideFlag = !slideFlag;
+    // })
 export default {
  name:"app-tabs",
  data(){
@@ -307,15 +323,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .show-enter-active,.show-leave-active{
-//        transition:all 2s;
-//   }
-// .show-enter,.show-leave-to{
-//        transform: translateX(-160px)
+// .fade-enter,.fade-leave-to{
+//   opacity: 0.5;
+//   transform: translateX(160px)
 // }
-// .show-enter-to,.show-leave{
-//         // transform: translateX(160px)
-
+// .fade-enter-to, .fade-leave{
+//   opacity: 1;
+// }
+// .fade-enter-active, .fade-leave-active{
+//   transform: all 10s;
 // }
   #tabs{
          background: #E8E8E8;

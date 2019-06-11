@@ -7,11 +7,11 @@ import { Swipe, SwipeItem } from 'vant'
 import { Icon } from 'vant'
 import 'lib-flexible/flexible'
 import $ from 'jquery'
-import animate from 'animate.css'
 
 
 
-Vue.use(animate);
+
+// Vue.use($);
 Vue.use(Icon);
 Vue.use(Swipe).use(SwipeItem);
 
