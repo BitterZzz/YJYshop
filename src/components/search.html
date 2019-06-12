@@ -501,7 +501,7 @@
 
      $(".c_hotTitle").hide();
      })
-     $("#steakBtn").click(function(){
+     $("#steakBtn").click(function(e){
         var steak_href = $("#steak_href").val();
         var steak_h5 = $("#steak_h5").val();
         var steak_p = $("#steak_p").val();
@@ -516,16 +516,68 @@
         $(".steak").attr("href",steak_href)
         $(".steak h5").text(steak_h5)
         $(".steak p").text(steak_p)
-        $(".steak img").attr("src",steak_src)  
+        // $(".steak img").attr("src",steak_src)  
 
         $(".bread").attr("href",bread_href)
         $(".bread h5").text(bread_h5)
         $(".bread p").text(bread_p)
-        $(".bread img").attr("src",bread_src)      
+        // $(".bread img").attr("src",bread_src)      
 
-            
-        
+
         $(".c_hotTop").hide();
+
+              e.preventDefault();//阻止默认行为
+              var steak = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var steak_file = $('#steak_src')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof steak_file != 'undefined')
+                  steak.append('file', steak_file);
+
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: steak,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".steak img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
+
+              e.preventDefault();//阻止默认行为
+              var bread = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var bread_file = $('#bread_src')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof bread_file != 'undefined')
+                  bread.append('file', bread_file);
+
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: bread,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".bread img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
+
+
+
      })
      $("#freshBtn").click(function(e){
         var fresh_href = $("#fresh_href").val();
@@ -568,11 +620,6 @@
               // oForm.append('name', $('#name').val());
               if (typeof fresh_file != 'undefined')
                   fresh.append('file', fresh_file);
-
-             
-
-              
-
               $.ajax({
                   url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
                   type: 'post',
