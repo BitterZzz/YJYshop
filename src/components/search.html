@@ -269,30 +269,31 @@
           </div>
    </div>
    <div id="compile">
-        <div class="c_banner">
-          <h4>轮播图</h4>
+        <div class="c_banner unify">
+          <h4>轮播图编辑</h4>
           <div class="c_a">
             跳转链接：<input type="text" name="" id="bannerHref"><br/>
-            图片路径：<input type="text" name="" id="bannerSrc"><br/>
+            图片路径：<input type="file" class="file" name="" id="bannerSrc"><br/>
           </div>
 
           <div class="c_b">
             跳转链接：<input type="text" name="" id="bHref"><br/>
-            图片路径：<input type="text" name="" id="bSrc"><br/>
+            图片路径：<input type="file" class="file" name="" id="bSrc"><br/>
           </div>
 
           <div class="c_c">
             跳转链接：<input type="text" name="" id="cHref"><br/>
-            图片路径：<input type="text" name="" id="cSrc"><br/>
+            图片路径：<input type="file" class="file" name="" id="cSrc"><br/>
           </div>
 
           <div class="c_d">
             跳转链接：<input type="text" name="" id="dHref"><br/>
-            图片路径：<input type="text" name="" id="dSrc"><br/>
+            图片路径：<input type="file" class="file" name="" id="dSrc"><br/>
           </div>
           <button type="submit" id="bannerBtn">保存</button>
         </div>
-        <div class="c_title">
+        <div class="c_title unify" >
+             <h4>商品标签编辑</h4>
                 <div class="t_one">
                    跳转链接：<input type="text" name="" id="oneHref">
                    显示图片：<input type="text" id="oneSrc">
@@ -310,83 +311,85 @@
                 </div>
                 <button type="submit" id="titleBtn">保存</button>
         </div>
-        <div class="c_nav">
+        <div class="c_nav unify" >
+          <h4>导航栏编辑</h4>
             <div class="n_one">
-                跳转链接：<input type="text" name="" id="n_Href"><br/>
-                图片链接：<input type="text" name="" id="n_Src"><br/>
-                展示内容：<input type="text" name="" id="n_Text">
+                跳转链接：<input type="text" name="" id="n_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file" id="n_Src"><br/>
+                展示内容：<input type="text" name="" id="n_Text" placeholder="导航标题">
             </div>
             <div class="n_two">
-                跳转链接：<input type="text" name="" id="nt_Href"><br/>
-                图片链接：<input type="text" name="" id="nt_Src"><br/>
-                展示内容：<input type="text" name="" id="nt_Text">
+                跳转链接：<input type="text" name="" id="nt_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file" id="nt_Src"><br/>
+                展示内容：<input type="text" name="" id="nt_Text" placeholder="导航标题">
             </div>
             <div class="n_three">
-                跳转链接：<input type="text" name="" id="nh_Href"><br/>
-                图片链接：<input type="text" name="" id="nh_Src"><br/>
-                展示内容：<input type="text" name="" id="nh_Text">
+                跳转链接：<input type="text" name="" id="nh_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name=""  class="file" id="nh_Src"><br/>
+                展示内容：<input type="text" name="" id="nh_Text" placeholder="导航标题">
             </div>
             <div class="n_four">
-                跳转链接：<input type="text" name="" id="nf_Href"><br/>
-                图片链接：<input type="text" name="" id="nf_Src"><br/>
-                展示内容：<input type="text" name="" id="nf_Text">
+                跳转链接：<input type="text" name="" id="nf_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file"  id="nf_Src"><br/>
+                展示内容：<input type="text" name="" id="nf_Text" placeholder="导航标题">
             </div>
 
             <button type="submit" id="navBtn">保存</button>
         </div>
-        <div class="c_hotTitle">
-            <h4>分区标题</h4>
+        <div class="c_hotTitle unify">
+            <h4>分区标题编辑</h4>
             <input type="text" name="" id="h_Text" placeholder="输入标题">
             <button type="button" id="hottBtn">保存</button>
         </div>
-        <div class="c_hotTop">
-            <h4>专区内容(一)</h4>
+        <div class="c_hotTop unify">
+            <h4>专区内容编辑(一)</h4>
             <div>
-               跳转链接：<input type="text" name="" id="steak_href"><br/>
-               商品标题：<input type="text" name="" id="steak_h5"><br/>
-               商品描述：<input type="text" name="" id="steak_p"><br/>
-               图片路径：<input type="text" name="" id="steak_src">
+               跳转链接：<input type="text" name="" id="steak_href" placeholder="跳转地址"><br/>
+               商品标题：<input type="text" name="" id="steak_h5" placeholder="输入标题"><br/>
+               商品描述：<input type="text" name="" id="steak_p" placeholder="描述内容"><br/>
+               图片路径：<input type="file" name="" class="file" id="steak_src">
             </div>
             <div>
-                跳转链接：<input type="text" name="" id="bread_href"><br/>
-                商品标题：<input type="text" name="" id="bread_h5"><br/>
-                商品描述：<input type="text" name="" id="bread_p"><br/>
-                图片路径：<input type="text" name="" id="bread_src">
+                跳转链接：<input type="text" name="" id="bread_href" placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="bread_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="bread_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" class="file" name="" id="bread_src">
              </div>
 
             <button type="submit" id="steakBtn">保存</button>
         </div>
-        <div class="c_hotBottom">
-            <h4>专区内容(二)</h4>
+        <div class="c_hotBottom unify">
+            <h4>专区内容编辑(二)</h4>
             <div>
-                跳转链接：<input type="text" name="" id="fresh_href"><br/>
-                商品标题：<input type="text" name="" id="fresh_h5"><br/>
-                商品描述：<input type="text" name="" id="fresh_p"><br/>
-                图片路径：<input type="text" name="" id="fresh_src">
+                跳转链接：<input type="text" name="" id="fresh_href" placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="fresh_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="fresh_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" name="" class="file" id="fresh_src">
             </div>
             <div>
-                跳转链接：<input type="text" name="" id="food_href"><br/>
-                商品标题：<input type="text" name="" id="food_h5"><br/>
-                商品描述：<input type="text" name="" id="food_p"><br/>
-                图片路径：<input type="text" name="" id="food_src">
+                跳转链接：<input type="text" name="" id="food_href"  placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="food_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="food_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" name="" class="file" id="food_src">
             </div>
             <div>
-              跳转链接：<input type="text" name="" id="kitchen_href"><br/>
-              商品标题：<input type="text" name="" id="kitchen_h5"><br/>
-              商品描述：<input type="text" name="" id="kitchen_p"><br/>
-              图片路径：<input type="text" name="" id="kitchen_src">
+              跳转链接：<input type="text" name="" id="kitchen_href"  placeholder="跳转地址"><br/>
+              商品标题：<input type="text" name="" id="kitchen_h5" placeholder="输入标题"><br/>
+              商品描述：<input type="text" name="" id="kitchen_p" placeholder="描述内容"><br/>
+              图片路径：<input type="file" name="" class="file" id="kitchen_src">
             </div>
             <button type="submit" id="freshBtn">保存</button>
         </div>
-        <div class="c_chiocTitle">
-          <h4>精选标题</h4>
+        <div class="c_chiocTitle unify">
+          <h4>精选标题编辑</h4>
           <input type="text" id="chioc_h2">
           <button type="submit" id="h2Btn">保存</button>
         </div>
-        <div class="c_bannerShow">
+        <div class="c_bannerShow unify">
+          <h4>精选展示编辑</h4>
           <div>
             跳转链接：<input type="text" name="" id="banner_a"><br/>
-            图片路径：<input type="file" name="" id="banner_img">
+            图片路径：<input type="file" name="file" class="file" id="banner_img">
           </div>
            <button type="submit" id="bannerShowBtn">保存</button>
         </div>
@@ -524,7 +527,7 @@
         
         $(".c_hotTop").hide();
      })
-     $("#freshBtn").click(function(){
+     $("#freshBtn").click(function(e){
         var fresh_href = $("#fresh_href").val();
         var fresh_h5 = $("#fresh_h5").val();
         var fresh_p = $("#fresh_p").val();
@@ -544,19 +547,93 @@
         $(".fresh").attr("href",fresh_href)
         $(".fresh h5").text(fresh_h5)
         $(".fresh p").text(fresh_p)
-        $(".fresh img").attr("src",fresh_src)  
+        // $(".fresh img").attr("src",fresh_src)  
 
         $(".food").attr("href",food_href)
         $(".food h5").text(food_h5)
         $(".food p").text(food_p)
-        $(".food img").attr("src",food_src)    
+        // $(".food img").attr("src",food_src)    
 
         $(".kitchen").attr("href",kitchen_href)
         $(".kitchen h5").text(kitchen_h5)
         $(".kitchen p").text(kitchen_p)
-        $(".kitchen img").attr("src",kitchen_src)    
+        // $(".kitchen img").attr("src",kitchen_src)    
 
         $(".c_hotBottom").hide();
+
+        e.preventDefault();//阻止默认行为
+              var fresh = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var fresh_file = $('#fresh_src')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof fresh_file != 'undefined')
+                  fresh.append('file', fresh_file);
+
+             
+
+              
+
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: fresh,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".fresh img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
+              var food = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var food_file = $('#fresh_src')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof food_file != 'undefined')
+                  food.append('file', food_file);
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: food,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".food img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
+              var kitchen = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var kitchen_file = $('#fresh_src')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof kitchen_file != 'undefined')
+                  kitchen.append('file', kitchen_file);
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: kitchen,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".kitchen img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
+        
      })
      $("#h2Btn").click(function(){
         var chioc_h2 = $("#chioc_h2").val()
@@ -564,17 +641,57 @@
         $("#choic_special h2").text(chioc_h2)
         $(".c_chiocTitle").hide();
      })
-     $("#bannerShowBtn").click(function(){
+     $("#bannerShowBtn").click(function(e){
         var banner_a = $("#banner_a").val()
         var banner_img = $("#banner_img").val()
 
         $(".chioc_banner a").attr("href",banner_a)
-        $(".chioc_banner a img").attr("src",banner_img)
+       
        
     
         $(".c_bannerShow").hide();
+        // // 点击保存改变地址的操作
+        // $.post("ajax/http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg",function(file){
+        //     console.log("返回的数据")
+        // })
+              e.preventDefault();//阻止默认行为
+              var oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+              var file = $('#banner_img')[0].files[0];//上传文件 file
+
+              // oForm.append('name', $('#name').val());
+              if (typeof file != 'undefined')
+                  oForm.append('file', file);
+
+              $.ajax({
+                  url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                  type: 'post',
+                  data: oForm,
+                  processData: false,  // 不处理数据
+                  contentType: false,   // 不设置内容类型
+                  success: function (result) {
+                      
+                      if (result) {
+                           console.log(result.data)
+                           $(".chioc_banner a img").attr("src",result.data)
+                      } else {
+
+                      }
+                  }
+              });
      })
+    
 })
+ 
+
+  // // 获取地址
+  // $('#banner_img').on('change',function(){
+  //   //  点击选中然后发送请求
+  //   $.post("ajax/http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg",function(file){
+  //     console.log("返回的地址")
+  //   })
+  // })
+
+
   function bannerShow(){
       $(".c_banner").show();
   }   
