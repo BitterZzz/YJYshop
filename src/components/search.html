@@ -589,8 +589,9 @@
                       }
                   }
               });
+
               var food = new FormData();// 创建FormData 对象 调用append()方法来添加字段
-              var food_file = $('#fresh_src')[0].files[0];//上传文件 file
+              var food_file = $('#food_src')[0].files[0];//上传文件 file
 
               // oForm.append('name', $('#name').val());
               if (typeof food_file != 'undefined')
@@ -612,7 +613,7 @@
                   }
               });
               var kitchen = new FormData();// 创建FormData 对象 调用append()方法来添加字段
-              var kitchen_file = $('#fresh_src')[0].files[0];//上传文件 file
+              var kitchen_file = $('#kitchen_src')[0].files[0];//上传文件 file
 
               // oForm.append('name', $('#name').val());
               if (typeof kitchen_file != 'undefined')
