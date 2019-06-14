@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/rest.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/compile.css">
+</head>
+<body>
+    <div id="tabs">
+           <!-- 头部 banner -->
+           <div class="top" class="banner" onclick="bannerShow()">
+              <van-swipe :autoplay="3000"  indicator-color="white">
+                <van-swipe-item>
+                  <a class="b1" href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067714992735718495819.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a class="b2" href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067770982156542113367.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a class="b3" href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067772488416188480798.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+                <van-swipe-item>
+                  <a class="b4" href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067705602050617339807.jpg" alt="" srcset=""></a>
+                </van-swipe-item>
+              </van-swipe>
+              <div class="header">
+                 <a href="#"><img src="../assets/img/sicon.png"/></a>
+               <p><img src="../assets/img/search.png" alt="" srcset=""> <input type="text" placeholder="输入关键字搜索"></p>
+                 <a href="#"><img src="../assets/img/gicon.png"/></a>
+              </div>
+           </div>
+           <!-- 标题 -->
+           <div class="title" onclick="titleShow()">
+            <a class="title_a" href="javascript:void(0);"><img src="../assets/img/icon1.png" alt="" /><span>精选食材</span></a>
+            <a class="title_b" href="javascript:void(0);"><img src="../assets/img/icon2.png" alt="" /><span>健康营养</span></a>
+            <a class="title_c" href="javascript:void(0);"><img src="../assets/img/icon3.png" alt="" /><span>安全放心</span></a>
+           </div>
+           <div class="Hr">
+                <hr/>
+           </div>
+           <!-- nav 分类 -->
+           <div class="nav" onclick="navShow()">
+            <li class="li_one">
+              <a href="javascript:void(0);" class="list">
+                <img src="../assets/img/classify.png" alt="" srcset="">
+              </a>
+              <a href="javascript:void(0);" class="nest">
+                分类
+              </a>
+            </li>
+            <li class="li_two">
+              <a href="javascript:void(0);" class="list">
+                <img src="../assets/img/roll.png" alt="" srcset="">
+              </a>
+              <a href="javascript:void(0);" class="nest">
+                新人领券
+              </a>
+            </li>
+            <li class="li_three">
+              <a href="javascript:void(0);" class="list">
+                <img src="../assets/img/group.png" alt="" srcset="">
+              </a>
+              <a href="javascript:void(0);" class="nest">
+               拼团
+              </a>
+            </li>
+            <li class="li_four">
+              <a href="javascript:void(0);" class="list">
+                <img src="../assets/img/mine.png" alt="" srcset="">
+              </a>
+              <a href="javascript:void(0);" class="nest">
+                个人中心
+              </a>
+            </li>
+           </div>
+           <!-- 热门分区-->
+           <div id="hot_partition">
+               <div class="hot_title" onclick="hotTitle()">
+                 <h2>热门分区</h2>
+               </div>
+               <div class="hot_top" onclick="hotTop()">
+                    <a class="steak" href="javascript:void(0);">
+                          <h5>牛排机专区</h5>
+                          <p>牛排好伴侣</p>
+                          <img src="../assets/img/steak.png" alt="" srcset=""/>
+                    </a>
+                    <a class="bread" href="javascript:void(0);">
+                          <h5>面包机专区</h5>
+                          <p>宜居云面包机随心DIY</p>
+                          <img src="https://www.eg-live.com/Storage/Shop/1/Products/1198/1_150.png" alt="" srcset=""/>
+                    </a>
+               </div>
+               <div class="hot_bottom" onclick="hotBottom()">
+                  <a href="javascript:void(0);" class="fresh">
+                          <h5>生鲜牛排专区</h5>
+                          <p>澳洲进口 天然原切</p>
+                          <img src="../assets/img/fresh.png" alt="" srcset=""/>
+                  </a>
+                  <a href="javascript:void(0);" class="food">
+                          <h5>五谷杂粮专区</h5>
+                          <p>原生态无污染 放心食材</p>
+                          <img src="../assets/img/food.png" alt="" srcset=""/>
+                  </a>
+                  <a href="javascript:void(0);" class="kitchen">
+                          <h5>厨电厨具专区</h5>
+                          <p>韩国进口 饭麦石不粘锅</p>
+                          <img src="../assets/img/kitchen.png" alt="" srcset=""/>
+                  </a>
+               </div>
+           </div>
+           <!-- 精选专题 -->
+           <div id="choic_special">
+                  <h2  onclick="h2Show()">精选专题</h2>
+                  <div class="chioc_banner" onclick="chiocBanner()">
+                    <a href="javascript:void(0);"><img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt=""></a> 
+                  </div>
+                  <div class="chiod_list" onclick="chiocList()">
+                    <li class="oflow"> 
+                      <a href="javascript:void(0);">
+                            <h6>超值任选</h6>
+                            <p>68元任选10件</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                    <li class="flour">
+                      <a href="javascript:void(0);">
+                            <h6>面包粉</h6>
+                            <p>最高199减100</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                   <li class="snack"> 
+                      <a href="javascript:void(0);">
+                            <h6>五朵梅</h6>
+                            <p>五谷杂粮粥…</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                    <li class="meat"> 
+                      <a href="javascript:void(0);">
+                            <h6>牛排限时秒杀</h6>
+                            <p>澳洲牛排8.8</p>
+                            <img src="https://www.eg-live.com/Storage/Shop/1/Products/1492/1_350.png" alt="" srcset="">
+                      </a>
+                    </li>
+                  </div>
+           </div>
+           <!-- 为你推荐 -->
+           <div id="fory_recommend">
+             <h2 onclick="foryTitle()">为你推荐</h2>
+              <ul class="fory_box boxOne" onclick="boxOneShow()">
+                 <li class="box_left">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+                 <li class="box_right">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend" onclick="boxTwoShow()">
+              <ul class="fory_box boxTwo">
+                 <li class="box_left">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+                 <li class="box_right">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend" onclick="boxThreeShow()">
+              <ul class="fory_box boxThree">
+                 <li class="box_left">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+                 <li class="box_right">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend " onclick="boxFourShow()">
+              <ul class="fory_box boxFour">
+                 <li class="box_left">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+                 <li class="box_right">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+              </ul>
+           </div>
+            <div id="fory_recommend" onclick="boxFiveShow()">
+              <ul class="fory_box boxFive">
+                 <li class="box_left">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+                 <li class="box_right">
+                    <a href="javascript:void(0);" class="pattern">
+                      <img src="https://www.eg-live.com/Storage/Shop/1/Products/1266/1_350.png" alt=""/>
+                    </a>
+                    
+                    <a href="javascript:void(0);" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
+                 </li>
+              </ul>
+           </div>
+           <div class="footer"></div>
+    </div>
+    <div id="compile">
+        <div class="c_banner unify">
+          <h4>轮播图编辑</h4>
+          <div class="c_a">
+            跳转链接：<input type="text" name="" id="bannerHref"><br/>
+            图片路径：<input type="file" class="file" name="" id="bannerSrc"><br/>
+          </div>
+
+          <div class="c_b">
+            跳转链接：<input type="text" name="" id="bHref"><br/>
+            图片路径：<input type="file" class="file" name="" id="bSrc"><br/>
+          </div>
+
+          <div class="c_c">
+            跳转链接：<input type="text" name="" id="cHref"><br/>
+            图片路径：<input type="file" class="file" name="" id="cSrc"><br/>
+          </div>
+
+          <div class="c_d">
+            跳转链接：<input type="text" name="" id="dHref"><br/>
+            图片路径：<input type="file" class="file" name="" id="dSrc"><br/>
+          </div>
+          <button type="submit" id="bannerBtn">保存</button>
+        </div>
+         <div class="c_title unify" >
+             <h4>商品标签编辑</h4>
+                <div class="t_one">
+                   跳转链接：<input type="text" name="" id="oneHref">
+                   显示图片：<input type="file" class="file" id="oneSrc">
+                   内  容  : <input type="text" id="oneText" placeholder="输入内容">
+                </div>
+                <div class="t_two">
+                    跳转链接：<input type="text" name="" id="twoHref">
+                    显示图片：<input type="file" class="file" id="twoSrc">
+                    内  容  : <input type="text" id="twoText" placeholder="输入内容">
+                </div>
+                <div class="t_three">
+                    跳转链接：<input type="text" name="" id="twoHref">
+                    显示图片：<input type="file" class="file" id="threeSrc">
+                    内  容  : <input type="text" id="threeText" placeholder="输入内容">
+                </div>
+                <button type="submit" id="titleBtn">保存</button>
+        </div>
+        <div class="c_nav unify" >
+          <h4>导航栏编辑</h4>
+            <div class="n_one">
+                跳转链接：<input type="text" name="" id="n_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file" id="n_Src"><br/>
+                展示内容：<input type="text" name="" id="n_Text" placeholder="导航标题">
+            </div>
+            <div class="n_two">
+                跳转链接：<input type="text" name="" id="nt_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file" id="nt_Src"><br/>
+                展示内容：<input type="text" name="" id="nt_Text" placeholder="导航标题">
+            </div>
+            <div class="n_three">
+                跳转链接：<input type="text" name="" id="nh_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name=""  class="file" id="nh_Src"><br/>
+                展示内容：<input type="text" name="" id="nh_Text" placeholder="导航标题">
+            </div>
+            <div class="n_four">
+                跳转链接：<input type="text" name="" id="nf_Href" placeholder="跳转地址"><br/>
+                图片链接：<input type="file" name="" class="file"  id="nf_Src"><br/>
+                展示内容：<input type="text" name="" id="nf_Text" placeholder="导航标题">
+            </div>
+
+            <button type="submit" id="navBtn">保存</button>
+        </div>
+        <div class="c_hotTitle unify">
+            <h4>分区标题编辑</h4>
+            <input type="text" name="" id="h_Text" placeholder="输入标题">
+            <button type="button" id="hottBtn">保存</button>
+        </div>
+        <div class="c_hotTop unify">
+            <h4>专区内容编辑(一)</h4>
+            <div>
+               跳转链接：<input type="text" name="" id="steak_href" placeholder="跳转地址"><br/>
+               商品标题：<input type="text" name="" id="steak_h5" placeholder="输入标题"><br/>
+               商品描述：<input type="text" name="" id="steak_p" placeholder="描述内容"><br/>
+               图片路径：<input type="file" name="" class="file" id="steak_src">
+            </div>
+            <div>
+                跳转链接：<input type="text" name="" id="bread_href" placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="bread_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="bread_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" class="file" name="" id="bread_src">
+             </div>
+
+            <button type="submit" id="steakBtn">保存</button>
+        </div>
+       <div class="c_hotBottom unify">
+            <h4>专区内容编辑(二)</h4>
+            <div>
+                跳转链接：<input type="text" name="" id="fresh_href" placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="fresh_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="fresh_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" name="" class="file" id="fresh_src">
+            </div>
+            <div>
+                跳转链接：<input type="text" name="" id="food_href"  placeholder="跳转地址"><br/>
+                商品标题：<input type="text" name="" id="food_h5" placeholder="输入标题"><br/>
+                商品描述：<input type="text" name="" id="food_p" placeholder="描述内容"><br/>
+                图片路径：<input type="file" name="" class="file" id="food_src">
+            </div>
+            <div>
+              跳转链接：<input type="text" name="" id="kitchen_href"  placeholder="跳转地址"><br/>
+              商品标题：<input type="text" name="" id="kitchen_h5" placeholder="输入标题"><br/>
+              商品描述：<input type="text" name="" id="kitchen_p" placeholder="描述内容"><br/>
+              图片路径：<input type="file" name="" class="file" id="kitchen_src">
+            </div>
+            <button type="submit" id="freshBtn">保存</button>
+        </div>
+         <div class="c_chiocTitle unify">
+          <h4>精选标题编辑</h4>
+          <input type="text" id="chioc_h2">
+          <button type="submit" id="h2Btn">保存</button>
+        </div>
+        <div class="c_bannerShow unify">
+          <h4>精选展示编辑</h4>
+          <div>
+            跳转链接：<input type="text" name="" id="banner_a"><br/>
+            图片路径：<input type="file" name="file" class="file" id="banner_img">
+          </div>
+           <button type="submit" id="bannerShowBtn">保存</button>
+        </div>
+        <div class="c_chiodList unify">
+           <h4>精选商品</h4>
+           <div>
+               跳转链接：<input type="text" name="" id="chiod_fflow"><br/>
+               商品标题：<input type="text" name="" id="chiod_oflow"><br/>
+               超值特惠：<input type="text" name="" id="chiod_tflow"><br/>
+               显示图片：<input type="file" class="file" name="" id="chiod_hflow">
+           </div>
+           <div>
+                跳转链接：<input type="text" name="" id="chiod_fflour"><br/>
+                商品标题：<input type="text" name="" id="chiod_oflour"><br/>
+                超值特惠：<input type="text" name="" id="chiod_tflour"><br/>
+                显示图片：<input type="file" class="file" name="" id="chiod_hflour">
+            </div>
+            <div>
+                跳转链接：<input type="text" name="" id="chiod_fsnack"><br/>
+                商品标题：<input type="text" name="" id="chiod_osnack"><br/>
+                超值特惠：<input type="text" name="" id="chiod_tsnack"><br/>
+                显示图片：<input type="file" class="file" name="" id="chiod_hsnack">
+             </div>
+            <div>
+                跳转链接：<input type="text" name="" id="chiod_fmeat"><br/>
+                商品标题：<input type="text" name="" id="chiod_omeat"><br/>
+                超值特惠：<input type="text" name="" id="chiod_tmeat"><br/>
+                显示图片：<input type="file" class="file" name="" id="chiod_hmeat">
+            </div>
+            <button type="submit" id="chiodListBtn">保存</button>
+        </div>
+        <div class="c_foryTitle unify">
+          <div>
+            推荐标题：<input type="text" name="" id="foryText" placeholder="输入标题">
+          </div>
+            <button type="submit" id="foryBtn">保存</button>
+        </div>
+        <div class="c_foryOneBox unify">
+           <div>
+              跳转链接：<input type="text" id="One_Lpattern"><br/>
+              显示图片：<input type="file" class="file" id="One_Lpicture"><br/>
+              商品描述：<input type="text" name="" id="One_Ldesc"><br/>
+              商品价格：<input type="text" name="" id="One_Lprice">
+           </div>
+           <div>
+              跳转链接：<input type="text" id="One_Rpattern"><br/>
+              显示图片：<input type="file" class="file" id="One_Rpicture"><br/>
+              商品描述：<input type="text" name="" id="One_Rdesc"><br/>
+              商品价格：<input type="text" name="" id="One_Rprice">
+           </div>
+           <button type="submit" id="OneBoxBtn">保存</button>
+        </div>
+        <div class="c_foryTwoBox unify">
+            <div>
+               跳转链接：<input type="text" id="Two_Lpattern"><br/>
+               显示图片：<input type="file" class="file" id="Two_Lpicture"><br/>
+               商品描述：<input type="text" name="" id="Two_Ldesc"><br/>
+               商品价格：<input type="text" name="" id="Two_Lprice">
+            </div>
+            <div>
+               跳转链接：<input type="text" id="Two_Rpattern"><br/>
+               显示图片：<input type="file" class="file" id="Two_Rpicture"><br/>
+               商品描述：<input type="text" name="" id="Two_Rdesc"><br/>
+               商品价格：<input type="text" name="" id="Two_Rprice">
+            </div>
+            <button type="submit" id="TwoBoxBtn">保存</button>
+         </div>
+         <div class="c_foryThreeBox unify">
+            <div>
+               跳转链接：<input type="text" id="Three_Lpattern"><br/>
+               显示图片：<input type="file" class="file" id="Three_Lpicture"><br/>
+               商品描述：<input type="text" name="" id="Three_Ldesc"><br/>
+               商品价格：<input type="text" name="" id="Three_Lprice">
+            </div>
+            <div>
+               跳转链接：<input type="text" id="Three_Rpattern"><br/>
+               显示图片：<input type="file" class="file" id="Three_Rpicture"><br/>
+               商品描述：<input type="text" name="" id="Three_Rdesc"><br/>
+               商品价格：<input type="text" name="" id="Three_Rprice">
+            </div>
+            <button type="submit" id="ThreeBoxBtn">保存</button>
+         </div>
+         <div class="c_foryFourBox unify">
+            <div>
+               跳转链接：<input type="text" id="Four_Lpattern"><br/>
+               显示图片：<input type="file" class="file" id="Four_Lpicture"><br/>
+               商品描述：<input type="text" name="" id="Four_Ldesc"><br/>
+               商品价格：<input type="text" name="" id="Four_Lprice">
+            </div>
+            <div>
+               跳转链接：<input type="text" id="Four_Rpattern"><br/>
+               显示图片：<input type="file" class="file" id="Four_Rpicture"><br/>
+               商品描述：<input type="text" name="" id="Four_Rdesc"><br/>
+               商品价格：<input type="text" name="" id="Four_Rprice">
+            </div>
+            <button type="submit" id="FourBoxBtn">保存</button>
+         </div>
+         <div class="c_foryFiveBox unify">
+            <div>
+               跳转链接：<input type="text" id="Five_Lpattern"><br/>
+               显示图片：<input type="file" class="file" id="Five_Lpicture"><br/>
+               商品描述：<input type="text" name="" id="Five_Ldesc"><br/>
+               商品价格：<input type="text" name="" id="Five_Lprice">
+            </div>
+            <div>
+               跳转链接：<input type="text" id="Five_Rpattern"><br/>
+               显示图片：<input type="file" class="file" id="Five_Rpicture"><br/>
+               商品描述：<input type="text" name="" id="Five_Rdesc"><br/>
+               商品价格：<input type="text" name="" id="Five_Rprice">
+            </div>
+            <button type="submit" id="FiveBoxBtn">保存</button>
+         </div>
+        </div>
+
+
+
+
+    
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $(".c_banner").hide();
+          $(".c_title").hide();
+          $(".c_nav").hide();
+          $(".c_hotTitle").hide();
+          $(".c_hotTop").hide();
+          $(".c_hotBottom").hide();
+          $(".c_chiocTitle").hide();
+          $(".c_bannerShow").hide();
+          $(".c_chiodList").hide();
+          $(".c_foryTitle").hide();
+          $(".c_foryOneBox").hide();
+          $(".c_foryTwoBox").hide();
+          $(".c_foryThreeBox").hide();
+          $(".c_foryFourBox").hide();
+          $(".c_foryFiveBox").hide();
+     
+          $("#bannerBtn").click(function(e){
+              
+              var bannerHref = $("#bannerHref").val();
+             //  var banenrSrc = $("#bannerSrc").val();
+     
+              var bHref = $("#bHref").val();
+             //  var bSrc = $("#bSrc").val();
+     
+              var cHref = $("#cHref").val();
+             //  var cSrc = $("#cSrc").val();
+     
+              var dHref = $("#dHref").val();
+             //  var dSrc = $("#dSrc").val();
+     
+              $(".b1").attr("href",bannerHref);
+             //  $(".b1 img").attr("src",banenrSrc);
+     
+              $(".b2 ").attr("href",bHref);
+             //  $(".b2 img").attr("src",bSrc);
+     
+              $(".b3").attr("href",cHref);
+             //  $(".b3 img").attr("src",cSrc);
+     
+              $(".b4").attr("href",dHref);
+             //  $(".b4 img").attr("src",dSrc);
+              
+              $(".c_banner").hide();
+     
+                  e.preventDefault();//阻止默认行为
+                   var bannOneForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var bannOnefile = $('#bannerSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof bannOnefile != 'undefined')
+                        bannOneForm.append('file', bannOnefile);
+     
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: bannOneForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                 $(".b1 img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var bannTwoForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var bannTwofile = $('#bSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof bannTwofile != 'undefined')
+                        bannTwoForm.append('file', bannTwofile);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: bannTwoForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                 $(".b2 img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var bannThreeForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var bannThreefile = $('#cSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof bannThreefile != 'undefined')
+                       bannThreeForm.append('file', bannThreefile);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: bannThreeForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                 $(".b3 img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var bannFourForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var bannFourfile = $('#dSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof bannFourfile != 'undefined')
+                       bannFourForm.append('file', bannFourfile);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: bannFourForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                 $(".b4 img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+              
+          })
+          $("#titleBtn").click(function(e){
+               e.preventDefault();//阻止默认行为
+     
+              var oneHref = $("#oneHref").val()
+             //  var oneSrc = $("#oneSrc").val()
+              var onetext = $("#oneText").val()
+     
+              var twoHref = $("#twoHref").val()
+             //  var twoSrc = $("#twoSrc").val()
+              var twotext = $("#twoText").val()
+     
+              var threeHref = $("#threeHref").val()
+             //  var threeSrc = $("#threeSrc").val()
+              var threetext = $("#threeText").val()
+              
+     
+             $(".title_a").attr("href",oneHref) 
+             // $(".title_a img").attr("src",oneSrc)
+             $(".title_a span").text(onetext)
+     
+             $(".title_b").attr("href",twoHref)
+             // $(".title_b img").attr("src",twoSrc)
+             $(".title_b span").text(twotext)
+     
+             $(".title_c").attr("href",threeHref)
+             // $(".title_c img").attr("src",threeSrc)
+             $(".title_c span").text(threetext)
+             $(".c_title").hide();
+     
+                   var stone = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var stone_file = $('#oneSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof stone_file != 'undefined')
+                       stone.append('file', stone_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: stone,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".title_a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var nutr = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var nutr_file = $('#twoSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof nutr_file != 'undefined')
+                        nutr.append('file', nutr_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: nutr,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".title_b img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+                   
+                   var safety = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var safety_file = $('#threeSrc')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof safety_file != 'undefined')
+                       safety.append('file', safety_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: safety,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".title_c img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#navBtn").click(function(e){
+              e.preventDefault();//阻止默认行为
+     
+     
+               var n_Href = $("#n_Href").val();
+               // var n_Src = $("#n_Src").val();
+               var n_Text = $("#n_Text").val();
+     
+               var nt_Href = $("#nt_Href").val();
+               // var nt_Src = $("#nt_Src").val();
+               var nt_Text = $("#nt_Text").val();
+     
+               var nh_Href = $("#nh_Href").val();
+               // var nh_Src = $("#nh_Src").val();
+               var nh_Text = $("#nh_Text").val();
+     
+               var nf_Href = $("#nf_Href").val();
+               // var nf_Src = $("#nf_Src").val();
+               var nf_Text = $("#nf_Text").val();
+     
+               $(".li_one .list").attr("href",n_Href)
+               // $(".li_one .list img").attr("src",n_Src)
+               $(".li_one .nest").text(n_Text)
+     
+               $(".li_two .list").attr("href",nt_Href)
+               // $(".li_two .list img").attr("src",nt_Src)
+               $(".li_two .nest").text(nt_Text)
+     
+               $(".li_three .list").attr("href",nh_Href)
+               // $(".li_three .list img").attr("src",nh_Src)
+               $(".li_three .nest").text(nh_Text)
+     
+               $(".li_four .list").attr("href",nf_Href)
+               // $(".li_four .list img").attr("src",nf_Src)
+               $(".li_four .nest").text(nf_Text)
+     
+               $(".c_nav").hide();
+     
+     
+                   
+                   var classify = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var classify_file = $('#n_Src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof classify_file != 'undefined')
+                       classify.append('file', classify_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: classify,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".li_one .list img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   
+                   var newPeople = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var newPeople_file = $('#nt_Src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof newPeople_file != 'undefined')
+                       newPeople.append('file', newPeople_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: newPeople,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".li_two .list img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                  
+                   var groupB = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var groupB_file = $('#nh_Src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof groupB_file != 'undefined')
+                         groupB.append('file', groupB_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: groupB,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".li_three .list img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+                   
+                   var perso = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var perso_file = $('#nf_Src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof perso_file != 'undefined')
+                         perso.append('file', perso_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: perso,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".li_four .list img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+
+          })
+          $("#hottBtn").click(function(){
+            var h_Text = $("#h_Text").val();
+     
+            $(".hot_title h2").text(h_Text)
+     
+          $(".c_hotTitle").hide();
+          })
+          $("#steakBtn").click(function(e){
+             var steak_href = $("#steak_href").val();
+             var steak_h5 = $("#steak_h5").val();
+             var steak_p = $("#steak_p").val();
+             // var steak_src = $("#steak_src").val();
+     
+             var bread_href = $("#bread_href").val();
+             var bread_h5 = $("#bread_h5").val();
+             var bread_p = $("#bread_p").val();
+             // var bread_src = $("#bread_src").val();
+     
+     
+             $(".steak").attr("href",steak_href)
+             $(".steak h5").text(steak_h5)
+             $(".steak p").text(steak_p)
+             // $(".steak img").attr("src",steak_src)  
+     
+             $(".bread").attr("href",bread_href)
+             $(".bread h5").text(bread_h5)
+             $(".bread p").text(bread_p)
+             // $(".bread img").attr("src",bread_src)      
+     
+     
+             $(".c_hotTop").hide();
+     
+                   e.preventDefault();//阻止默认行为
+                   var steak = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var steak_file = $('#steak_src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof steak_file != 'undefined')
+                       steak.append('file', steak_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: steak,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".steak img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   e.preventDefault();//阻止默认行为
+                   var bread = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var bread_file = $('#bread_src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof bread_file != 'undefined')
+                       bread.append('file', bread_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: bread,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".bread img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+     
+     
+          })
+          $("#freshBtn").click(function(e){
+             var fresh_href = $("#fresh_href").val();
+             var fresh_h5 = $("#fresh_h5").val();
+             var fresh_p = $("#fresh_p").val();
+             var fresh_src = $("#fresh_src").val();
+     
+             var food_href = $("#food_href").val();
+             var food_h5 = $("#food_h5").val();
+             var food_p = $("#food_p").val();
+             var food_src = $("#food_src").val();
+     
+             var kitchen_href = $("#kitchen_href").val();
+             var kitchen_h5 = $("#kitchen_h5").val();
+             var kitchen_p = $("#kitchen_p").val();
+             var kitchen_src = $("#kitchen_src").val();
+     
+     
+             $(".fresh").attr("href",fresh_href)
+             $(".fresh h5").text(fresh_h5)
+             $(".fresh p").text(fresh_p)
+             // $(".fresh img").attr("src",fresh_src)  
+     
+             $(".food").attr("href",food_href)
+             $(".food h5").text(food_h5)
+             $(".food p").text(food_p)
+             // $(".food img").attr("src",food_src)    
+     
+             $(".kitchen").attr("href",kitchen_href)
+             $(".kitchen h5").text(kitchen_h5)
+             $(".kitchen p").text(kitchen_p)
+             // $(".kitchen img").attr("src",kitchen_src)    
+     
+             $(".c_hotBottom").hide();
+     
+             e.preventDefault();//阻止默认行为
+                   var fresh = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var fresh_file = $('#fresh_src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof fresh_file != 'undefined')
+                       fresh.append('file', fresh_file);
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: fresh,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".fresh img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var food = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var food_file = $('#food_src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof food_file != 'undefined')
+                       food.append('file', food_file);
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: food,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".food img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+                   var kitchen = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var kitchen_file = $('#kitchen_src')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof kitchen_file != 'undefined')
+                       kitchen.append('file', kitchen_file);
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: kitchen,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".kitchen img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+             
+          })
+          $("#h2Btn").click(function(){
+             var chioc_h2 = $("#chioc_h2").val()
+     
+             $("#choic_special h2").text(chioc_h2)
+             $(".c_chiocTitle").hide();
+          })
+          $("#bannerShowBtn").click(function(e){
+             var banner_a = $("#banner_a").val()
+             var banner_img = $("#banner_img").val()
+     
+             $(".chioc_banner a").attr("href",banner_a)
+            
+            
+         
+             $(".c_bannerShow").hide();
+             // // 点击保存改变地址的操作
+             // $.post("ajax/http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg",function(file){
+             //     console.log("返回的数据")
+             // })
+                   e.preventDefault();//阻止默认行为
+                   var oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var file = $('#banner_img')[0].files[0];//上传文件 file
+     
+                   // oForm.append('name', $('#name').val());
+                   if (typeof file != 'undefined')
+                       oForm.append('file', file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: oForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".chioc_banner a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#chiodListBtn").click(function(e){
+            e.preventDefault();//阻止默认行为
+     
+              var chiod_fflow = $("#chiod_fflow").val()
+              var chiod_oflow = $("#chiod_oflow").val()
+              var chiod_tflow = $("#chiod_tflow").val()
+              var chiod_hflow = $("#chiod_hflow").val()
+     
+              $(".oflow a").attr("href",chiod_fflow)
+              $(".oflow a h6").text(chiod_oflow)
+              $(".oflow a p").text(chiod_tflow)
+              $(".oflow a img").attr("src",chiod_hflow)
+     
+              var chiod_fflour = $("#chiod_fflour").val()
+              var chiod_oflour = $("#chiod_oflour").val()
+              var chiod_tflour = $("#chiod_tflour").val()
+              var chiod_hflour = $("#chiod_hflour").val()
+     
+              $(".flour a").attr("href",chiod_fflour)
+              $(".flour a h6").text(chiod_oflour)
+              $(".flour a p").text(chiod_tflour)
+              $(".flour a img").attr("src",chiod_hflour)
+     
+              var chiod_fsnack = $("#chiod_fsnack").val()
+              var chiod_osnack = $("#chiod_osnack").val()
+              var chiod_tsnack = $("#chiod_tsnack").val()
+              var chiod_hsnack = $("#chiod_hsnack").val()
+     
+              $(".snack a").attr("href",chiod_fsnack)
+              $(".snack a h6").text(chiod_osnack)
+              $(".snack a p").text(chiod_tsnack)
+              $(".snack a img").attr("src",chiod_hsnack)
+     
+              var chiod_fmeat = $("#chiod_fmeat").val()
+              var chiod_omeat = $("#chiod_omeat").val()
+              var chiod_tmeat = $("#chiod_tmeat").val()
+              var chiod_hmeat = $("#chiod_hmeat").val()
+     
+              $(".meat a").attr("href",chiod_fmeat)
+              $(".meat a h6").text(chiod_omeat)
+              $(".meat a p").text(chiod_tmeat)
+              $(".meat a img").attr("src",chiod_hmeat)
+     
+              $(".c_chiodList").hide();
+     
+                   var fflow_oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var fflow_file = $('#chiod_hflow')[0].files[0];//上传文件 file
+     
+                   if (typeof fflow_file != 'undefined')
+                      fflow_oForm.append('file', fflow_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: fflow_oForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".oflow a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var flour_oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var flour_file = $('#chiod_hflour')[0].files[0];//上传文件 file
+     
+                   if (typeof flour_file != 'undefined')
+                      flour_oForm.append('file', flour_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: flour_oForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".flour a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var snack_oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var snack_file = $('#chiod_hsnack')[0].files[0];//上传文件 file
+     
+                   if (typeof snack_file != 'undefined')
+                     snack_oForm.append('file', snack_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: snack_oForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".snack a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var meat_oForm = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var meat_file = $('#chiod_hmeat')[0].files[0];//上传文件 file
+     
+                   if (typeof meat_file != 'undefined')
+                   meat_oForm.append('file', meat_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: meat_oForm,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".meat a img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#foryBtn").click(function(){
+            var foryText = $("#foryText").val()
+     
+            $("#fory_recommend h2").text(foryText)
+     
+     
+          $(".c_foryTitle").hide();
+          })
+          $("#OneBoxBtn").click(function(e){
+            e.preventDefault();//阻止默认行为
+            var One_Lpattern = $("#One_Lpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var One_Ldesc = $("#One_Ldesc").val()
+            var One_Lprice = $("#One_Lprice").val()
+     
+            $(".boxOne .box_left a").attr("href",One_Lpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxOne .box_left .desc").text(One_Ldesc)
+            $(".boxOne .box_left  span").text(One_Lprice)
+     
+            var One_Rpattern = $("#One_Rpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var One_Rdesc = $("#One_Rdesc").val()
+            var One_Rprice = $("#One_Rprice").val()
+     
+            $(".boxOne .box_right a").attr("href",One_Rpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxOne .box_right .desc").text(One_Rdesc)
+            $(".boxOne .box_right  span").text(One_Rprice)
+     
+     
+            $(".c_foryOneBox").hide();
+     
+                   var OneLbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var OneLbox_file = $('#One_Lpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof OneLbox_file != 'undefined')
+                   OneLbox.append('file', OneLbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: OneLbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxOne .box_left img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var OneRbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var OneRbox_file = $('#One_Rpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof OneRbox_file != 'undefined')
+                   OneRbox.append('file', OneRbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: OneRbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxOne .box_right img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#TwoBoxBtn").click(function(e){
+           e.preventDefault();//阻止默认行为
+            var Two_Lpattern = $("#Two_Lpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Two_Ldesc = $("#Two_Ldesc").val()
+            var Two_Lprice = $("#Two_Lprice").val()
+     
+            $(".boxTwo .box_left a").attr("href",Two_Lpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxTwo .box_left .desc").text(Two_Ldesc)
+            $(".boxTwo .box_left  span").text(Two_Lprice)
+     
+            var Two_Rpattern = $("#Two_Rpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Two_Rdesc = $("#Two_Rdesc").val()
+            var Two_Rprice = $("#Two_Rprice").val()
+     
+            $(".boxTwo .box_right a").attr("href",Two_Rpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxTwo .box_right .desc").text(Two_Rdesc)
+            $(".boxTwo .box_right  span").text(Two_Rprice)
+     
+     
+            $(".c_foryTwoBox").hide();
+     
+                   var TwoLbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var TwoLbox_file = $('#Two_Lpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof TwoLbox_file != 'undefined')
+                   TwoLbox.append('file', TwoLbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: TwoLbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxTwo .box_left img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var TwoRbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var TwoRbox_file = $('#Two_Rpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof TwoRbox_file != 'undefined')
+                   TwoRbox.append('file', TwoRbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: TwoRbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxTwo .box_right img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#ThreeBoxBtn").click(function(e){
+           e.preventDefault();//阻止默认行为
+            var Three_Lpattern = $("#Three_Lpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Three_Ldesc = $("#Three_Ldesc").val()
+            var Three_Lprice = $("#Three_Lprice").val()
+     
+            $(".boxThree .box_left a").attr("href",Three_Lpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxThree .box_left .desc").text(Three_Ldesc)
+            $(".boxThree .box_left  span").text(Three_Lprice)
+     
+            var Three_Rpattern = $("#Three_Rpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Three_Rdesc = $("#Three_Rdesc").val()
+            var Three_Rprice = $("#Three_Rprice").val()
+     
+            $(".boxThree .box_right a").attr("href",Three_Rpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxThree .box_right .desc").text(Three_Rdesc)
+            $(".boxThree .box_right  span").text(Three_Rprice)
+     
+     
+            $(".c_foryThreeBox").hide();
+     
+                   var ThreeLbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var ThreeLbox_file = $('#Three_Lpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof ThreeLbox_file != 'undefined')
+                   ThreeLbox.append('file', ThreeLbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: ThreeLbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxThree .box_left img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var ThreeRbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var ThreeRbox_file = $('#Three_Rpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof ThreeRbox_file != 'undefined')
+                   ThreeRbox.append('file', ThreeRbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: ThreeRbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxThree .box_right img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#FourBoxBtn").click(function(e){
+           e.preventDefault();//阻止默认行为
+            var Four_Lpattern = $("#Four_Lpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Four_Ldesc = $("#Four_Ldesc").val()
+            var Four_Lprice = $("#Four_Lprice").val()
+     
+            $(".boxFour .box_left a").attr("href",Four_Lpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxFour .box_left .desc").text(Four_Ldesc)
+            $(".boxFour .box_left  span").text(Four_Lprice)
+     
+            var Four_Rpattern = $("#Four_Rpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Four_Rdesc = $("#Four_Rdesc").val()
+            var Four_Rprice = $("#Four_Rprice").val()
+     
+            $(".boxFour .box_right a").attr("href",Four_Rpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxFour .box_right .desc").text(Four_Rdesc)
+            $(".boxFour .box_right  span").text(Four_Rprice)
+     
+     
+            $(".c_foryFourBox").hide();
+     
+                   var FourLbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var FourLbox_file = $('#Four_Lpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof FourLbox_file != 'undefined')
+                   FourLbox.append('file', FourLbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: FourLbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxFour .box_left img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var FourRbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var FourRbox_file = $('#Four_Rpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof FourRbox_file != 'undefined')
+                   FourRbox.append('file', FourRbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: FourRbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxFour .box_right img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+          $("#FiveBoxBtn").click(function(e){
+           e.preventDefault();//阻止默认行为
+            var Five_Lpattern = $("#Five_Lpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Five_Ldesc = $("#Five_Ldesc").val()
+            var Five_Lprice = $("#Five_Lprice").val()
+     
+            $(".boxFive .box_left a").attr("href",Five_Lpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxFive .box_left .desc").text(Five_Ldesc)
+            $(".boxFive .box_left  span").text(Five_Lprice)
+     
+            var Five_Rpattern = $("#Five_Rpattern").val()
+           //  var One_picture = $("#One_picture").val()
+            var Five_Rdesc = $("#Five_Rdesc").val()
+            var Five_Rprice = $("#Five_Rprice").val()
+     
+            $(".boxFive .box_right a").attr("href",Five_Rpattern)
+           //  $(".box_left .patten img").attr("src",One_picture)
+            $(".boxFive .box_right .desc").text(Five_Rdesc)
+            $(".boxFive .box_right  span").text(Five_Rprice)
+     
+     
+            $(".c_foryFiveBox").hide();
+     
+                   var FiveLbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var FiveLbox_file = $('#Five_Lpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof FiveLbox_file != 'undefined')
+                   FiveLbox.append('file', FiveLbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: FiveLbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxFive .box_left img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+     
+                   var FiveRbox = new FormData();// 创建FormData 对象 调用append()方法来添加字段
+                   var FiveRbox_file = $('#Five_Rpicture')[0].files[0];//上传文件 file
+     
+                   if (typeof FiveRbox_file != 'undefined')
+                   FiveRbox.append('file', FiveRbox_file);
+     
+                   $.ajax({
+                       url: 'http://192.168.1.24:8080/gateway/fileService/file/uploadHomeImg',//后台文件
+                       type: 'post',
+                       data: FiveRbox,
+                       processData: false,  // 不处理数据
+                       contentType: false,   // 不设置内容类型
+                       success: function (result) {
+                           
+                           if (result) {
+                                console.log(result.data)
+                                $(".boxFive .box_right img").attr("src",result.data)
+                           } else {
+     
+                           }
+                       }
+                   });
+          })
+     })
+      
+       function bannerShow(){
+           $(".c_banner").show();
+       }   
+       function titleShow(){
+         $(".c_title").show()
+       }
+       function navShow(){
+         $(".c_nav").show()
+       }
+       function hotTitle(){
+         $(".c_hotTitle").show()
+       }
+       function hotTop(){
+         $(".c_hotTop").show()
+       }
+       function hotBottom(){
+         $(".c_hotBottom").show();                                                                                                                                                                                                                                                                            
+       }
+       function h2Show(){
+         $(".c_chiocTitle").show();
+       }
+       function chiocBanner(){
+         $(".c_bannerShow").show();
+       }
+       function chiocList(){
+         $(".c_chiodList").show();
+       }
+       function foryTitle(){
+          $(".c_foryTitle").show();
+       }
+       function boxOneShow(){
+         $(".c_foryOneBox").show();
+       }
+       function boxTwoShow(){
+         $(".c_foryTwoBox").show();
+       }
+       function boxThreeShow(){
+         $(".c_foryThreeBox").show();
+       }
+       function boxFourShow(){
+         $(".c_foryFourBox").show();
+       }
+       function boxFiveShow(){
+         $(".c_foryFiveBox").show();
+       }
+       
+       
+       
+        </script>
+</body>
+</html>

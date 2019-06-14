@@ -1,4 +1,6 @@
 <template>
+<div>
+
       <div id="tabs">
         <!-- 头部 banner -->
            <div class="top">
@@ -58,12 +60,14 @@
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <img src="../assets/img/mine.png" alt="" srcset="">
-                </a>
-                <a href="#">
-                  个人中心
-                </a>
+                <router-link to="/mobile/home">
+                  <a href="#">
+                    <img src="../assets/img/mine.png" alt="" srcset="">
+                  </a>
+                  <a href="#">
+                    个人中心
+                  </a>
+                </router-link>
               </li>
            </div>
            <!-- 热门分区-->
@@ -72,12 +76,12 @@
                  <h2>热门分区</h2>
                </div>
                <div class="hot_top">
-                    <a class="steak" href="#">
+                    <a class="steak" href="javascript:void(0);">
                           <h5>牛排机专区</h5>
                           <p>牛排好伴侣</p>
                           <img src="../assets/img/steak.png" alt="" srcset=""/>
                     </a>
-                    <a class="bread" href="#">
+                    <a class="bread" href="javascript:void(0);">
                           <h5>面包机专区</h5>
                           <p>宜居云面包机随心DIY</p>
                           <img src="https://www.eg-live.com/Storage/Shop/1/Products/1198/1_150.png" alt="" srcset=""/>
@@ -105,7 +109,7 @@
            <div id="choic_special">
                   <h2>精选专题</h2>
                   <div class="chioc_banner">
-                    <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt="">
+                  <a> <img src="https://www.eg-live.com/Storage/template/0/20190412/6369067759774272315572640.jpg" alt=""></a> 
                   </div>
                   <div class="chiod_list">
                     <li> 
@@ -148,9 +152,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -158,9 +162,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -172,9 +176,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -182,9 +186,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -196,9 +200,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -206,9 +210,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -220,9 +224,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -230,9 +234,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -244,9 +248,9 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -254,16 +258,16 @@
                     </a>
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
-                    <p>¥1598.00</p>
-                    <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a>
+                     <p>¥<span>1598.00</span></p>
+                    <!-- <span>已售:36</span>
+                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
            <div class="footer"></div>
             
-            
-                <div class="suspend">
+      </div>
+        <div class="suspend">
                    <a class="hint" @click="selectMenu"><img id="glyphiconSlideImg" src="../assets/img/unfold.png" alt="" /> 导航</a>
                     <transition name="fade" enter-active-class="slideInLeft " leave-active-class="slideInRight">
                     <ul class="susNav" v-if="showMenu">
@@ -275,10 +279,14 @@
                         <a href="#"><img src="../assets/img/home.png" alt="" /></a>
                         <a href="#">首页</a>
                       </li>
-                      <li>
-                        <a href="#"><img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/Navigation/icon_user.png" alt=""/></a>
-                        <a href="#">个人中心</a>
-                      </li>
+                      
+                        <li>
+                          <router-link to="/home"> 
+                          <a href="#"><img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/Navigation/icon_user.png" alt=""/></a>
+                          <a href="#">个人中心</a>
+                          </router-link>
+                        </li>
+                     
                     </ul>
                       </transition>
                 </div>
@@ -287,25 +295,10 @@
           <transition enter-active-class="fadeIn " leave-active-class="fadeOut">
               <div class="cover" v-if="showMenu"></div>
           </transition>
-      </div>
+</div>
 </template>
 
 <script>
-//  var slideFlag = false;
-    // $(".hint").on('click', function () {
-    //     if (!slideFlag) {
-    //         $(".susNav").animate({ right: "0px" });
-    //         $(".hint").text("导航");
-    //         $("#glyphiconSlideImg").attr("src", "/Areas/Mobile/Templates/Default/Images/Navigation/icon_packup.png");
-    //         LoadCartTipForSlideMenu();
-    //     } else {
-           
-    //         $(".susNav").animate({ right: "160px" });
-    //         $(".hint").text("导航");
-    //         $("#glyphiconSlideImg").attr("src", "/Areas/Mobile/Templates/Default/Images/Navigation/icon_unfold.png");
-    //     }
-    //     slideFlag = !slideFlag;
-    // })
 export default {
  name:"app-tabs",
  data(){
@@ -668,12 +661,31 @@ export default {
           display: flex;
           justify-content: space-between;
           margin-bottom: 5px;
-             .box_left{
-                width: 185px;
-                height: 264px;
-                background: #ffffff;
-               
-                  img{
+              .desc{
+                     display: block;
+                     width: 163px;
+                     height: 32px;
+                     font-size: 14px;
+                     color: #333333;
+                     letter-spacing: -0.34px;
+                     line-height: 16px;
+                     margin-left: 15px;
+                     margin-top: 5px;
+                     display: -webkit-box;
+                     -webkit-box-orient: vertical;
+                     -webkit-line-clamp: 2;
+                     overflow: hidden;
+                  }
+                  p{
+                    min-width: 48.56px;
+                    height: 22px;
+                    font-size: 18px;
+                    color: #FE3824;
+                    letter-spacing: -0.43px;
+                    line-height: 18px;
+                    margin: 10px 0 3px 15px;
+                  }
+                   img{
                         width: 100%;
                         height: 100%;
                        }
@@ -682,99 +694,17 @@ export default {
                      width: 185px;
                      height: 185px; 
                   }
-                  .desc{
-                     display: block;
-                     width: 163px;
-                     height: 32px;
-                     font-size: 14px;
-                     color: #333333;
-                     letter-spacing: -0.34px;
-                     line-height: 16px;
-                     margin-left: 15px;
-                  }
-                  p{
-                    min-width: 48.56px;
-                    height: 22px;
-                    font-size: 18px;
-                    color: #FE3824;
-                    letter-spacing: -0.43px;
-                    line-height: 18px;
-                    margin: 5px 0 3px 15px;
-                  }
-                  span{
-                    display: block;
-                    width: 41px;
-                    height: 12px;
-                    font-size: 12px;
-                    color: #666666;
-                    letter-spacing: -0.29px;
-                    line-height: 12px;
-                    margin: 0 0 0 15px;
-                    
-                  }
-                  .cart{
-                    display: block;
-                    width: 44px;
-                    height: 44px;
-                    float: right;
-                    position: relative;
-                    top: -41px;
-                    left: -3px;
-                  }
+                  
+             .box_left{
+                width: 185px;
+                height: 264px;
+                background: #ffffff; 
              }
              .box_right{
                 width: 185px;
                 height: 264px;
                 background: #ffffff;
-                float: right;
-                  img{
-                        width: 100%;
-                        height: 100%;
-                       }
-                 .pattern{
-                     display: block;
-                     width: 185px;
-                     height: 185px; 
-                  }
-                  .desc{
-                     display: block;
-                     width: 163px;
-                     height: 32px;
-                     font-size: 14px;
-                     color: #333333;
-                     letter-spacing: -0.34px;
-                     line-height: 16px;
-                     margin-left: 15px;
-                  }
-                  p{
-                    min-width: 48.56px;
-                    height: 22px;
-                    font-size: 18px;
-                    color: #FE3824;
-                    letter-spacing: -0.43px;
-                    line-height: 18px;
-                    margin: 5px 0 3px 15px;
-                  }
-                  span{
-                    display: block;
-                    width: 41px;
-                    height: 12px;
-                    font-size: 12px;
-                    color: #666666;
-                    letter-spacing: -0.29px;
-                    line-height: 12px;
-                    margin: 0 0 0 15px;
-                    
-                  }
-                  .cart{
-                    display: block;
-                    width: 44px;
-                    height: 44px;
-                    float: right;
-                    position: relative;
-                    top: -41px;
-                    left: -3px;
-                  }
+                float: right;  
              }
         }
     }
