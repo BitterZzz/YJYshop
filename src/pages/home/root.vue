@@ -29,11 +29,21 @@
 </template>
 
 <script>
+import Axios from 'axios';
+import wx from 'weixin-js-sdk';
 export default {
   name:"home",
   data(){
     
-  }
+  },
+  methods:{
+    getWeixin(){
+      Axios.get()
+    }
+  },
+  created(){
+    console.log(wx);
+  },
 };
 </script>
 
