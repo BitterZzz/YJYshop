@@ -20,7 +20,7 @@
               </van-swipe>
               <div class="header">
                  <a href="#"><img src="../assets/img/sicon.png"/></a>
-                <van-icon name="search"/><input type="text" placeholder="输入关键字搜索">
+                 <p><img src="../assets/img/search.png" alt="" srcset=""> <input type="text" placeholder="输入关键字搜索"></p>
                  <a href="#"><img src="../assets/img/gicon.png"/></a>
               </div>
            </div>
@@ -281,7 +281,7 @@
                       </li>
                       
                         <li>
-                          <router-link to="/home"> 
+                          <router-link to="/mobile/home"> 
                           <a href="#"><img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/Navigation/icon_user.png" alt=""/></a>
                           <a href="#">个人中心</a>
                           </router-link>
@@ -292,40 +292,35 @@
                 </div>
          
            <!-- 遮罩层 -->
-          <transition enter-active-class="fadeIn " leave-active-class="fadeOut">
+          <transition enter-active-class="fadeIn" leave-active-class="fadeOut">
               <div class="cover" v-if="showMenu"></div>
           </transition>
+
+          <router-view></router-view>
 </div>
 </template>
 
 <script>
 export default {
- name:"app-tabs",
- data(){
+  name:"app-tabs",
+data(){
     return{
-      //  显示悬浮窗
+
       showMenu: false,
     }
  },
- methods:{
+
+methods:{
    selectMenu(){
       this.showMenu = !this.showMenu;
-   }
- }
+   },
+
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-// .fade-enter,.fade-leave-to{
-//   opacity: 0.5;
-//   transform: translateX(160px)
-// }
-// .fade-enter-to, .fade-leave{
-//   opacity: 1;
-// }
-// .fade-enter-active, .fade-leave-active{
-//   transform: all 10s;
-// }
+
   #tabs{
          background: #E8E8E8;
          overflow: hidden;
@@ -344,14 +339,14 @@ export default {
      }
       .header{
           position: absolute;
-          top: 0;
-          width: 100%;
-          height: 44px;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
+              top: 3px;
+              width: 375px;
+              height: 44px;
+              /* background: red; */
+              display: flex;
+              justify-content: space-around;
               input{
-                width: 258px;
+                 width: 258px;
                 height: 30px;
                 padding-left: 31px;
                 box-sizing: border-box;
@@ -359,26 +354,29 @@ export default {
                 color: #999;
                 border: none;
                 border-radius: 2px;
+                margin-top: 6px;
               }
               a{
-                display: block;
+               display: inline-block;
                 width: 44px;
                 height: 44px;
+                 img{
+                      width: 100%;
+                      height: 100%;
+                  }
               }
-              .van-icon{
-                display: block;
-                width: 13px;
-                height: 13px;
-                position: absolute;
-                left: 70px;
-                font-size: 13px;
-                top: 16px;
+              p {
+                img{
+                  position: absolute;
+                  width: 13px;
+                  height: 13px;
+                  top: 15px;
+                  left: 69px;
               }
+          }
+            
       }
-      img{
-        width: 100%;
-        height: 100%;
-      }
+   
     }
     .title{
       width: 100%;
@@ -676,6 +674,7 @@ export default {
                      -webkit-line-clamp: 2;
                      overflow: hidden;
                   }
+                  
                   p{
                     min-width: 48.56px;
                     height: 22px;
@@ -685,10 +684,10 @@ export default {
                     line-height: 18px;
                     margin: 10px 0 3px 15px;
                   }
-                   img{
+                  img{
                         width: 100%;
                         height: 100%;
-                       }
+                    }
                   .pattern{
                      display: block;
                      width: 185px;
@@ -699,6 +698,7 @@ export default {
                 width: 185px;
                 height: 264px;
                 background: #ffffff; 
+                float: left;
              }
              .box_right{
                 width: 185px;
@@ -713,10 +713,6 @@ export default {
       width: 100%;
       border-bottom: 1px dashed #333;
     }
-    // .suspend:active{
-    //                 transform: translateX(-160px)
-    //               }
-    
     .suspend{
           display: flex;
           cursor: pointer;

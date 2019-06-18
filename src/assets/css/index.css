@@ -23,8 +23,7 @@
               top: 3px;
               width: 375px;
               height: 44px;
- 
-              background: red;
+              /* background: red; */
               display: flex;
               justify-content: space-around;
               
@@ -347,11 +346,14 @@
                           display: flex;
                           justify-content: space-between;
                           margin-bottom: 5px;
+                        
                                 }
+
  .fory_box .box_left{
                                 width: 185px;
                                 height: 264px;
                                 background: #ffffff;
+                                float: left;
                                     }           
  .fory_box   img{
                                         width: 100%;
@@ -397,4 +399,11 @@
                                     margin: 5px 0 0 15px;
                                   }
 
-  
+#template #temBtn{
+     display: black;
+     width: 100px;
+     height:30px;
+     position: fixed;
+     bottom: 0;
+     left: 50%;
+}
