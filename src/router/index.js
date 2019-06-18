@@ -19,11 +19,7 @@ const routes =[
     component:()=>import('../pages/home/root.vue'),
 
   },
-  {
-    path:'/mobile/home',
-    component:()=>import('../pages/home/root.vue'),
 
-  }
 ];
 
 
