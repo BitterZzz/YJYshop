@@ -25,17 +25,19 @@
         <img src="##">
       </a>
     </div>
-    <!-- <div class="error">
-      
-    </div> -->
+    <suspend></suspend>
   </div>
 </template>
 
 <script>
+import suspend from '../../components/suspend'
 import Axios from 'axios';
 import wx from 'weixin-js-sdk';
 export default {
   name:"home",
+  components:{
+    Suspend:suspend,
+  },
   data(){
     return{
       value: 0,
