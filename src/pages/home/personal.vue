@@ -75,13 +75,39 @@
            </li>
         </div>
         <div class="footer"></div>
+        <suspend></suspend>
   </div>
 </template>
 
 <script>
+import suspend from '../../components/suspend'
 export default {
-  name: "home",
-  data() {}
+  name: "personal",
+  components:{
+    Suspend:suspend
+  },
+  data(){
+      return{
+         photogory:[],
+         datagory:[],
+      }
+  },
+  methods:{
+    getToken(){
+      Axios.get('http://192.168.1.24:8080/gateway/userInfoService/userInfo/getUserBaseInfo',{
+         param:{
+             
+         }
+      }).then(res=>{
+         let photo = res.photo
+        if(res.status === 200){
+          this.photogory = photo
+           
+        }
+      })
+    },
+  }
+
 };
 </script>
 
