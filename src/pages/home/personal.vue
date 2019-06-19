@@ -5,70 +5,76 @@
                <img src="" alt="" srcset="">
                <div class="border"></div>
            </div>
-           <p>爱发胖的薯条</p>
+           <p>18770992620</p>
        </div>
         <div class="order-form">
              <li class="orderSee">
                 <h5>全部订单</h5>
-                <span>查看全部订单 </span>
+                <span>查看全部订单 <van-icon name="arrow"/></span>
              </li>
              <li class="orderList">
                  <a href="#" class="payment">
-                   <img src="" alt="">
+                   <p class="icon"></p>
                    <span>待付款</span>
                  </a>
                   <a href="#" class="shipments">
-                   <img src="" alt="">
+                   <p class="icon icon1"></p>
                    <span>代发货</span>
                  </a>
                   <a href="#" class="delivery">
-                   <img src="" alt="">
+                   <p class="icon icon2"></p>
                    <span>待收货</span>
                  </a>
                   <a href="#" class="evaluate">
-                   <img src="" alt="">
+                   <p class="icon icon3"></p>
                    <span>待评价</span>
                  </a>
                   <a href="#" class="refund">
-                   <img src="" alt="">
+                   <p class="icon icon4"></p>
                    <span>退款/售后</span>
                  </a>
              </li>
         </div>
         <div class="meum">
-            <li>
+            <li class="meum-roll meu">
               <a href="#">
-                 <img src="" alt="" srcset="">
+                 <em></em>
                  <span>我的优惠卷</span>
+                 <van-icon name="arrow"/>
               </a>
             </li>
-            <li>
+            <li class="meum-asset meu">
               <a href="#">
-                 <img src="" alt="" srcset="">
+                <em class="eicon1"></em>
                  <span>我的资产</span>
+                 <van-icon name="arrow"/>
               </a>
             </li>
-            <li>
+            <li class="meum-collect meu">
               <a href="#">
-                 <img src="" alt="" srcset="">
+                <em class="eicon2"></em>
                  <span>我的收藏</span>
+                 <van-icon name="arrow"/>
               </a>
             </li>
         </div>
         <div class="manage">
-           <li>
+           <li class="manage-take">
              <a href="#">
-               <img src="" alt="">
+               <em class="takeIcon"></em>
                <span>收货地址管理</span>
+               <van-icon name="arrow"/>
              </a>
            </li>
-           <li>
+           <li class="manage-ID">
              <a href="#">
-               <img src="" alt="">
+               <em class="IDIcon"></em>
                <span>账号管理</span>
+               <van-icon name="arrow"/>
              </a>
            </li>
         </div>
+        <div class="footer"></div>
   </div>
 </template>
 
@@ -84,6 +90,7 @@ export default {
       background: #cdcdcd;
       padding-top: 11px;
       box-sizing: border-box;
+      overflow: hidden;
       .header{
             width: 93.125%;
             height: 182px;
@@ -107,19 +114,21 @@ export default {
                     position: relative;
                       .border{
                             border: 2px solid #e3393c;
-                            left: 1.6px;
                             position: absolute;
-                            top: 1.4px;
-                            width: 72px;
-                            height: 72px;
+                            width: 70px;
+                            height: 70px;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            top: 0;
+                            margin: auto;
                             border-radius: 50%;
-
                       }
-                 
               }
               p{
                     text-align: center;
-                    font-size: 20px;
+                    margin-top: 15px;
+                    font-size: 18px;
                   }
       }
       .order-form{
@@ -137,6 +146,7 @@ export default {
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
+                  position: relative;
                     h5{
                       margin: 0;
                       font-size: 14px;
@@ -145,26 +155,152 @@ export default {
                     span{
                           font-size: 12px;
                           color: #aeaeae;
-                          margin-right: 15px;
+                          margin-right: 20px;
                           float: right;
+                         
+                            .van-icon{
+                               position: absolute;
+                               font-size: 14px;
+                               right: 9px;
+                               top: 17px;
+                              
+                               color: #2a2a2e;
+                            }
                     }
           }
           .orderList{
             height: 57px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
               a{
-                  img{
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;
+                  .icon{
                     width: 20px;
                     height: 20px;
+                    background: url(../../assets/img/login-icon1.png) ;
+                    background-size: cover;
                   }
                   span{
                     display: block;
                     text-align: center;
+                    color: #47474a;
+                    margin-top:4px;
+                  }
+                  .icon1{
+                     background: url(../../assets/img/login-icon1.png) 0 -20px;
+                     background-size: cover;
+                  }
+                  .icon2{
+                     background: url(../../assets/img/login-icon1.png) 0 -120px;
+                     background-size: cover;
+                  }
+                  .icon3{
+                     background: url(../../assets/img/login-icon1.png) 0 -40px;
+                     background-size: cover;
+                  }
+                  .icon4{
+                     background: url(../../assets/img/login-icon1.png) 0 -242px;
+                     background-size: cover;
                   }
               }
           }
+      }
+      .meum{
+         width: 100%;
+         height: 162px;
+         background: #fff;
+         margin-top: 10px;
+         padding: 0 10px;
+         box-sizing: border-box;
+          .meu{
+            height: 54px;
+            line-height: 54px;
+              span{
+                   color: #2a2a2e;
+                   font-size: 13px
+              }
+              .van-icon{
+                float: right;
+                line-height: 54px;
+                font-size: 14px;
+              }
+              em{
+                 display: inline-block;
+                 width: 20px;
+                 height: 20px;
+                 background: url(../../assets/img/login-icon1.png);
+                 background-size: cover;
+                 position: relative;
+                 top: 7px;
+                 margin:0 10px 0 6px;
+               }
+               .eicon1{
+                  background: url(../../assets/img/login-icon1.png) 0 -100px; 
+                  background-size: cover;
+               }
+               .eicon2{
+                  background: url(../../assets/img/login-icon1.png) 0 -180px; 
+                  background-size: cover;
+               }
+          }
+          .meum-roll{
+                border-bottom: 1px solid #e9e9ea;
+          }
+          .meum-asset{
+                border-bottom: 1px solid #e9e9ea;
+          }
+      }
+      .manage{
+         width: 100%;
+         height: 108px;
+         background: #fff;
+         margin-top: 10px;
+         padding: 0 10px;
+         box-sizing: border-box;
+           li{
+             height: 54px;
+             line-height: 54px;
+               span{
+                   color: #2a2a2e;
+                   font-size: 13px
+              }
+              .van-icon{
+                float: right;
+                line-height: 54px;
+                font-size: 14px;
+              }
+               em{
+                 display: inline-block;
+                 width: 20px;
+                 height: 20px;
+                 background: url(../../assets/img/login-icon1.png);
+                 background-size: cover;
+                 position: relative;
+                 top: 7px;
+                 margin:0 10px 0 6px;
+               }
+               .takeIcon{
+                  background: url(../../assets/img/login-icon1.png) 0 -200px; 
+                  background-size: cover;
+               }
+               .IDIcon{
+                  background: url(../../assets/img/login-icon1.png) 0 -220px; 
+                  background-size: cover;
+               }
+           }
+        .manage-take{
+          border-bottom: 1px solid #e9e9ea;
+        }
+      }
+      .footer{
+        display: flex;
+        flex: 1;
+        margin-top: 10px;
+        background: #cdcdcd;
       }
   }
 </style>
