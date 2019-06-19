@@ -153,8 +153,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -163,8 +161,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -177,8 +173,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -187,8 +181,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -201,8 +193,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -211,8 +201,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -225,8 +213,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -235,8 +221,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -249,8 +233,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
                  <li class="box_right">
                     <a href="#" class="pattern">
@@ -259,8 +241,6 @@
                     
                     <a href="#" class="desc">宜居云）滋滋叫牛排机家用全自动智能牛扒机…</a>
                      <p>¥<span>1598.00</span></p>
-                    <!-- <span>已售:36</span>
-                    <a href="#" class="cart"><img src="../assets/img/gwc.png" alt=""/></a> -->
                  </li>
               </ul>
            </div>
@@ -342,7 +322,6 @@ methods:{
               top: 3px;
               width: 375px;
               height: 44px;
-              /* background: red; */
               display: flex;
               justify-content: space-around;
               input{
