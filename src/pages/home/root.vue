@@ -38,7 +38,14 @@ export default {
   name:"home",
   data(){
     return{
-
+      value: 0,
+      dom: {
+      phoneInput : '',
+      pwdInput : '',
+      errorInput : '',
+      _userVerity : '',
+      _pwdVerity : ''
+      }
     }
   },
   methods:{
@@ -49,6 +56,18 @@ export default {
     countDown(){
       let val = document.querySelector('.auth-code');
       let countdown = 60;
+      let _userVerity = this.dom._userVerity
+      if(this.dom.phoneInput.value === ''){
+        this.showToast("请输入手机号");
+        return;
+        if(_userVerity.test(this.dom.phoneInput.value)){
+          
+        }else{
+          this.showToast("请输入正确手机号");
+          return;
+        }
+        return;
+      }
       let settime = function(val){
         var stime = setTimeout(
           function(){
@@ -65,26 +84,55 @@ export default {
           countdown--;
         }
       }
-      settime(val)
+      settime(val);
+      this.authCode();
     },
+    //发送请求发送登录验证码
+    authCode(){
+      Axios.get('http://192.168.1.24:8080/gateway/userEditService/userEdit/sendPhoneCode',{
+        params:{
+          phone:this.dom.phoneInput.value
+        }
+      }).then(res => {
+        sessionStorage.setItem('code',res.data.code);
+      })
+    },
+    //发送请求验证登录帐号与密码
+    loginCheck(){
+      Axios.get('http://192.168.1.24:8080/gateway/userInfoService/login/loginByCode',{
+        params:{
+          phone: this.dom.phoneInput.value,
+          code:this.dom.pwdInput.value
+        }
+      }).then(res => {
+        localStorage.setItem('token',res.data.data)
+      })
+    },
+    
     //登录注册验证
     register(){
-      let phoneInput = document.querySelector('#username');
-      let pwdInput = document.querySelector('#password');
-      let errorInput = document.querySelector('.error')
-      let _userVerity = /^[1][3,4,5,7,8][0-9]{9}$/;
-      let _pwdVerity = /^[0-9]{4}$/;
+      let phoneInput = this.dom.phoneInput;
+      let pwdInput = this.dom.pwdInput;
+      let errorInput = this.dom.errorInput;
+      let _userVerity = this.dom._userVerity;
+      let _pwdVerity = this.dom._pwdVerity;
       if(phoneInput.value === '' || pwdInput.value === ''){
-        this.showToast();
+        let value = "用户名或密码为空"
+        this.showToast(value);
         return;
       }else{
-        if(_userVerity.test(phoneInput.value) && _pwdVerity.test(pwdInput.value)){
+        if(_userVerity.test(phoneInput.value) && _pwdVerity.test(pwdInput.value) ){
+          let value = "验证正确";
+          this.showToast(value);
+          this.loginCheck();
+          return;
         }
-          alert('用户名或密码不正确')
+          let value = "用户名或密码错误";
+          this.showToast(value)
       }
     },
-    showToast(){
-      this.$toast('1111')
+    showToast(value){
+      this.$toast(value)
     }
   },
   created(){
@@ -92,6 +140,11 @@ export default {
   },
   mounted(){
     let that = this
+    this.dom.phoneInput = document.querySelector('#username');
+    this.dom.pwdInput = document.querySelector('#password');
+    this.dom.errorInput = document.querySelector('.error')
+    this.dom._userVerity = /^[1][3,4,5,7,8][0-9]{9}$/;
+    this.dom._pwdVerity = /^[0-9]{6}$/;
     function button(){
       let btn =  document.querySelector('#loginBtn');
       btn.onmousedown = function(){
