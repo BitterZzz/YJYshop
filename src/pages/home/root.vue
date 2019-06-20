@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="loginBtn-box">
-          <a id="loginBtn" class="flex-center">登录</a>
+          <div to="" id="loginBtn" class="flex-center" @click="toIndex()">登录</div>
         </div>
       </div>
     </div>
@@ -47,7 +47,8 @@ export default {
       errorInput : '',
       _userVerity : '',
       _pwdVerity : ''
-      }
+      },
+      canClick: true,
     }
   },
   methods:{
@@ -57,7 +58,7 @@ export default {
     //倒计时
     countDown(){
       let val = document.querySelector('.auth-code');
-      let countdown = 60;
+      let countdown = 120;
       let _userVerity = this.dom._userVerity
       if(this.dom.phoneInput.value === ''){
         this.showToast("请输入手机号");
@@ -78,7 +79,7 @@ export default {
         )
         if(countdown === 0){
           val.value = "发送验证码";
-          countdown = 60;
+          countdown = 120;
           clearTimeout(settime);
           settime = null;
         }else{
@@ -121,13 +122,13 @@ export default {
       if(phoneInput.value === '' || pwdInput.value === ''){
         let value = "用户名或密码为空"
         this.showToast(value);
-        return;
+        return false;
       }else{
         if(_userVerity.test(phoneInput.value) && _pwdVerity.test(pwdInput.value) ){
           let value = "验证正确";
           this.showToast(value);
           this.loginCheck();
-          return;
+          return true;
         }
           let value = "用户名或密码错误";
           this.showToast(value)
@@ -135,6 +136,15 @@ export default {
     },
     showToast(value){
       this.$toast(value)
+    },
+    toIndex(){
+      let phoneInput = this.dom.phoneInput;
+      let pwdInput = this.dom.pwdInput;
+      if(this.register()){
+        if(localStorage.token){
+          this.$router.replace('/mobile')
+        }
+      }
     }
   },
   created(){

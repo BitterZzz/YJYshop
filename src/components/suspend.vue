@@ -14,7 +14,7 @@
                       </li>
                       
                         <li>
-                          <router-link to="/mobile/home"> 
+                          <router-link to="/personal"> 
                           <a href="#"><img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/Navigation/icon_user.png" alt=""/></a>
                           <a href="#">个人中心</a>
                           </router-link>

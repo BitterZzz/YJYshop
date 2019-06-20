@@ -6,6 +6,7 @@ import router from './router'
 import { Swipe, SwipeItem, Toast } from 'vant'
 import { Icon } from 'vant'
 import 'lib-flexible/flexible'
+import Axios from 'axios'
 import $ from 'jquery'
 
 
