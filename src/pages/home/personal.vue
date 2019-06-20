@@ -36,15 +36,15 @@
              </li>
         </div>
         <div class="meum">
-            <li class="meum-roll meu">
-              <router-link to="/mobile/coupon">
-                    <a href="#">
-                      <em></em>
-                      <span>我的优惠卷</span>
-                      <van-icon name="arrow"/>
-                    </a>
-              </router-link>
-            </li>
+           <router-link to="/mobile/coupon">
+                <li class="meum-roll meu">
+                        <a href="#">
+                          <em></em>
+                          <span>我的优惠卷</span>
+                          <van-icon name="arrow"/>
+                        </a>
+                </li>
+            </router-link>
             <li class="meum-asset meu">
               <a href="#">
                 <em class="eicon1"></em>
@@ -103,7 +103,7 @@ export default {
          Authorization:"localStorage.token"
        }
       }).then(res=>{
-          console.log(res) 
+          // console.log(res) 
        
       })
     },

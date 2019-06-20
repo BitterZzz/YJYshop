@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Swipe, SwipeItem, Toast,NavBar,Icon  } from 'vant'
+import { Swipe, SwipeItem, Toast,NavBar,Icon,Card  } from 'vant'
 import 'lib-flexible/flexible'
 
 Vue.use(Icon);
+Vue.use(Card);
 Vue.use(NavBar)
 Vue.use(Swipe).use(SwipeItem).use(Toast);
 

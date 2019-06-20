@@ -58,7 +58,21 @@ const routes =[
   // 我的优惠券
   {
      path:'/mobile/coupon',
-     component:()=>import('../pages/coupon/root.vue')
+     component:()=>import('../pages/coupon/root.vue'),
+       children:[
+            {
+              path:'/unUsed',
+              component:()=>import('../pages/coupon/children/unUsed.vue')
+            },
+            {
+              path:'/pustDue',
+              component:()=>import('../pages/coupon/children/pustDue.vue')
+            },
+            {
+              path:'/use',
+              component:()=>import('../pages/coupon/children/use.vue')
+            }
+       ]
   },
   {
     path:'*',
