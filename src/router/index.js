@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -41,6 +42,23 @@ const routes =[
       title:'个人中心',
       auth:true
      }
+  },
+  {
+    path:'*',
+    redirect:'/mobile'
+  },
+  {
+    path:'/personal',
+    component: ()=>import('../pages/home/personal.vue'),
+    meta: { 
+      title:'个人中心',
+      auth:true
+     }
+  },
+  // 我的优惠券
+  {
+     path:'/mobile/coupon',
+     component:()=>import('../pages/coupon/root.vue')
   },
   {
     path:'*',

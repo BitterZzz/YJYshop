@@ -3,17 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Swipe, SwipeItem, Toast } from 'vant'
-import { Icon } from 'vant'
+import { Swipe, SwipeItem, Toast,NavBar,Icon  } from 'vant'
 import 'lib-flexible/flexible'
-import Axios from 'axios'
-import $ from 'jquery'
 
-
-
-
-// Vue.use($);
 Vue.use(Icon);
+Vue.use(NavBar)
 Vue.use(Swipe).use(SwipeItem).use(Toast);
 
 Vue.config.productionTip = false
