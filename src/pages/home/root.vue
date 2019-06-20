@@ -22,7 +22,7 @@
         <span class="trus-title">使用微信一键登录</span>
       </div>
       <a href="#" class="iconic">
-        <img src="##">
+        <img src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/icon-weixin-trust.png">
       </a>
     </div>
     <suspend></suspend>
@@ -105,6 +105,7 @@ export default {
         params:{
           phone: this.dom.phoneInput.value,
           code:this.dom.pwdInput.value
+         
         }
       }).then(res => {
         localStorage.setItem('token',res.data.data)
@@ -214,8 +215,12 @@ export default {
         text-align: center;
         line-height: 42px;
         background: #d50014;
-        color: #ffffff;
+        
         margin-top: 28px;
+         a{
+           color: #ffffff;
+          font-size: 16px;
+         }
         #loginBtn{
           display: block;
           width: 100%;
@@ -239,19 +244,29 @@ export default {
       }
       .trus-title{
         position: absolute;
-        width: 106px;
+        min-width: 106px;
         text-align: center;
         background-color: #ffffff;
-        left: 138px;
+        left: 127px;
         top: -8px;
+        color:#494e52;
+        padding: 0 5px;
+        box-sizing: border-box;
+        font-size: 14px;
       }
     }
       .iconic{
       display:inline-block; 
-      width: 20px;
-      height: 20px;
-      background: red;
+      width: 50px;
+      height: 50px;
       margin-top: 20px;
+      border-radius: 50%;
+         img{
+           width: 100%;
+           height: 100%;
+           background-size:cover;
+           
+         }
     }
   }
   .error{

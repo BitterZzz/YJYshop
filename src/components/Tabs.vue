@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li>
-                <router-link to="/mobile/home">
+                <router-link to="/mobile/login">
                   <a href="#">
                     <img src="../assets/img/mine.png" alt="" srcset="">
                   </a>
@@ -262,7 +262,9 @@ export default {
    Suspend:suspend,
   },
   data(){
-      
+      return{
+
+      }
   },
   methods:{
     

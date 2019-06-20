@@ -37,11 +37,13 @@
         </div>
         <div class="meum">
             <li class="meum-roll meu">
-              <a href="#">
-                 <em></em>
-                 <span>我的优惠卷</span>
-                 <van-icon name="arrow"/>
-              </a>
+              <router-link to="/mobile/coupon">
+                    <a href="#">
+                      <em></em>
+                      <span>我的优惠卷</span>
+                      <van-icon name="arrow"/>
+                    </a>
+              </router-link>
             </li>
             <li class="meum-asset meu">
               <a href="#">
@@ -76,10 +78,12 @@
         </div>
         <div class="footer"></div>
         <suspend></suspend>
+        <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Axios from 'axios';
 import suspend from '../../components/suspend'
 export default {
   name: "personal",
@@ -89,24 +93,26 @@ export default {
   data(){
       return{
          photogory:[],
-         datagory:[],
+         tokengory:[],
       }
   },
   methods:{
     getToken(){
       Axios.get('http://192.168.1.24:8080/gateway/userInfoService/userInfo/getUserBaseInfo',{
-         param:{
-             
-         }
+       Headers:{
+         Authorization:"localStorage.token"
+       }
       }).then(res=>{
-         let photo = res.photo
-        if(res.status === 200){
-          this.photogory = photo
-           
-        }
+          console.log(res) 
+       
       })
     },
-  }
+   
+   
+  },
+  created(){
+     this.getToken();
+  },
 
 };
 </script>
