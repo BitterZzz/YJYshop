@@ -29,14 +29,14 @@ const routes =[
     component:()=>import('../pages/home/root.vue'),
     beforeEnter: (to, from, next)  => {
       if(localStorage.token !== null && localStorage.token){
-        next('/personal');
+        next('/mobile/personal');
         return;
       }
       next();
     }
   },
   {
-    path:'/personal',
+    path:'/mobile/personal',
     component: ()=>import('../pages/home/personal.vue'),
     meta: { 
       title:'个人中心',
@@ -47,29 +47,22 @@ const routes =[
     path:'*',
     redirect:'/mobile'
   },
-  {
-    path:'/personal',
-    component: ()=>import('../pages/home/personal.vue'),
-    meta: { 
-      title:'个人中心',
-      auth:true
-     }
-  },
+
   // 我的优惠券
   {
      path:'/mobile/coupon',
      component:()=>import('../pages/coupon/root.vue'),
        children:[
             {
-              path:'/unUsed',
+              path:'/mobile/unUsed',
               component:()=>import('../pages/coupon/children/unUsed.vue')
             },
             {
-              path:'/pustDue',
+              path:'/mobile/pustDue',
               component:()=>import('../pages/coupon/children/pustDue.vue')
             },
             {
-              path:'/use',
+              path:'/mobile/use',
               component:()=>import('../pages/coupon/children/use.vue')
             }
        ]

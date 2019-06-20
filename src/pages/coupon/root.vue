@@ -6,12 +6,14 @@
             @click-left="onClickLeft"
             />
         <div class="Nav">
-             <li v-for="item in list" :key="item">
-                 <router-link :to="item.path">
-                     
-                    {{item.name}}
-                 </router-link>
-             </li>
+            <ul>
+                <li v-for="item in list" :key="item"
+                 >
+                    <router-link :to="item.path">
+                       <a href="#">{{item.name}}()</a>
+                    </router-link>
+                </li>
+             </ul>
         </div>
         <router-view></router-view>
     </div>
@@ -23,9 +25,9 @@ export default {
     data(){
        return{
            list:[
-               {name:'未使用',path:'/unUsed'},
-               {name:'已使用',path:'/use'},
-               {name:'已过期',path:'/pustDue'}
+               {name:'未使用',path:'/mobile/unUsed'},
+               {name:'已使用',path:'/mobile/use'},
+               {name:'已过期',path:'/mobile/pustDue'}
            ],
        }
     },
@@ -39,7 +41,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+html,body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
 #coupon{
+     background: #cdcdcd;
+     flex: 1;
+     width: 100%;
+     height: 100%;
     .van-ellipsis{
          font-weight:800;
         font-size: 18px;
@@ -52,13 +63,21 @@ export default {
    }
    .Nav{
             height: 40px;
-            background-color: red;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-              li{
-                  font-size: 16px;
-              }
+            // background-color: red;
+            border-top: 1px solid #cdcdcd;
+            border-bottom: 1px solid #cdcdcd;
+             ul{
+                 display: flex;
+                 justify-content: space-around;
+                 align-items: center;  
+                 height: 40px;
+                    li{
+                        font-size: 16px;
+                        a{
+                             color: #666666
+                        }
+                    }
+             }
         }
   
 }

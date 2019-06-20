@@ -225,12 +225,9 @@ export default {
         text-align: center;
         line-height: 42px;
         background: #d50014;
-        
+        color: #ffffff;
+        font-size: 16px;
         margin-top: 28px;
-         a{
-           color: #ffffff;
-          font-size: 16px;
-         }
         #loginBtn{
           display: block;
           width: 100%;

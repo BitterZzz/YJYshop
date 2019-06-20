@@ -97,13 +97,15 @@ export default {
       }
   },
   methods:{
+    
     getToken(){
       Axios.get('http://192.168.1.24:8080/gateway/userInfoService/userInfo/getUserBaseInfo',{
-       Headers:{
-         Authorization:"localStorage.token"
+       headers:{
+         "Authorization":localStorage.token
        }
       }).then(res=>{
-          // console.log(res) 
+        // debugger;
+          console.log(res) 
        
       })
     },
