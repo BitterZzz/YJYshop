@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li>
-                <router-link to="/mobile/login">
+                <router-link to="/mobile/personal">
                   <a href="#">
                     <img src="../assets/img/mine.png" alt="" srcset="">
                   </a>

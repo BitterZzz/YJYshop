@@ -10,13 +10,13 @@ const routes =[
   {
     path: '/',
     component:()=>import('../components/Tabs.vue'),
-    beforeEnter: (to,from,next) => {
-      if(localStorage.token !== null && localStorage.token){
-        next();
-        return;
-      }
-      next('/mobile/login')
-    },
+    // beforeEnter: (to,from,next) => {
+    //   if(localStorage.token !== null && localStorage.token){
+    //     next();
+    //     return;
+    //   }
+    //   next('/mobile/login')
+    // },
     children:[
       {
         path:'mobile',
@@ -38,6 +38,17 @@ const routes =[
   {
     path:'/mobile/personal',
     component: ()=>import('../pages/home/personal.vue'),
+    beforeEnter:(to,form,next) => {
+      if(localStorage.token !== null && localStorage.token){
+        next();
+        return;
+      }else{
+        next({
+          path:'/mobile/login',
+          redirect:to.path
+        });
+      }
+    },
     meta: { 
       title:'个人中心',
       auth:true
