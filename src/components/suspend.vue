@@ -104,9 +104,9 @@ methods:{
     }
     .cover{
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 2420.86px;
+    height: 100%;
     left: 0;
     background: rgba(0,0,0,0.4);
     z-index: 1;

@@ -52,6 +52,7 @@ const routes =[
   {
      path:'/mobile/coupon',
      component:()=>import('../pages/coupon/root.vue'),
+     redirect:'/mobile/unUsed',
        children:[
             {
               path:'/mobile/unUsed',

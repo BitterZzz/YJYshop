@@ -1,13 +1,8 @@
 <template>
-    <div id="coupon" class="page">
-         <van-nav-bar
-            title="我的优惠券"
-            left-arrow
-            @click-left="onClickLeft"
-            />
+    <div id="coupon" class="page" style="height:100%;">
         <div class="Nav">
             <ul>
-                <li v-for="item in list" :key="item"
+                <li v-for="item in list" :key="item.name"
                  >
                     <router-link :to="item.path">
                        <a href="#">{{item.name}}()</a>
@@ -15,44 +10,44 @@
                 </li>
              </ul>
         </div>
+        
+
+        <suspend></suspend>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import suspend from '../../components/suspend'
 export default {
     name:'',
+    components:{
+         Suspend:suspend,
+    },
     data(){
        return{
            list:[
-               {name:'未使用',path:'/mobile/unUsed'},
-               {name:'已使用',path:'/mobile/use'},
-               {name:'已过期',path:'/mobile/pustDue'}
+               {id:1,name:'未使用',path:'/mobile/unUsed'},
+               {id:2,name:'已使用',path:'/mobile/use'},
+               {id:3,name:'已过期',path:'/mobile/pustDue'}
            ],
        }
     },
     methods: {
-        onClickLeft() {
-          this.$router.back()
-        },
+       
        
     },
 }
 </script>
 
 <style lang="scss" scoped>
-html,body{
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
 #coupon{
-     background: #cdcdcd;
-     flex: 1;
+     position: fixed;
+     background: #f7f7f7;
      width: 100%;
      height: 100%;
     .van-ellipsis{
-         font-weight:800;
+        font-weight:800;
         font-size: 18px;
         color: #333333;
         letter-spacing: -0.43px;
@@ -63,7 +58,7 @@ html,body{
    }
    .Nav{
             height: 40px;
-            // background-color: red;
+            background-color: #ffffff;
             border-top: 1px solid #cdcdcd;
             border-bottom: 1px solid #cdcdcd;
              ul{

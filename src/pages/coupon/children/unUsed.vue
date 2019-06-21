@@ -1,11 +1,17 @@
 <template>
     <div id="unUse" class="page">
-        <h1>未使用</h1>
+        hello
+          <div id="">
+               <div></div>
+               <div></div>
+          </div>
     </div>
 </template>
 
 <script>
+
 export default {
+    name:'unUsed',
 
 }
 </script>
