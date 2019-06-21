@@ -10,13 +10,6 @@ const routes =[
   {
     path: '/',
     component:()=>import('../components/Tabs.vue'),
-    // beforeEnter: (to,from,next) => {
-    //   if(localStorage.token !== null && localStorage.token){
-    //     next();
-    //     return;
-    //   }
-    //   next('/mobile/login')
-    // },
     children:[
       {
         path:'mobile',

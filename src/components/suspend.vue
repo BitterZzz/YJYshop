@@ -9,8 +9,10 @@
                         <a href="#">购物车</a>
                       </li>
                       <li>
-                        <a href="#"><img src="../assets/img/home.png" alt="" /></a>
-                        <a href="#">首页</a>
+                        <router-link to="/mobile">
+                          <a href="#"><img src="../assets/img/home.png" alt="" /></a>
+                          <a href="#">首页</a>
+                        </router-link>
                       </li>
                       
                         <li>

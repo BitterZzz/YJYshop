@@ -148,9 +148,6 @@ export default {
       }
     }
   },
-  created(){
-    
-  },
   mounted(){
     let that = this
     this.dom.phoneInput = document.querySelector('#username');
@@ -158,16 +155,6 @@ export default {
     this.dom.errorInput = document.querySelector('.error')
     this.dom._userVerity = /^[1][3,4,5,7,8][0-9]{9}$/;
     this.dom._pwdVerity = /^[0-9]{6}$/;
-    // function button(){
-    //   let btn =  document.querySelector('#loginBtn');
-    //   btn.onmousedown = function(){
-    //     function autoFocus(){
-    //       that.register();
-    //     }
-    //     autoFocus();
-    //   }
-    // }
-    // button();
   }
 };
 </script>
