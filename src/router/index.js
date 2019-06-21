@@ -75,7 +75,18 @@ const routes =[
   // 我的资产
   {
     path:'/mobile/property',
-    component:()=>import('../pages/property/root.vue')
+    component:()=>import('../pages/property/root.vue'),
+    redirect:'/mobile/balance',
+     children:[
+       {
+        path:'/mobile/balance',
+        component:()=>import('../pages/property/children/balance.vue')
+       },
+       {
+        path:'/mobile/intergral',
+        component:()=>import('../pages/property/children/integral.vue')
+       }
+     ]
   },
   {
     path:'*',

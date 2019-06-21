@@ -48,13 +48,15 @@
           </a>
         </li>
       </router-link>
-      <li class="meum-asset meu">
-        <a href="#">
-          <em class="eicon1"></em>
-          <span>我的资产</span>
-          <van-icon name="arrow"/>
-        </a>
-      </li>
+      <router-link to="/mobile/property">
+        <li class="meum-asset meu">
+          <a href="#">
+            <em class="eicon1"></em>
+            <span>我的资产</span>
+            <van-icon name="arrow"/>
+          </a>
+        </li>
+      </router-link>
       <li class="meum-collect meu">
         <a href="#">
           <em class="eicon2"></em>
@@ -82,6 +84,7 @@
     <div class="footer"></div>
     <suspend></suspend>
     <router-view></router-view>
+    
   </div>
 </template>
 
