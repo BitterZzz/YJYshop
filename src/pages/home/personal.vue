@@ -96,7 +96,7 @@ export default {
   data() {
     return {
       photogory: [],
-      tokengory: []
+      tokengory: [],
     };
   },
   methods: {
@@ -114,7 +114,7 @@ export default {
     }
   },
   created() {
-    if(localStorage.token !== 'null' && localStorage.token){
+    if(localStorage.token === 'null' && !localStorage.token){
       this.getToken();
     }
   }

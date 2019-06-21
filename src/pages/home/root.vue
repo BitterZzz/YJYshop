@@ -146,6 +146,10 @@ export default {
     toIndex(){
       if(this.register()){
       }
+    },
+    //获取微信code
+    wxCode(){
+      
     }
   },
   mounted(){
