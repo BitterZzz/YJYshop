@@ -2,7 +2,8 @@
     <div id="coupon" class="page" style="height:100%;">
         <div class="Nav">
             <ul>
-                <li v-for="item in list" :key="item.name"
+                <li v-for="(item,index) in list" :key="index"
+                :options="{activeColor: '#b4282d'}"
                  >
                     <router-link :to="item.path">
                        <a href="#">{{item.name}}()</a>
@@ -59,7 +60,6 @@ export default {
    .Nav{
             height: 40px;
             background-color: #ffffff;
-            border-top: 1px solid #cdcdcd;
             border-bottom: 1px solid #cdcdcd;
              ul{
                  display: flex;
@@ -68,6 +68,10 @@ export default {
                  height: 40px;
                     li{
                         font-size: 16px;
+                        width: 70px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
                         a{
                              color: #666666
                         }
