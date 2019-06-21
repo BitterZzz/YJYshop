@@ -8,7 +8,7 @@
           </div>
           <div class="input-item flex-center">
             <input type="password" id="password" class="form-control" placeholder="请输入验证码">
-            <input type="button" class="auth-code" value="获取验证码" @click="countDown()">
+            <input type="button" class="auth-code" value="获取验证码"  @click="countDown()">
           </div>
         </div>
         <div class="loginBtn-box">
@@ -58,7 +58,7 @@ export default {
     //倒计时
     countDown(){
       let val = document.querySelector('.auth-code');
-      let countdown = 120;
+      let countdown = 60;
       let _userVerity = this.dom._userVerity
       if(this.dom.phoneInput.value === ''){
         this.showToast("请输入手机号");
@@ -78,11 +78,13 @@ export default {
           },1000
         )
         if(countdown === 0){
+          val.removeAttribute("disabled");
           val.value = "发送验证码";
-          countdown = 120;
+          countdown = 60;
           clearTimeout(settime);
           settime = null;
         }else{
+          val.setAttribute("disabled", true);
           val.value = "重新发送("+ countdown + ")";
           countdown--;
         }
@@ -106,10 +108,10 @@ export default {
         params:{
           phone: this.dom.phoneInput.value,
           code:this.dom.pwdInput.value
-         
         }
       }).then(res => {
         localStorage.setItem('token',res.data.data)
+        console.log(res);
       })
     },
     
@@ -123,12 +125,15 @@ export default {
       if(phoneInput.value === '' || pwdInput.value === ''){
         let value = "用户名或密码为空"
         this.showToast(value);
-        return false;
+        return;
       }else{
-        if(_userVerity.test(phoneInput.value) && _pwdVerity.test(pwdInput.value) ){
-          let value = "验证正确";
-          this.showToast(value);
+        if(_userVerity.test(phoneInput.value) && _pwdVerity.test(pwdInput.value) && sessionStorage.code === '0'){
           this.loginCheck();
+          if(localStorage.token && localStorage.token !== 'null'){
+            let value = "验证正确";
+            this.showToast(value);
+            this.$router.replace('/mobile')
+          }
           return true;
         }
           let value = "用户名或密码错误";
@@ -139,12 +144,7 @@ export default {
       this.$toast(value)
     },
     toIndex(){
-      let phoneInput = this.dom.phoneInput;
-      let pwdInput = this.dom.pwdInput;
       if(this.register()){
-        if(localStorage.token){
-          this.$router.replace('/mobile')
-        }
       }
     }
   },
@@ -158,16 +158,16 @@ export default {
     this.dom.errorInput = document.querySelector('.error')
     this.dom._userVerity = /^[1][3,4,5,7,8][0-9]{9}$/;
     this.dom._pwdVerity = /^[0-9]{6}$/;
-    function button(){
-      let btn =  document.querySelector('#loginBtn');
-      btn.onmousedown = function(){
-        function autoFocus(){
-          that.register();
-        }
-        autoFocus();
-      }
-    }
-    button();
+    // function button(){
+    //   let btn =  document.querySelector('#loginBtn');
+    //   btn.onmousedown = function(){
+    //     function autoFocus(){
+    //       that.register();
+    //     }
+    //     autoFocus();
+    //   }
+    // }
+    // button();
   }
 };
 </script>

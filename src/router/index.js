@@ -28,7 +28,7 @@ const routes =[
     path:'/mobile/login',
     component:()=>import('../pages/home/root.vue'),
     beforeEnter: (to, from, next)  => {
-      if(localStorage.token !== null && localStorage.token){
+      if(localStorage.token !== 'null' && localStorage.token){
         next('/mobile/personal');
         return;
       }
@@ -39,7 +39,7 @@ const routes =[
     path:'/mobile/personal',
     component: ()=>import('../pages/home/personal.vue'),
     beforeEnter:(to,form,next) => {
-      if(localStorage.token !== null && localStorage.token){
+      if(localStorage.token !== 'null' && localStorage.token){
         next();
         return;
       }else{
