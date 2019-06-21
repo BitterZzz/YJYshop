@@ -66,6 +66,7 @@ export default {
                  justify-content: space-around;
                  align-items: center;  
                  height: 40px;
+                 
                     li{
                         font-size: 16px;
                         width: 70px;
@@ -76,6 +77,7 @@ export default {
                              color: #666666
                         }
                     }
+                   
              }
         }
   
