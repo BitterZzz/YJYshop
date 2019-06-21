@@ -72,6 +72,11 @@ const routes =[
             }
        ]
   },
+  // 我的资产
+  {
+    path:'/mobile/property',
+    component:()=>import('../pages/property/root.vue')
+  },
   {
     path:'*',
     redirect:'/mobile'
