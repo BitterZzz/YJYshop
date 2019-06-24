@@ -3,7 +3,8 @@
         <div class="Nav">
             <ul>
                 <li v-for="(item,index) in list" :key="index"
-                :options="{activeColor: '#b4282d'}"
+                v-on:click="addClass(index)"
+                v-bind:class="{ bgColors:index==current}"
                  >
                     <router-link :to="item.path">
                        <a href="#">{{item.name}}()</a>
@@ -27,16 +28,20 @@ export default {
     },
     data(){
        return{
+           current:0,
            list:[
                {id:1,name:'未使用',path:'/mobile/unUsed'},
                {id:2,name:'已使用',path:'/mobile/use'},
                {id:3,name:'已过期',path:'/mobile/pustDue'}
            ],
+        
        }
     },
     methods: {
-       
-       
+       addClass:function(index){
+          this.current=index;
+        }
+
     },
 }
 </script>
@@ -66,7 +71,11 @@ export default {
                  justify-content: space-around;
                  align-items: center;  
                  height: 40px;
-                 
+                    .bgColors a{
+                        font-weight: bold;
+                        color: #333;
+                        border-bottom: 2px solid red;
+                    }
                     li{
                         font-size: 16px;
                         width: 70px;
@@ -74,7 +83,11 @@ export default {
                         line-height: 40px;
                         text-align: center;
                         a{
-                             color: #666666
+                             display: block;
+                             color: #666666;
+                             width: 70px;
+                             text-align: center;
+                             height: 38px;
                         }
                     }
                    
