@@ -1,33 +1,57 @@
 <template>
     <div id="balance">
-         <h1>900.00</h1>
-         <div class="list" v-for="item in balaList" :key="item.id">
-            <p>
-                <span>{{item.cont}}</span>
-                <span>{{item.time}}</span>
-            </p>
-            <p class="sum">{{item.sum}}</p>
+         <h1>{{balance}}</h1>
+            <div class="list" v-for="item in balaList" :key="item.id">
+                <p>
+                    <span>{{item.sourceTypeDescription}}</span>
+                    <span>{{item.createTime}}</span>
+                </p>
+                <p class="sum">{{item.amount}}</p>
          </div>
     </div>
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
       name:'',
       data(){
          return{
-              balaList:[
-                  {id:1,cont:'消费',time:'2018-5-10  12:30',sum:'+0.05'},
-                  {id:2,cont:'佣金输入',time:'2018-5-10  7:46',sum:'-0.02'},
-                  {id:3,cont:'消费',time:'2018-5-10 10:12',sum:'+0.05'},
-              ]
+              balaList:[],
+              balance:"",
          }
       },
+      methods:{
+          balanData(){
+              Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserCapital",{
+                  headers:{
+                      Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNjQ0IiwiaWF0IjoxNTYxMzU4MTE0LCJleHAiOjE1NjE0NDQ1MTR9.HkEJJo0ti89v8Rm1DuX6kBgIiEBbvAIAMP97UwT48Ma6_DiwubKTf4ySSuSrjI6zLH8WI6NR_pqKh-CgRT69oQ"
+                  }
+              }).then(res=>{
+                  let data = res.data.data
+                  this.balance = data.balance
+                  console.log(this.balance)
+                  this.balaList = data.capitalDetails.map(item=>{
+                        return{
+                          sourceTypeDescription:item.sourceTypeDescription,
+                          createTime:item.createTime,
+                          amount:item.amount
+                       }
+                  })
+          
+                  console.log(data)
+              })
+          }
+      },
+      created(){
+          this.balanData();
+      }
 }
 </script>
 
 <style lang="scss" scoped>
  #balance{
+
      h1{
          width: 100%;
          height: 100px;
@@ -58,6 +82,6 @@ export default {
           .sum{
               color: #F06258;
           }
-     }  
+     } 
 }
 </style>

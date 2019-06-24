@@ -4,32 +4,52 @@
                <div v-for="item in list" :key="item.id"
                 class="unUse-box">
                    <ul class="box-left">
-                       <li>￥<span>150</span></li>
-                       <p>满150元可用</p>
+                       <li>￥<span>{{item.price}}</span></li>
+                       <p>满{{item.orderAmount}}元可用</p>
                    </ul>
                    <ul class="box-right">
                       <em>活动标签</em>
-                      <p>全场通用&nbsp;&nbsp;(促销商品除外)</p>
-                      <span>有限期至2018-10-10</span>
+                      <p>{{item.couponName}}</p>
+                      <span>有限期至{{item.endTime}}</span>
                       <a href="#">立即使用</a>
                       
                    </ul>
                </div>
+              
     </div>
 </template>
 
 <script>
-
+import Axios from 'axios'
 export default {
     name:'unUsed',
     data(){
         return{
-            list:[
-                    {id:1,},
-                    {id:2,},
-                    {id:3,}
-            ],
+            list:[ ],
         }
+    },
+    methods:{
+        unUseData(){
+        Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",{
+            headers:{
+                 Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxMzU3NzYzLCJleHAiOjE1NjE0NDQxNjN9.4w4MFRgcSpNl4EbtL9UuzPKi7M-wEdTqRgBAMth5x5tYX3Se6E6bctHK1tWgPkVTcqmhPtuM1uziEe-oOZ7KBg"
+            }
+        }).then(res=>{
+            let data = res.data.data
+            this.list = data.unusedCoupons.map(item=>{
+                    return{
+                        price:item.price,
+                        orderAmount:item.orderAmount,
+                        couponName:item.couponName,
+                        endTime:item.endTime,
+                    }
+                })
+                console.log(this.list)
+           })
+        }
+    },
+    created(){
+        this.unUseData()
     }
 }
 </script>

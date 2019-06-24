@@ -1,28 +1,52 @@
 <template>
     <div id="itergral">
-         <h1>2300</h1>
-         <div class="list" v-for="item in balaList" :key="item.id">
+         <h1>{{integral}}</h1>
+         <div class="list" v-for="item in interList" :key="item.id">
             <p>
-                <span>{{item.cont}}</span>
-                <span>{{item.time}}</span>
+                <span>{{item.typeIdDescription}}</span>
+                <span>{{item.recordDate}}</span>
             </p>
-            <p class="sum">{{item.sum}}</p>
+            <p class="sum">{{item.integral}}</p>
          </div>
     </div>
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
-      name:'',
+      name:'intergral',
       data(){
          return{
-              balaList:[
-                  {id:1,cont:'消费',time:'2018-5-10  9:32',sum:'+305'},
-                  {id:2,cont:'佣金输入',time:'2018-5-10  16:10',sum:'+500'},
-                  {id:3,cont:'消费',time:'2018-5-10  22:12',sum:'+60'},
-              ]
+              interList:[],
+              integral:"",
          }
       },
+            methods:{
+          interData(){
+              Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserIntegral",{
+                  headers:{
+                      Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxMzU3NzYzLCJleHAiOjE1NjE0NDQxNjN9.4w4MFRgcSpNl4EbtL9UuzPKi7M-wEdTqRgBAMth5x5tYX3Se6E6bctHK1tWgPkVTcqmhPtuM1uziEe-oOZ7KBg"
+                  }
+              }).then(res=>{
+                  let data = res.data.data
+                  this.integral = data.availableIntegrals
+                  console.log(this.integral)
+                  this.interList = data.integralRecords.map(item=>{
+                        return{
+                          typeIdDescription:item.typeIdDescription,
+                          recordDate:item.recordDate,
+                          integral:item.integral
+                       }
+                  })
+          
+                  console.log(data)
+              })
+          }
+      },
+      created(){
+          this.interData();
+      }
+      
 }
 </script>
 

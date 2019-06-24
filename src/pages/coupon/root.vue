@@ -28,7 +28,7 @@ export default {
     },
     data(){
        return{
-           current:0,
+           current:"",
            list:[
                {id:1,name:'未使用',path:'/mobile/unUsed'},
                {id:2,name:'已使用',path:'/mobile/use'},
@@ -40,7 +40,8 @@ export default {
     methods: {
        addClass:function(index){
           this.current=index;
-        }
+       },
+       
 
     },
 }

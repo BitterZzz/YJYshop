@@ -18,10 +18,11 @@
 
 <script>
 import suspend from '../../components/suspend'
+
 export default {
    name:'',
    components:{
-        Suspend:suspend
+        Suspend:suspend,
    },
    data(){
        return{
@@ -35,8 +36,9 @@ export default {
    methods:{
        proClass:function(index){
           this.profrom=index;
-        }
-     }
+        },
+       
+     },
 
 }
 
@@ -44,11 +46,12 @@ export default {
 
 <style lang="scss" scoped>
   #property{
-      position: fixed;
+      
       width: 100%;
       height: 100%;
       background: #F7F7F7;
       cursor: pointer;
+      overflow: auto;
      .balance{
          width: 100%;
          height: 44px;
