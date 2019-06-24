@@ -5,7 +5,7 @@
         <img src alt srcset>
         <div class="border"></div>
       </div>
-      <p>18770992620</p>
+      <p>{{this.telephone}}</p>
     </div>
     <div class="order-form">
       <li class="orderSee">
@@ -100,6 +100,7 @@ export default {
     return {
       photogory: [],
       tokengory: [],
+      telephone:''
     };
   },
   methods: {
@@ -112,15 +113,15 @@ export default {
           }
         }
       ).then(res => {
-        console.log(res);
+        this.telephone = res.data.data.userName;
       });
     }
   },
   created() {
-    if(localStorage.token === 'null' && !localStorage.token){
+    // if(localStorage.token === 'null' && !localStorage.token){
       this.getToken();
-    }
-  }
+    // }
+  },
 };
 </script>
 
