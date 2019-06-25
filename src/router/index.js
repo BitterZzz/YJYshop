@@ -88,6 +88,22 @@ const routes =[
        }
      ]
   },
+  // 我的收藏
+  {
+     path:'/mobile/collect',
+     component:()=>import('../pages/collect/root.vue'),
+     redirect:'/mobile/commodity',
+     children:[
+      {
+        path:'/mobile/commodity',
+        component:()=>import('../pages/collect/children/commodity.vue')
+      },
+      {
+        path:'/mobile/store',
+        component:()=>import('../pages/collect/children/store.vue')
+      },
+ ]
+  },
   {
     path:'*',
     redirect:'/mobile'

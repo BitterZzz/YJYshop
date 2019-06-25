@@ -32,7 +32,7 @@ export default {
         unUseData(){
         Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",{
             headers:{
-                 Authorization: localStorage.token
+                 Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxNDUzNjYwLCJleHAiOjE1NjE1NDAwNjB9.--jRIMK9ldoKh6CPxl91jdqaOfBBZtJL4U3zw_QkRcI6A_-p-3CdM3ndPHE4w1_0-I14OasG6zwIfSKz47VF4w"
             }
         }).then(res=>{
             let data = res.data.data
@@ -44,7 +44,6 @@ export default {
                         endTime:item.endTime,
                     }
                 })
-            
                 console.log(this.list)
            })
         }
