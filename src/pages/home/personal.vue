@@ -62,13 +62,15 @@
           </a>
         </li>
       </router-link>
-      <li class="meum-collect meu">
-        <a href="#">
-          <em class="eicon2"></em>
-          <span>我的收藏</span>
-          <van-icon name="arrow"/>
-        </a>
-      </li>
+      <router-link to="/mobile/collect">
+        <li class="meum-collect meu">
+          <a href="#">
+            <em class="eicon2"></em>
+            <span>我的收藏</span>
+            <van-icon name="arrow"/>
+          </a>
+        </li>
+      </router-link>
     </div>
     <div class="manage">
       <li class="manage-take">
