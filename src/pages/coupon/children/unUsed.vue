@@ -11,7 +11,7 @@
                       <em>活动标签</em>
                       <p>{{item.couponName}}</p>
                       <span>有限期至{{item.endTime}}</span>
-                      <a href="#">立即使用</a>
+                      <a href="https://www.eg-live.com/m-wap/vshop/detail/10">立即使用</a>
                       
                    </ul>
                </div>
