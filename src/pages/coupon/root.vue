@@ -7,7 +7,7 @@
                 v-bind:class="{ bgColors:index==current}"
                  >
                     <router-link :to="item.path">
-                       <a href="#">{{item.name}}()</a>
+                       <a href="#">{{item.name}}({{item.length}})</a>
                     </router-link>
                 </li>
              </ul>
@@ -30,9 +30,9 @@ export default {
        return{
            current:"",
            list:[
-               {id:1,name:'未使用',path:'/mobile/unUsed'},
-               {id:2,name:'已使用',path:'/mobile/use'},
-               {id:3,name:'已过期',path:'/mobile/pustDue'}
+               {id:1,name:'未使用',path:'/mobile/unUsed',length:sessionStorage.unUsedLenght},
+               {id:2,name:'已使用',path:'/mobile/use',length:sessionStorage.useLenght},
+               {id:3,name:'已过期',path:'/mobile/pustDue',length:sessionStorage.pustDueLenght}
            ],
         
        }
@@ -41,9 +41,11 @@ export default {
        addClass:function(index){
           this.current=index;
        },
-       
 
     },
+    mounted(){
+        console.log(sessionStorage)
+    }
 }
 </script>
 
@@ -86,7 +88,7 @@ export default {
                         a{
                              display: block;
                              color: #666666;
-                             width: 70px;
+                             width: 90px;
                              text-align: center;
                              height: 38px;
                         }

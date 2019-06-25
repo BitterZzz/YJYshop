@@ -36,25 +36,31 @@ export default {
         "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
         {
           headers: {
-            Authorization:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxMzU3NzYzLCJleHAiOjE1NjE0NDQxNjN9.4w4MFRgcSpNl4EbtL9UuzPKi7M-wEdTqRgBAMth5x5tYX3Se6E6bctHK1tWgPkVTcqmhPtuM1uziEe-oOZ7KBg"
+            Authorization: localStorage.token
           }
         }
       ).then(res => {
         let data = res.data.data;
         this.list = data.usedCoupons.map(item => {
           return {
-            price: item.price,
-            orderAmount: item.orderAmount,
-            couponName: item.couponName,
-            endTime: item.endTime
+            price: "item.price",
+            orderAmount: "item.orderAmount",
+            couponName: "item.couponName",
+            endTime: "item.endTime"
           };
         });
+        sessionStorage.setItem("useLenght", this.list.length);
       });
     }
   },
   created() {
     this.useData();
+  },
+  mounted() {
+    if (sessionStorage.useLenght === "0") {
+      let dom = document.querySelector(".emit");
+      dom.style.display = "block";
+    }
   }
 };
 </script>
@@ -137,11 +143,15 @@ export default {
       }
     }
   }
-  .emit{
+  .emit {
     position: absolute;
+    width: 100px;
+    height: 26px;
+    font-size: 20px;
     left: 50%;
     top: 50%;
+    margin-left: -50px;
+    height: -13px;
   }
 }
 </style>
-
