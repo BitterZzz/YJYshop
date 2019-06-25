@@ -100,7 +100,7 @@ export default {
     return {
       photogory: [],
       tokengory: [],
-      telephone:''
+      telephone:sessionStorage.getItem('telephone')
     };
   },
   methods: {
@@ -113,14 +113,14 @@ export default {
           }
         }
       ).then(res => {
-        this.telephone = res.data.data.userName;
+        sessionStorage.setItem('telephone', res.data.data.userName);
       });
     }
   },
   created() {
-    // if(localStorage.token === 'null' && !localStorage.token){
+    if(localStorage.token === 'null' && !localStorage.token){
       this.getToken();
-    // }
+    }
   },
 };
 </script>

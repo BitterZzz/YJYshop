@@ -19,11 +19,12 @@
     <div class="login-ft" id="wxlogin">
       <div class="trus">
         <i class="trus-line"></i>
-        <span class="trus-title" @click="wxLogin()">使用微信一键登录</span>
+        <span class="trus-title">使用微信一键登录</span>
       </div>
       <a href="#" class="iconic">
         <img
           src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/icon-weixin-trust.png"
+          @click="wxLogin()"
         >
       </a>
     </div>
@@ -168,7 +169,8 @@ export default {
           if (sessionStorage.code === "0") {
             let value = "验证正确";
             that.showToast(value);
-            that.$router.replace("/mobile");
+            setInterval(() => {that.$router.replace("/mobile")},3000);
+            return
           }
           return true;
         }
