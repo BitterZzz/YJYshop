@@ -15,26 +15,31 @@
           <van-icon name="arrow"/>
         </span>
       </li>
-      <li class="orderList">
+      <li class="orderList" >
         <a href="#" class="payment">
           <p class="icon"></p>
           <span>待付款</span>
+          <i>{{ordersData.waitingPayCount}}</i>
         </a>
         <a href="#" class="shipments">
           <p class="icon icon1"></p>
           <span>代发货</span>
+          <i>{{ordersData.waitingDeliveryCount}}</i>
         </a>
         <a href="#" class="delivery">
           <p class="icon icon2"></p>
           <span>待收货</span>
+          <i>{{ordersData.waitingRecieveCount}}</i>
         </a>
         <a href="#" class="evaluate">
           <p class="icon icon3"></p>
           <span>待评价</span>
+          <i>{{ordersData.waitingCommentCount}}</i>
         </a>
         <a href="#" class="refund">
           <p class="icon icon4"></p>
           <span>退款/售后</span>
+          <i>{{ordersData.refundOrdersCount}}</i>
         </a>
       </li>
     </div>
@@ -91,6 +96,7 @@
 <script>
 import Axios from "axios";
 import suspend from "../../components/suspend";
+import { constants } from 'crypto';
 export default {
   name: "personal",
   components: {
@@ -100,7 +106,8 @@ export default {
     return {
       photogory: [],
       tokengory: [],
-      telephone:''
+      telephone:'',
+      ordersData:''
     };
   },
   methods: {
@@ -115,11 +122,22 @@ export default {
       ).then(res => {
         this.telephone = res.data.data.userName;
       });
+    },
+    getOrdersCount(){
+       Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",{
+         params:{
+          egshopUserId:1797
+         }
+       }).then(res=>{
+         this.ordersData = res.data.data
+         console.log(this.ordersData)
+       })
     }
   },
   created() {
     // if(localStorage.token === 'null' && !localStorage.token){
       this.getToken();
+      this.getOrdersCount();
     // }
   },
 };
@@ -213,11 +231,25 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      .refund i{
+         display: block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e3393c;
+            position: absolute;
+            color: #fff;
+            right: -2px;
+            top: -3px;
+      }
       a {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
         .icon {
           width: 20px;
           height: 20px;
@@ -229,6 +261,20 @@ export default {
           text-align: center;
           color: #47474a;
           margin-top: 4px;
+        }
+        i{
+            display: block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: 6px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e3393c;
+            position: absolute;
+            color: #fff;
+            right: -8px;
+            top: -5px;
         }
         .icon1 {
           background: url(../../assets/img/login-icon1.png) 0 -20px;

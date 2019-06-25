@@ -30,7 +30,7 @@ export default {
         useData(){
         Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",{
             headers:{
-                 Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxMzU3NzYzLCJleHAiOjE1NjE0NDQxNjN9.4w4MFRgcSpNl4EbtL9UuzPKi7M-wEdTqRgBAMth5x5tYX3Se6E6bctHK1tWgPkVTcqmhPtuM1uziEe-oOZ7KBg"
+                 Authorization: localStorage.token
             }
         }).then(res=>{
             let data = res.data.data
