@@ -8,22 +8,47 @@
       <p>{{this.telephone}}</p>
     </div>
     <div class="order-form">
-      <li class="orderSee">
-        <h5>全部订单</h5>
-        <span>
-          查看全部订单
-          <van-icon name="arrow"/>
-        </span>
-      </li>
+      <router-link to="/mobile/allOrder">
+        <li class="orderSee">
+          <h5>全部订单</h5>
+          <span>
+            查看全部订单
+            <van-icon name="arrow"/>
+          </span>
+        </li>
+      </router-link>
       <li class="orderList" >
 
-        <a href="#"  v-for="item in listGory" :key="item.id">
-          <p :class='[item.pclass]'></p>
-          <span> {{item.value}} </span>
-          <i :class='[item.aClass]'>{{item.length}}</i>
-        </a>
-        
+        <router-link tag="a" to="/mobile/pay"> 
+          <p class="icon"><img src="../../assets/img/ico1.png" alt="" srcset=""></p>
+          <span>代付款</span>
+          <i>{{ordersData.waitingPayCount}}</i>
+        </router-link>
 
+        <router-link tag="a" to="/mobile/deliver">
+          <p class="icon"><img src="../../assets/img/ico2.png" alt=""></p>
+          <span>代发货</span>
+          <i>{{ordersData.waitingDeliveryCount}}</i>
+        </router-link>
+
+         <router-link tag="a" to="/mobile/receive">
+           <p class="icon"><img src="../../assets/img/ico3.png" alt=""></p>
+          <span>代收货</span>
+          <i>{{ordersData.waitingRecieveCount}}</i>
+        </router-link>
+
+         <router-link tag="a" to="/mobile/evaluate">
+           <p class="icon"><img src="../../assets/img/ico4.png" alt=""></p>
+          <span>代评价</span>
+          <i>{{ordersData.waitingCommentCount}}</i>
+        </router-link>
+
+        <router-link tag="a" class="refund" to="/mobile/refund">
+           <p class="icon"><img src="../../assets/img/ico5.png" alt=""></p>
+          <span>退款/售后</span>
+          <i>{{ordersData.refundOrdersCount}}</i>
+        </router-link>
+      
       </li>
     </div>
     <div class="meum">
@@ -90,11 +115,11 @@ export default {
   data() {
     return {
       listGory: [
-        {id:11,pclass:'icon ',aClass:"",value:'代付款',length:ordersData.waitingPayCount},
-        {id:12,pclass:'icon icon1',aClass:"",value:'代发货',length:ordersData.waitingPayCount},
-        {id:13,pclass:'icon icon2',aClass:"",value:'代收货',length:ordersData.waitingPayCount},
-        {id:14,pclass:'icon icon3',aClass:"",value:'代评价',length:ordersData.waitingPayCount},
-        {id:15,pclass:'icon icon4',aClass:'refund',value:'代退款',length:ordersData.waitingPayCount},
+        {id:11,pclass:'icon icon1',aClass:"",value:'',length:''},
+        {id:12,pclass:'icon icon2',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:13,pclass:'icon icon3',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:14,pclass:'icon icon4',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:15,pclass:'icon icon5',aClass:'',value:'代退款',length:'ordersData.waitingPayCount'},
       ],
       tokengory: [],
       telephone:sessionStorage.getItem('telephone'),
@@ -121,6 +146,7 @@ export default {
          }
        }).then(res=>{
          this.ordersData = res.data.data
+         console.log(this.ordersData)
        })
     }
   },
@@ -225,7 +251,7 @@ export default {
       justify-content: space-around;
       align-items: center;
       .refund i{
-         display: block;
+            display: block;
             width: 16px;
             height: 16px;
             line-height: 16px;
@@ -234,7 +260,7 @@ export default {
             background: #e3393c;
             position: absolute;
             color: #fff;
-            right: -2px;
+            right: -3px;
             top: -3px;
       }
       a {
@@ -245,9 +271,12 @@ export default {
         position: relative;
         .icon {
           width: 20px;
-          height: 20px;
-          background: url(../../assets/img/login-icon1.png) no-repeat 0 1px;
-          background-size: cover;
+          height: 18px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          
         }
         span {
           display: block;
@@ -266,25 +295,10 @@ export default {
             background: #e3393c;
             position: absolute;
             color: #fff;
-            right: -8px;
+            right: -12px;
             top: -5px;
         }
-        .icon1 {
-          background: url(../../assets/img/login-icon1.png) 0 -18px;
-          background-size: cover;
-        }
-        .icon2 {
-          background: url(../../assets/img/login-icon1.png) 0 -113px;
-          background-size: cover;
-        }
-        .icon3 {
-          background: url(../../assets/img/login-icon1.png) 0 -37px;
-          background-size: cover;
-        }
-        .icon4 {
-          background: url(../../assets/img/login-icon1.png) 0 -231px;
-          background-size: cover;
-        }
+
       }
     }
   }

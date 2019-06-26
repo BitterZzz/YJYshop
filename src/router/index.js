@@ -47,11 +47,6 @@ const routes =[
       auth:true
      }
   },
-  {
-    path:'*',
-    redirect:'/mobile'
-  },
-
   // 我的优惠券
   {
      path:'/mobile/coupon',
@@ -102,8 +97,42 @@ const routes =[
         path:'/mobile/store',
         component:()=>import('../pages/collect/children/store.vue')
       },
- ]
+    ]
   },
+   // 全部订单
+   {
+      path:'/mobile/allOrder',
+      component:()=>import('../pages/allOrders/root.vue'),
+      redirect:'/mobile/order',
+        children:[
+          {
+            path:'/mobile/order',
+            component:()=>import('../pages/allOrders/children/order.vue')
+          },
+          {
+            path:'/mobile/pay',
+            component:()=>import('../pages/allOrders/children/pay.vue')
+          },
+          {
+            path:'/mobile/deliver',
+            component:()=>import('../pages/allOrders/children/deliver.vue')
+          },
+          {
+            path:'/mobile/receive',
+            component:()=>import('../pages/allOrders/children/receive.vue')
+          },
+          {
+            path:'/mobile/evaluate',
+            component:()=>import('../pages/allOrders/children/evaluate.vue')
+          },
+          
+        ]
+   },
+  //  退款、售后
+   {
+    path:'/mobile/refund',
+    component:()=>import('../pages/allOrders/children/refund.vue')
+   },
   {
     path:'*',
     redirect:'/mobile'
