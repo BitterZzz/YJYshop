@@ -101,18 +101,17 @@
     <div class="footer"></div>
     <suspend></suspend>
     <router-view></router-view>
-    
   </div>
 </template>
 
 <script>
 import Axios from "axios";
 import suspend from "../../components/suspend";
-import { constants } from 'crypto';
+import { constants } from "crypto";
 export default {
   name: "personal",
   components: {
-    Suspend: suspend,
+    Suspend: suspend
   },
   data() {
     return {
@@ -124,8 +123,8 @@ export default {
         {id:15,pclass:'icon icon5',aClass:'',value:'代退款',length:'ordersData.waitingPayCount'},
       ],
       tokengory: [],
-      telephone:sessionStorage.getItem('telephone'),
-      ordersData:''
+      telephone: "",
+      ordersData: ""
     };
   },
   methods: {
@@ -138,7 +137,7 @@ export default {
           }
         }
       ).then(res => {
-        sessionStorage.setItem('telephone', res.data.data.userName);
+        this.telephone = res.data.data.userName;
       });
     },
     getOrdersCount(){
@@ -153,11 +152,9 @@ export default {
     }
   },
   created() {
-    if(localStorage.token !== 'null' && localStorage.token){
-      this.getToken();
-      this.getOrdersCount();
-    }
-  },
+    this.getToken();
+    this.getOrdersCount();
+  }
 };
 </script>
 
@@ -167,9 +164,6 @@ export default {
   padding-top: 11px;
   box-sizing: border-box;
   overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 100%;
   .header {
     width: 93.125%;
     height: 182px;
