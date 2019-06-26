@@ -58,9 +58,6 @@ export default {
     }
   },
   mounted() {
-      this.list = this.list.map((item) => {
-          return item.length = 10
-      })
   },
 };
 </script>
