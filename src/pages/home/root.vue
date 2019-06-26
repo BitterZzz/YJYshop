@@ -169,7 +169,8 @@ export default {
           if (sessionStorage.code === "0") {
             let value = "验证正确";
             that.showToast(value);
-            setInterval(() => {that.$router.replace("/mobile")},3000);
+            var clearset = setInterval(() => {that.$router.replace("/mobile")},2000);
+            setInterval(() => {clearInterval(clearset)},2100);
             return
           }
           return true;

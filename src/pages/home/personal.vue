@@ -132,12 +132,11 @@ export default {
          }
        }).then(res=>{
          this.ordersData = res.data.data
-         console.log(this.ordersData)
        })
     }
   },
   created() {
-    if(localStorage.token === 'null' && !localStorage.token){
+    if(localStorage.token !== 'null' && localStorage.token){
       this.getToken();
       this.getOrdersCount();
     }
