@@ -53,10 +53,10 @@ export default {
               right: 50%;
               top: 4px;
           }
-           .bgColors {
+           .bgColors a{
                         font-weight: bold;
-                        color: #333;
-                        border-bottom: 2px solid red;}
+                        color: #3CADFF;
+                        border-bottom: 2px solid #3CADFF;}
           p{
              
                  a{

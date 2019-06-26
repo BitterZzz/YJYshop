@@ -17,6 +17,7 @@ const routes =[
       }, 
     ]
   },
+  // 登录页
   {
     path:'/mobile/login',
     component:()=>import('../pages/home/root.vue'),
@@ -28,6 +29,7 @@ const routes =[
       next();
     }
   },
+  // 个人中心
   {
     path:'/mobile/personal',
     component: ()=>import('../pages/home/personal.vue'),
@@ -133,10 +135,15 @@ const routes =[
     path:'/mobile/refund',
     component:()=>import('../pages/allOrders/children/refund.vue')
    },
-  {
+  //  我的地址管理
+   {
+     path:'/mobile/site',
+     component:()=>import('../pages/site/root.vue')
+   },
+   {
     path:'*',
     redirect:'/mobile'
-  },
+   },
 ];
 const router = new Router({
   mode: 'hash',   
