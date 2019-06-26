@@ -37,7 +37,7 @@ export default {
         {
           headers: {
             Authorization:
-              "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTYxNDUzNjYwLCJleHAiOjE1NjE1NDAwNjB9.--jRIMK9ldoKh6CPxl91jdqaOfBBZtJL4U3zw_QkRcI6A_-p-3CdM3ndPHE4w1_0-I14OasG6zwIfSKz47VF4w"
+              localStorage.token
           }
         }
       ).then(res => {

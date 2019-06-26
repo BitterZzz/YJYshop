@@ -14,7 +14,6 @@
         </li>
       </ul>
     </div>
-
     <suspend></suspend>
     <router-view></router-view>
   </div>
@@ -49,7 +48,8 @@ export default {
           path: "/mobile/pustDue",
           length: sessionStorage.pustDueLenght
         }
-      ]
+      ],
+      dataObj: {}
     };
   },
   methods: {
@@ -58,8 +58,10 @@ export default {
     }
   },
   mounted() {
-    console.log(sessionStorage);
-  }
+      this.list = this.list.map((item) => {
+          return item.length = 10
+      })
+  },
 };
 </script>
 
