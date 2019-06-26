@@ -132,12 +132,12 @@ export default {
          }
        }).then(res=>{
          this.ordersData = res.data.data
-         console.log(this.ordersData)
+         console.log(res)
        })
     }
   },
   created() {
-    if(localStorage.token === 'null' && !localStorage.token){
+    if(localStorage.token === 'null' && localStorage.token){
       this.getToken();
       this.getOrdersCount();
     }
@@ -151,6 +151,9 @@ export default {
   padding-top: 11px;
   box-sizing: border-box;
   overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
   .header {
     width: 93.125%;
     height: 182px;
