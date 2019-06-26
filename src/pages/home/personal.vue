@@ -16,31 +16,14 @@
         </span>
       </li>
       <li class="orderList" >
-        <a href="#" class="payment">
-          <p class="icon"></p>
-          <span>待付款</span>
-          <i>{{ordersData.waitingPayCount}}</i>
+
+        <a href="#"  v-for="item in listGory" :key="item.id">
+          <p :class='[item.pclass]'></p>
+          <span> {{item.value}} </span>
+          <i :class='[item.aClass]'>{{item.length}}</i>
         </a>
-        <a href="#" class="shipments">
-          <p class="icon icon1"></p>
-          <span>代发货</span>
-          <i>{{ordersData.waitingDeliveryCount}}</i>
-        </a>
-        <a href="#" class="delivery">
-          <p class="icon icon2"></p>
-          <span>待收货</span>
-          <i>{{ordersData.waitingRecieveCount}}</i>
-        </a>
-        <a href="#" class="evaluate">
-          <p class="icon icon3"></p>
-          <span>待评价</span>
-          <i>{{ordersData.waitingCommentCount}}</i>
-        </a>
-        <a href="#" class="refund">
-          <p class="icon icon4"></p>
-          <span>退款/售后</span>
-          <i>{{ordersData.refundOrdersCount}}</i>
-        </a>
+        
+
       </li>
     </div>
     <div class="meum">
@@ -102,11 +85,17 @@ import { constants } from 'crypto';
 export default {
   name: "personal",
   components: {
-    Suspend: suspend
+    Suspend: suspend,
   },
   data() {
     return {
-      photogory: [],
+      listGory: [
+        {id:11,pclass:'icon ',aClass:"",value:'代付款',length:ordersData.waitingPayCount},
+        {id:12,pclass:'icon icon1',aClass:"",value:'代发货',length:ordersData.waitingPayCount},
+        {id:13,pclass:'icon icon2',aClass:"",value:'代收货',length:ordersData.waitingPayCount},
+        {id:14,pclass:'icon icon3',aClass:"",value:'代评价',length:ordersData.waitingPayCount},
+        {id:15,pclass:'icon icon4',aClass:'refund',value:'代退款',length:ordersData.waitingPayCount},
+      ],
       tokengory: [],
       telephone:sessionStorage.getItem('telephone'),
       ordersData:''
@@ -257,7 +246,7 @@ export default {
         .icon {
           width: 20px;
           height: 20px;
-          background: url(../../assets/img/login-icon1.png);
+          background: url(../../assets/img/login-icon1.png) no-repeat 0 1px;
           background-size: cover;
         }
         span {
@@ -281,19 +270,19 @@ export default {
             top: -5px;
         }
         .icon1 {
-          background: url(../../assets/img/login-icon1.png) 0 -20px;
+          background: url(../../assets/img/login-icon1.png) 0 -18px;
           background-size: cover;
         }
         .icon2 {
-          background: url(../../assets/img/login-icon1.png) 0 -120px;
+          background: url(../../assets/img/login-icon1.png) 0 -113px;
           background-size: cover;
         }
         .icon3 {
-          background: url(../../assets/img/login-icon1.png) 0 -40px;
+          background: url(../../assets/img/login-icon1.png) 0 -37px;
           background-size: cover;
         }
         .icon4 {
-          background: url(../../assets/img/login-icon1.png) 0 -242px;
+          background: url(../../assets/img/login-icon1.png) 0 -231px;
           background-size: cover;
         }
       }
