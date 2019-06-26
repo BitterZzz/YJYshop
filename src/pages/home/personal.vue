@@ -81,13 +81,15 @@
       </router-link>
     </div>
     <div class="manage">
-      <li class="manage-take">
-        <a href="#">
-          <em class="takeIcon"></em>
-          <span>收货地址管理</span>
-          <van-icon name="arrow"/>
-        </a>
-      </li>
+      <router-link to="/mobile/site">
+        <li class="manage-take">
+          <a href="#">
+            <em class="takeIcon"></em>
+            <span>收货地址管理</span>
+            <van-icon name="arrow"/>
+          </a>
+        </li>
+      </router-link>
       <li class="manage-ID">
         <a href="#">
           <em class="IDIcon"></em>

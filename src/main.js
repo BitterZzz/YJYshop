@@ -3,15 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Swipe, SwipeItem, Toast,NavBar,Icon,Card,Tab, Tabs } from 'vant'
+import { Swipe, SwipeItem, Toast,NavBar,Icon,Card,Tab, Tabs,SwipeCell,Button,Cell, CellGroup  } from 'vant'
 import 'lib-flexible/flexible'
 
 
-Vue.use(Icon);
-Vue.use(Card);
-Vue.use(NavBar)
+Vue.use(Icon,Button,Card,NavBar,SwipeCell);
 Vue.use(Tab).use(Tabs);
 Vue.use(Swipe).use(SwipeItem).use(Toast);
+Vue.use(Cell).use(CellGroup);
 
 Vue.config.productionTip = false
 
