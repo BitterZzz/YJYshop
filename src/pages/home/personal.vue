@@ -8,39 +8,47 @@
       <p>{{this.telephone}}</p>
     </div>
     <div class="order-form">
-      <li class="orderSee">
-        <h5>全部订单</h5>
-        <span>
-          查看全部订单
-          <van-icon name="arrow"/>
-        </span>
-      </li>
-      <li class="orderList">
-        <a href="#" class="payment">
-          <p class="icon"></p>
-          <span>待付款</span>
+      <router-link to="/mobile/allOrder">
+        <li class="orderSee">
+          <h5>全部订单</h5>
+          <span>
+            查看全部订单
+            <van-icon name="arrow"/>
+          </span>
+        </li>
+      </router-link>
+      <li class="orderList" >
+
+        <router-link tag="a" to="/mobile/pay"> 
+          <p class="icon"><img src="../../assets/img/ico1.png" alt="" srcset=""></p>
+          <span>代付款</span>
           <i>{{ordersData.waitingPayCount}}</i>
-        </a>
-        <a href="#" class="shipments">
-          <p class="icon icon1"></p>
+        </router-link>
+
+        <router-link tag="a" to="/mobile/deliver">
+          <p class="icon"><img src="../../assets/img/ico2.png" alt=""></p>
           <span>代发货</span>
           <i>{{ordersData.waitingDeliveryCount}}</i>
-        </a>
-        <a href="#" class="delivery">
-          <p class="icon icon2"></p>
-          <span>待收货</span>
+        </router-link>
+
+         <router-link tag="a" to="/mobile/receive">
+           <p class="icon"><img src="../../assets/img/ico3.png" alt=""></p>
+          <span>代收货</span>
           <i>{{ordersData.waitingRecieveCount}}</i>
-        </a>
-        <a href="#" class="evaluate">
-          <p class="icon icon3"></p>
-          <span>待评价</span>
+        </router-link>
+
+         <router-link tag="a" to="/mobile/evaluate">
+           <p class="icon"><img src="../../assets/img/ico4.png" alt=""></p>
+          <span>代评价</span>
           <i>{{ordersData.waitingCommentCount}}</i>
-        </a>
-        <a href="#" class="refund">
-          <p class="icon icon4"></p>
+        </router-link>
+
+        <router-link tag="a" class="refund" to="/mobile/refund">
+           <p class="icon"><img src="../../assets/img/ico5.png" alt=""></p>
           <span>退款/售后</span>
           <i>{{ordersData.refundOrdersCount}}</i>
-        </a>
+        </router-link>
+      
       </li>
     </div>
     <div class="meum">
@@ -105,7 +113,13 @@ export default {
   },
   data() {
     return {
-      photogory: [],
+      listGory: [
+        {id:11,pclass:'icon icon1',aClass:"",value:'',length:''},
+        {id:12,pclass:'icon icon2',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:13,pclass:'icon icon3',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:14,pclass:'icon icon4',aClass:"",value:'',length:'ordersData.waitingPayCount'},
+        {id:15,pclass:'icon icon5',aClass:'',value:'代退款',length:'ordersData.waitingPayCount'},
+      ],
       tokengory: [],
       telephone: "",
       ordersData: ""
@@ -124,17 +138,15 @@ export default {
         this.telephone = res.data.data.userName;
       });
     },
-    getOrdersCount() {
-      Axios.get(
-        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",
-        {
-          params: {
-            egshopUserId: 1797
-          }
-        }
-      ).then(res => {
-        this.ordersData = res.data.data;
-      });
+    getOrdersCount(){
+       Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",{
+         params:{
+          egshopUserId:1797
+         }
+       }).then(res=>{
+         this.ordersData = res.data.data
+         console.log(this.ordersData)
+       })
     }
   },
   created() {
@@ -232,18 +244,18 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      .refund i {
-        display: block;
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        text-align: center;
-        border-radius: 50%;
-        background: #e3393c;
-        position: absolute;
-        color: #fff;
-        right: -2px;
-        top: -3px;
+      .refund i{
+            display: block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e3393c;
+            position: absolute;
+            color: #fff;
+            right: -3px;
+            top: -3px;
       }
       a {
         display: flex;
@@ -253,9 +265,12 @@ export default {
         position: relative;
         .icon {
           width: 20px;
-          height: 20px;
-          background: url(../../assets/img/login-icon1.png);
-          background-size: cover;
+          height: 18px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          
         }
         span {
           display: block;
@@ -263,36 +278,21 @@ export default {
           color: #47474a;
           margin-top: 4px;
         }
-        i {
-          display: block;
-          width: 16px;
-          height: 16px;
-          line-height: 16px;
-          font-size: 6px;
-          text-align: center;
-          border-radius: 50%;
-          background: #e3393c;
-          position: absolute;
-          color: #fff;
-          right: -8px;
-          top: -5px;
+        i{
+            display: block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: 6px;
+            text-align: center;
+            border-radius: 50%;
+            background: #e3393c;
+            position: absolute;
+            color: #fff;
+            right: -12px;
+            top: -5px;
         }
-        .icon1 {
-          background: url(../../assets/img/login-icon1.png) 0 -20px;
-          background-size: cover;
-        }
-        .icon2 {
-          background: url(../../assets/img/login-icon1.png) 0 -120px;
-          background-size: cover;
-        }
-        .icon3 {
-          background: url(../../assets/img/login-icon1.png) 0 -40px;
-          background-size: cover;
-        }
-        .icon4 {
-          background: url(../../assets/img/login-icon1.png) 0 -242px;
-          background-size: cover;
-        }
+
       }
     }
   }

@@ -25,7 +25,7 @@ export default {
           balanData(){
               Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserCapital",{
                   headers:{
-                      Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNjQ0IiwiaWF0IjoxNTYxMzU4MTE0LCJleHAiOjE1NjE0NDQ1MTR9.HkEJJo0ti89v8Rm1DuX6kBgIiEBbvAIAMP97UwT48Ma6_DiwubKTf4ySSuSrjI6zLH8WI6NR_pqKh-CgRT69oQ"
+                      Authorization:localStorage.token
                   }
               }).then(res=>{
                   let data = res.data.data
