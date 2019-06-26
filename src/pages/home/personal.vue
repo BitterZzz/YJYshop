@@ -150,6 +150,9 @@ export default {
   padding-top: 11px;
   box-sizing: border-box;
   overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
   .header {
     width: 93.125%;
     height: 182px;
