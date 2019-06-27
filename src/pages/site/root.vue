@@ -14,8 +14,9 @@
         </div>
         <div class="operation">
           <div class="check">
-            <input type="checkbox" class="check-style">
-            <span>设为默认</span>
+            <van-checkbox v-model="checked" checked-color="red">
+              <span class="check-title">默认地址</span>
+            </van-checkbox>
           </div>
           <div class="redact">
             <router-link tag="div" to="/mobile/shippingAddres" class="redact-redact redact-commit">
@@ -36,15 +37,15 @@
 
 <script>
 export default {
-  name:"size",
-  data(){
-    return{
-
-    }
+  name: "size",
+  data() {
+    return {
+      checked: true
+    };
   },
-  methods:{
-    delet(){
-      console.log('删除');
+  methods: {
+    delet() {
+      console.log("删除");
     }
   }
 };
@@ -58,7 +59,7 @@ export default {
     line-height: 45px;
     text-align: center;
     background-color: #ffffff;
-    border-bottom: solid 1px #898989;
+    border-bottom: solid 1px #CCCCCC;
     margin-bottom: 14px;
     .title {
       font-size: 18px;
@@ -114,7 +115,7 @@ export default {
           .check-style {
             width: 22px;
             height: 22px;
-            border:solid 1px #888888;
+            border: solid 1px #888888;
             border-radius: 50%;
           }
         }
