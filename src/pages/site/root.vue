@@ -1,42 +1,140 @@
 <template>
-    <div id="site">
-    <div class="button">添加地址</div>
+  <div id="site">
+    <div class="header">
+      <span class="title">地址管理</span>
+    </div>
     <div class="coco">
-
-    
-    <div v-for="i in 10" :key="i">添加地址</div>
+      <div class="Adtitle">
+        <div class="msg">
+          <span class="msg-name">陈华</span>
+          <span class="msg-telephone">15979632782</span>
+        </div>
+        <div class="adr">
+          <p class="adr-title">广东省深圳市广东省深圳市广东省深圳市广东省深圳市广东省深圳市</p>
+        </div>
+        <div class="operation">
+          <div class="check">
+            <input type="checkbox" class="check-style">
+            <span>设为默认</span>
+          </div>
+          <div class="redact">
+            <router-link tag="div" to="/mobile/shippingAddres" class="redact-redact redact-commit">
+              <img src="../../assets/img/redax.png">
+              <span>编辑</span>
+            </router-link>
+            <div class="redact-delete redact-commit" @click="delet">
+              <img src="../../assets/img/delete.png">
+              <span>删除</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
+    <router-link to="/mobile/shippingAddres" tag="div" class="button">添加地址</router-link>
+  </div>
 </template>
 
 <script>
 export default {
+  name:"size",
+  data(){
+    return{
 
-}
+    }
+  },
+  methods:{
+    delet(){
+      console.log('删除');
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-
-  #site{
-      
-      .button{
-          width: 100%;
-          height: 50px;
-          line-height: 50px;
-          text-align: center;
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          background-image: linear-gradient(90deg, #F00200 0%, #FE4F18 98%);
-          font-size: 17px;
-          color: #FFFFFF;
-      }
-      .coco{
-       width: 100%;
-       height: 100%;
-       
-       background: #F7F7F7;
-      }
+#site {
+  .header {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: solid 1px #898989;
+    margin-bottom: 14px;
+    .title {
+      font-size: 18px;
+      color: #333333;
+      font-family: PingFangSC-Medium;
+    }
   }
+  .button {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, #f00200 0%, #fe4f18 98%);
+    font-size: 17px;
+    color: #ffffff;
+  }
+  .coco {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    .Adtitle {
+      box-sizing: border-box;
+      padding: 0 15px;
+      background-color: #ffffff;
+      overflow: hidden;
+      .msg {
+        display: flex;
+        justify-content: space-between;
+        height: 14px;
+        line-height: 14px;
+        font-size: 16px;
+        margin-top: 11px;
+      }
+      .adr {
+        width: 337px;
+        font-size: 14px;
+        color: #999999;
+        padding-top: 10px;
+        padding-bottom: 12px;
+        border-bottom: solid 1px #cccccc;
+      }
+      .operation {
+        display: flex;
+        justify-content: space-between;
+        margin: 9px 0;
+        .check {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          .check-style {
+            width: 22px;
+            height: 22px;
+            border:solid 1px #888888;
+            border-radius: 50%;
+          }
+        }
+        .redact {
+          display: flex;
+          .redact-commit {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 14px;
+          }
+          img {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 

@@ -49,18 +49,17 @@ export default {
             endTime: item.endTime
           };
         });
-        sessionStorage.setItem("pustDueLenght", this.list.length);
       });
     }
   },
   created() {
     this.pustData();
   },
-  mounted () {
-      if(sessionStorage.pustDueLenght === '0'){
-          let dom = document.querySelector('.emit');
-          dom.style.display = 'block';
-      }
+  mounted() {
+    if (this.list.length === 0) {
+      let dom = document.querySelector(".emit");
+      dom.style.display = "block";
+    }
   }
 };
 </script>

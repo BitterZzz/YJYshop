@@ -49,7 +49,6 @@ export default {
             endTime: "item.endTime"
           };
         });
-        sessionStorage.setItem("useLenght", this.list.length);
       });
     }
   },

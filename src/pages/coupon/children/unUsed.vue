@@ -36,8 +36,7 @@ export default {
         "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
         {
           headers: {
-            Authorization:
-              localStorage.token
+            Authorization: localStorage.token
           }
         }
       ).then(res => {
@@ -50,16 +49,14 @@ export default {
             endTime: item.endTime
           };
         });
-        sessionStorage.setItem("unUsedLenght", this.list.length);
       });
     }
   },
   created() {
     this.unUseData();
   },
-  mounted() {
-    if (sessionStorage.unUsedLenght === "0") {
-        console.log('unused')
+  async mounted() {
+    if (this.list.length === 0) {
       let dom = document.querySelector(".emit");
       dom.style.display = "block";
     }

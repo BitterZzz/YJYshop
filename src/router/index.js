@@ -141,6 +141,10 @@ const routes =[
      component:()=>import('../pages/site/root.vue')
    },
    {
+    path:'/mobile/shippingAddres',
+    component:()=>import('../pages/shippingAddres/addres.vue'),
+  },
+   {
     path:'*',
     redirect:'/mobile'
    },

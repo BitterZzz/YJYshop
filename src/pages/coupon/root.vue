@@ -21,6 +21,7 @@
 
 <script>
 import suspend from "../../components/suspend";
+import Axios from 'axios';
 export default {
   name: "",
   components: {
@@ -49,16 +50,60 @@ export default {
           length: sessionStorage.pustDueLenght
         }
       ],
-      dataObj: {}
+      dataObj: {},
+      listUnused: {},
+      listUse: {},
+      listPust: {}
     };
   },
   methods: {
     addClass: function(index) {
       this.current = index;
+    },
+    getList() {
+      Axios.get(
+        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
+        {
+          headers: {
+            Authorization: localStorage.token
+          }
+        }
+      ).then(res => {
+        let data = res.data.data;
+        this.listUnused = data.unusedCoupons.map(item => {
+          return {
+            price: item.price,
+            orderAmount: item.orderAmount,
+            couponName: item.couponName,
+            endTime: item.endTime
+          };
+        });
+        this.listUse = data.usedCoupons.map(item => {
+          return {
+            price: item.price,
+            orderAmount: item.orderAmount,
+            couponName: item.couponName,
+            endTime: item.endTime
+          };
+        });
+        this.listPust = data.expiredCoupons.map(item => {
+          return {
+            price: item.price,
+            orderAmount: item.orderAmount,
+            couponName: item.couponName,
+            endTime: item.endTime
+          };
+        });
+        this.list[0].length = this.listUnused.length;
+        this.list[1].length = this.listUse.length;
+        this.list[2].length = this.listPust.length;
+      });
     }
   },
-  mounted() {
+  created(){
+    this.getList();
   },
+  mounted() {}
 };
 </script>
 
