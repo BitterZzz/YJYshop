@@ -2,7 +2,7 @@
 <div id="store">
 
        <van-swipe-cell :right-width="60" :left-width="0" :on-close="onClose"
-          v-for="(item,index) in sotreList" 
+          v-for="(item,index) in storeList" 
           :key="index"
           :index="item.shopId">
             
@@ -47,6 +47,14 @@
         <transition name="slide-fade" enter-active-class=" animated fadeIn" leave-active-class="animated fadeOut" >
           <div class="cover" v-if="show"></div>
         </transition>
+        <div class="empty">
+                 <p>
+                   <img src="../../../assets/img/collect.png" alt="">
+                 </p>
+                 <span>
+                    收藏夹空空一片
+                 </span>
+        </div>
 </div>
 </template>
 
@@ -59,7 +67,7 @@ export default {
   name:'',
   data(){
     return{
-        sotreList:[],
+        storeList:[],
         show:false,
         showmenu:false,
     }
@@ -71,7 +79,7 @@ export default {
                Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTUzNjAxOSwiZXhwIjoxNTYxNjIyNDE5fQ.q1XeH8t3E6GcZqeCyQ3NNL4drXn6rXMydoAz7vOqMbH4vePQu42i_rKJXrpEM0lEsezoDGExveMlfy8rwUA1aA"
             }
           }).then(res=>{
-            this.sotreList = res.data.data.map(item=>{
+            this.storeList = res.data.data.map(item=>{
                 return{
                 logo:item.logo,
                 name:item.name,
@@ -79,7 +87,7 @@ export default {
               }
             })
             // this.vanCellList = res.data.data
-            console.log(this.sotreList)
+            console.log(this.storeList)
           })
       },
     onClose() {
@@ -99,7 +107,7 @@ export default {
             //  this.vanCellList.splice(index,1);
              this.showmenu = !this.showmenu;
              this.show = !this.show;
-             console.log(this.sotreList)
+             console.log(this.storeList)
 
     },
     cancelAction(){
@@ -112,6 +120,12 @@ export default {
   created(){
       this.getShopData();
   },
+  mounted(){
+    if(this.storeList.length === 0){
+              let empty = document.querySelector(".empty")
+              empty.style.display="block"
+        }
+   },
 }
 </script>
 
@@ -176,7 +190,7 @@ export default {
                         overflow: hidden;
                         text-overflow: ellipsis;
                    
-                }
+                   }
        }
                 .cover{
                       width: 100%;
@@ -187,6 +201,36 @@ export default {
                       background-color: rgba(0, 0, 0, 0.7);
                       z-index: 0;
                     }
+                .empty{
+                      width: 130px;
+                      height: 150px;
+                      position: fixed;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      top: 0;
+                      margin: auto;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      align-items: center;
+                      display: none;
+                   p{
+                     width: 100px;
+                     height: 90px;
+                     margin:0 0 40px 14px;
+                       img{
+                         width: 100%;
+                         height: 100%;
+                       }
+                   }
+                   span{
+                     font-size: 14px;
+                     color: #999999;
+                     display: block;
+                     margin-left: 10px;
+                   }
+                }
   }
 </style>
 
