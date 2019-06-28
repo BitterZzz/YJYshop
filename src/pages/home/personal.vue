@@ -90,13 +90,15 @@
           </a>
         </li>
       </router-link>
-      <li class="manage-ID">
-        <a href="#">
-          <em class="IDIcon"></em>
-          <span>账号管理</span>
-          <van-icon name="arrow"/>
-        </a>
-      </li>
+      <router-link to="/mobile/account">
+        <li class="manage-ID">
+          <a href="#">
+            <em class="IDIcon"></em>
+            <span>账号管理</span>
+            <van-icon name="arrow"/>
+          </a>
+        </li>
+      </router-link>
     </div>
     <div class="footer"></div>
     <suspend></suspend>

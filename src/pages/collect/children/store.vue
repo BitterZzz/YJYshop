@@ -4,7 +4,8 @@
        <van-swipe-cell :right-width="60" :left-width="0" :on-close="onClose"
           v-for="(item,index) in storeList" 
           :key="index"
-          :index="item.shopId">
+          :index="item.shopId"
+          :id="'_'+item.shopId">
             
             <van-cell class="vanList">
                 <div class="shop">
@@ -55,6 +56,8 @@
                     收藏夹空空一片
                  </span>
         </div>
+        <suspend></suspend>
+
 </div>
 </template>
 
@@ -62,9 +65,12 @@
 import { constants } from 'crypto';
 import Axios from 'axios';
 import { setTimeout } from 'timers';
-
+import suspend from "../../../components/suspend"
 export default {
   name:'',
+  components:{
+      Suspend:suspend
+  },
   data(){
     return{
         storeList:[],
@@ -76,7 +82,7 @@ export default {
     getShopData(){
           Axios.get("http://192.168.1.24:8130/gateway/mobileMemberCenterService/memberCenter/getUserCollectionShop",{
             headers:{
-               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTUzNjAxOSwiZXhwIjoxNTYxNjIyNDE5fQ.q1XeH8t3E6GcZqeCyQ3NNL4drXn6rXMydoAz7vOqMbH4vePQu42i_rKJXrpEM0lEsezoDGExveMlfy8rwUA1aA"
+               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
             }
           }).then(res=>{
             this.storeList = res.data.data.map(item=>{
@@ -88,6 +94,10 @@ export default {
             })
             // this.vanCellList = res.data.data
             console.log(this.storeList)
+            if(this.storeList.length === 0){
+                  let empty = document.querySelector(".empty")
+                  empty.style.display="block"
+              }
           })
       },
     onClose() {
@@ -102,12 +112,27 @@ export default {
     },
     deleteAction(index){
              console.log("确认删除")
-             let shopId = sessionStorage.index
-             console.log(ProductId)
-            //  this.vanCellList.splice(index,1);
+             console.log(sessionStorage.index)
+             let dom = document.querySelector("#_" + sessionStorage.index)
+                  console.log(dom)
+                  dom.style.display ="none"
+
+            //  this.storeList.splice(index,1);
              this.showmenu = !this.showmenu;
              this.show = !this.show;
              console.log(this.storeList)
+
+            Axios.post("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionShop?shopId="+sessionStorage.index,{ },
+               {
+                  headers: {
+                    Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
+                  }
+              }
+             ).then(res=>{
+                 console.log(res)
+                  console.log(res.data.code)
+                  
+             })
 
     },
     cancelAction(){
@@ -121,10 +146,9 @@ export default {
       this.getShopData();
   },
   mounted(){
-    if(this.storeList.length === 0){
-              let empty = document.querySelector(".empty")
-              empty.style.display="block"
-        }
+       setTimeout(()=>{
+
+    },1000)
    },
 }
 </script>

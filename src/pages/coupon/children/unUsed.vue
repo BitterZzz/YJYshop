@@ -52,17 +52,19 @@ export default {
             endTime: item.endTime
           };
         });
+     if (this.list.length === 0) {
+            let dom = document.querySelector(".empty");
+            dom.style.display = "block";
+          }
+
       });
     }
   },
   created() {
     this.unUseData();
   },
-  async mounted() {
-    if (this.list.length === 0) {
-      let dom = document.querySelector(".empty");
-      dom.style.display = "block";
-    }
+  mounted() {
+
   }
 };
 </script>

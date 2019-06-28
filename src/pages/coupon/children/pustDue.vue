@@ -54,6 +54,10 @@ export default {
             endTime: item.endTime
           };
         });
+         if(this.list.length === 0){
+              let empty = document.querySelector(".empty")
+              empty.style.display="block"
+          }
       });
     }
   },
@@ -61,10 +65,6 @@ export default {
     this.pustData();
   },
   mounted() {
-    if (this.list.length === 0) {
-      let dom = document.querySelector(".empty");
-      dom.style.display = "block";
-    }
   }
 };
 </script>

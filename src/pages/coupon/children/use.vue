@@ -54,6 +54,11 @@ export default {
             endTime: "item.endTime"
           };
         });
+        console.log(this.list)
+        if (this.list.length === 0) {
+                let dom = document.querySelector(".empty");
+                dom.style.display = "block";
+              }
       });
     }
   },
@@ -61,10 +66,7 @@ export default {
     this.useData();
   },
   mounted() {
-    if (sessionStorage.useLenght === "0") {
-      let dom = document.querySelector(".empty");
-      dom.style.display = "block";
-    }
+    
   }
 };
 </script>

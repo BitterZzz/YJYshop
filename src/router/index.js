@@ -144,6 +144,11 @@ const routes =[
     path:'/mobile/shippingAddres',
     component:()=>import('../pages/shippingAddres/addres.vue'),
   },
+  // 账户管理
+  {
+    path:'/mobile/account',
+    component:()=>import('../pages/account/root')
+  },
    {
     path:'*',
     redirect:'/mobile'
