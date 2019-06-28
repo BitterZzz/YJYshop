@@ -15,13 +15,11 @@
         <a href="https://www.eg-live.com/m-wap/vshop/detail/10">立即使用</a>
       </ul>
     </div>
-     <div class="empty">
-            <p>
-              <img src="../../../assets/img/pustLogo.png" alt="">
-            </p>
-            <span>
-               还没有优惠券哦
-            </span>
+    <div class="empty">
+      <p>
+        <img src="../../../assets/img/pustLogo.png" alt>
+      </p>
+      <span>还没有优惠券哦</span>
     </div>
   </div>
 </template>
@@ -150,32 +148,32 @@ export default {
       }
     }
   }
-.empty{
-                      width: 130px;
-                      height: 150px;
-                      position: fixed;
-                      left: 0;
-                      right: 0;
-                      bottom: 0;
-                      top: 0;
-                      margin: auto;
-                      display: none;
-                   p{
-                     width: 100px;
-                     height: 90px;
-                     margin:0 0 40px 14px;
-                       img{
-                         width: 100%;
-                         height: 100%;
-                       }
-                   }
-                   span{
-                     font-size: 14px;
-                     color: #999999;
-                     display: block;
-                     margin-left: 10px;
-                   }
-                }
+  .empty {
+    width: 130px;
+    height: 150px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    display: none;
+    p {
+      width: 100px;
+      height: 90px;
+      margin: 0 0 40px 14px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    span {
+      font-size: 14px;
+      color: #999999;
+      display: block;
+      margin-left: 10px;
+    }
+  }
 }
 </style>
 
