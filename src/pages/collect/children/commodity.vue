@@ -3,7 +3,9 @@
        <van-swipe-cell :right-width="60" :left-width="0" :on-close="onClose"
           v-for="(item,index) in vanCellList" 
           :key="index"
-          :index="item.productId">
+          :index="item.productId"
+          :id="'_' + item.productId"
+          >
             
             <van-cell class="vanList">
                 <div class="shop">
@@ -14,6 +16,7 @@
                       <p>{{item.productName}}</p>
                       <a>¥{{item.minSalePrice}}</a>
                       <span>{{item.evaluation}}人评价</span>
+                      <i style="display:none">{{item.productId}}</i>
                     </div>
                 </div>
             </van-cell>
@@ -56,6 +59,7 @@
                     收藏夹空空一片
                  </span>
         </div>
+        <suspend></suspend>
 </div>
 </template>
 
@@ -63,9 +67,12 @@
 import { constants } from 'crypto';
 import Axios from 'axios';
 import { setTimeout } from 'timers';
-
+import suspend from '../../../components/suspend'
 export default {
   name:'',
+  components:{
+      Suspend:suspend
+  },
   data(){
     return{
         vanCellList:[],
@@ -77,7 +84,7 @@ export default {
     getShopData(){
           Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserCollectionProduct",{
             headers:{
-               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTUzNjAxOSwiZXhwIjoxNTYxNjIyNDE5fQ.q1XeH8t3E6GcZqeCyQ3NNL4drXn6rXMydoAz7vOqMbH4vePQu42i_rKJXrpEM0lEsezoDGExveMlfy8rwUA1aA"
+               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
             }
           }).then(res=>{
             this.vanCellList = res.data.data.map(item=>{
@@ -90,8 +97,11 @@ export default {
               }
             })
             // this.vanCellList = res.data.data
-            console.log(this.vanCellList)
-
+            // console.log(this.vanCellList)
+            if(this.vanCellList.length === 0){
+                  let empty = document.querySelector(".empty")
+                  empty.style.display="block"
+              }
           })
       },
     onClose() {
@@ -99,19 +109,32 @@ export default {
     },
     dangerAction(index){
         console.log("确定删除商品吗")
-        console.log(index)
+        // console.log(index)
         sessionStorage.setItem("index",index)
         this.showmenu = !this.showmenu;
         this.show = !this.show;
     },
     deleteAction(index){
              console.log("确认删除")
-             let ProductId = sessionStorage.index
-             console.log(ProductId)
-            //  this.vanCellList.splice(index,1);
+             console.log(sessionStorage.index)
+             let dom = document.querySelector("#_" + sessionStorage.index)
+                  console.log(dom)
+                  dom.style.display ="none"
+             
              this.showmenu = !this.showmenu;
              this.show = !this.show;
              console.log(this.vanCellList)
+             Axios.post("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionProduct?productId="+sessionStorage.index,{ },
+               {
+                  headers: {
+                    Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
+                  }
+              }
+             ).then(res=>{
+                 console.log(res)
+                  console.log(res.data.code)
+                  
+             })
 
     },
     cancelAction(){
@@ -127,10 +150,7 @@ export default {
 
   },
   mounted(){
-    if(this.vanCellList.length === 0){
-              let empty = document.querySelector(".empty")
-              empty.style.display="block"
-        }
+   
    },
 }
 </script>
@@ -170,6 +190,7 @@ export default {
       .danger{
           height: 115px;
       }
+
   }
   #commodity{
        .massage{
