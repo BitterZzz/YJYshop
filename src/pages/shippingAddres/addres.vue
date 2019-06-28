@@ -122,7 +122,6 @@
 </template>
 <script>
 import Axios from "axios";
-import Region from '../../assets/json/region.json'
 export default {
   name: "addres",
   data() {
