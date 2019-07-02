@@ -11,7 +11,7 @@
           </div>
           <div class="van-cell__value">
             <div class="van-field__body">
-              <input type="text" placeholder="收货人姓名" class="van-field__control">
+              <input type="text" placeholder="收货人姓名" class="van-field__control" />
             </div>
           </div>
         </div>
@@ -21,7 +21,7 @@
           </div>
           <div class="van-cell__value">
             <div class="van-field__body">
-              <input type="tel" placeholder="收货人手机号" class="van-field__control telephone">
+              <input type="tel" placeholder="收货人手机号" class="van-field__control telephone" />
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
                 placeholder="选择省 / 市 / 区"
                 readonly="readonly"
                 class="van-field__control area"
-              >
+              />
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
                 placeholder="选择街道"
                 readonly="readonly"
                 class="van-field__control area"
-              >
+              />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
             <span>设为默认收货地址</span>
           </div>
           <div class="van-cell__value">
-            <van-switch v-model="checked"/>
+            <van-switch v-model="checked" />
           </div>
         </div>
         <div class="van-address-edit__buttons save" @click="save()">
@@ -98,21 +98,26 @@
           <div class="header-top">
             <span class="title">配送至</span>
             <i class="icon">
-              <van-icon name="close" size="16px"/>
+              <van-icon name="close" size="16px" />
             </i>
           </div>
           <div class="header-bottom">
             <ul class="clearfix">
               <li class="li-style li-change">请选择</li>
+              <li class="li-style li-second">请选择</li>
+              <li class="li-style li-thrid">请选择</li>
+              <li class="li-style li-fourth">请选择</li>
             </ul>
           </div>
         </div>
         <div class="content">
           <div class="content-title">
             <ul>
-              <li v-for="item in this.city" :key="item.id">
-                {{item.ShortName}}
-              </li>
+              <li
+                v-for="(item,index) in this.city"
+                :key="item.id"
+                @click="GetID(item,index)"
+              >{{item.Name}}</li>
             </ul>
           </div>
         </div>
@@ -122,6 +127,7 @@
 </template>
 <script>
 import Axios from "axios";
+import Region from "../../assets/json/region.json";
 export default {
   name: "addres",
   data() {
@@ -137,7 +143,17 @@ export default {
         _area: "",
         _addres: ""
       },
-      city: ""
+      cityDom: {
+        liName: "",
+        liSecond: "",
+        liThrid: "",
+        liFourth: "",
+        _ul: ""
+      },
+      city: "",
+      msg: "",
+      item:"",
+      index:""
     };
   },
 
@@ -145,6 +161,7 @@ export default {
     showPopup() {
       this.show = true;
     },
+    //保存前判断
     save() {
       let _userVerity = /^[1][3,4,5,7,8][0-9]{9}$/;
       if (this.dom._userName.value === "") {
@@ -166,11 +183,44 @@ export default {
     },
     showToast(value) {
       this.$toast(value);
+    },
+    //获取点击到的城市的信息
+    GetID(item, index) {
+      this.item = item;
+      this.index = index;
+      this.cityDom.liName = document.querySelector(".li-change");
+      this.cityDom.liSecond = document.querySelector(".li-second");
+      this.cityDom.liThrid = document.querySelector(".li-thrid");
+      this.cityDom.liFourth = document.querySelector(".li-fourth");
+      this.cityDom._ul = document.querySelector(".content-title ul");
+      this.cityDom._ul.addEventListener("click", this.CityJudge, false);
+    },
+    //城市信息判断
+    CityJudge() {
+      let val = "请选择";
+      console.log(this.cityDom.liThrid);
+      if (this.cityDom.liName.innerHTML === val) {
+        this.cityDom.liName.innerHTML = `${this.item.Name}`;
+      }
+      if (this.cityDom.liName.innerHTML !== val) {
+        this.city = JSON.parse(this.msg);
+        this.cityDom.liSecond.style.display = "block";
+        this.city = this.city[this.index].Sub;
+        console.log(this.city);
+        return;
+      }
+      if (this.cityDom.liSecond.innerHTML === val && this.cityDom) {
+        this.cityDom._ul.removeEventListener("click", this.CityJudge, false);
+      }
+      if(this.cityDom.liSecond.innerHTML !== val){
+        this.cityDom.liSecond.innerHTML = `${this.city[this.index].Name}`;
+      }
     }
   },
   created() {
     sessionStorage.setItem("area", JSON.stringify(Region));
-    this.areaList = { Region };
+    this.msg = sessionStorage.getItem("area");
+    this.city = JSON.parse(this.msg);
   },
   mounted() {
     let provinceList = [];
@@ -179,9 +229,6 @@ export default {
     this.dom._telephone = document.querySelector(".telephone");
     this.dom._area = document.querySelector(".area");
     this.dom._addres = document.querySelector(".addres");
-    let a = sessionStorage.getItem("area");
-    this.city = JSON.parse(a);
-    console.log(this.city);
   }
 };
 </script>
@@ -245,6 +292,15 @@ export default {
             padding-bottom: 4px;
             font-size: 14px;
           }
+          .li-second {
+            display: none;
+          }
+          .li-thrid {
+            display: none;
+          }
+          .li-fourth {
+            display: none;
+          }
           .li-change {
             font-weight: 500;
             border-bottom: solid 1px #fe3824;
@@ -264,6 +320,9 @@ export default {
         ul {
           margin-top: 18px;
           overflow: hidden;
+          behavior: "alternate";
+          height: 354px;
+          overflow-y: auto;
           li {
             margin-bottom: 26px;
           }

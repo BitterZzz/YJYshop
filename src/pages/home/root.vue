@@ -266,6 +266,7 @@ export default {
         box-shadow: 0px 3px 4px rgba(137, 148, 155, 0.2),
           0px 0px 4px rgba(234, 234, 234, 0.6);
         padding: 0 12px;
+        background-color: #ffffff;
         .input-item {
           position: relative;
           cursor: pointer;
@@ -334,7 +335,7 @@ export default {
         position: relative;
         min-width: 106px;
         text-align: center;
-        background-color: #ffffff;
+        background-color: #F7F7F7;
         // left: 127px;
         top: -9px;
         color: #494e52;
