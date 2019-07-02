@@ -66,6 +66,7 @@ import { constants } from 'crypto';
 import Axios from 'axios';
 import { setTimeout } from 'timers';
 import suspend from "../../../components/suspend"
+import QS from 'qs'
 export default {
   name:'',
   components:{
@@ -82,7 +83,7 @@ export default {
     getShopData(){
           Axios.get("http://192.168.1.24:8130/gateway/mobileMemberCenterService/memberCenter/getUserCollectionShop",{
             headers:{
-               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
+               Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MjA0NzIyMywiZXhwIjoxNTYyMTMzNjIzfQ.x15fIv5zdae5YCmNyM0cffQODUkbMeYSavgVNBRilG2nem5jXGewSymnHUbX91gEuoaYje72vbpIiKmb2dU8GA"
             }
           }).then(res=>{
             this.storeList = res.data.data.map(item=>{
@@ -122,10 +123,12 @@ export default {
              this.show = !this.show;
              console.log(this.storeList)
 
-            Axios.post("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionShop?shopId="+sessionStorage.index,{ },
+            Axios.post("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionShop",
+             QS.stringify({shopId: sessionStorage.index}),
                {
                   headers: {
-                    Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MTY4NzE4NCwiZXhwIjoxNTYxNzczNTg0fQ.YFl37DraHSlYJFKFlomikTk78Gl64qTa5tfTvP7XI4X6ana9mon9BXcX7VK-i5WVJzPHpHobI9g8GdQNRJUM5Q"
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    Authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MjA0NzIyMywiZXhwIjoxNTYyMTMzNjIzfQ.x15fIv5zdae5YCmNyM0cffQODUkbMeYSavgVNBRilG2nem5jXGewSymnHUbX91gEuoaYje72vbpIiKmb2dU8GA"
                   }
               }
              ).then(res=>{
@@ -183,7 +186,7 @@ export default {
            
           .shop{
                 display: flex;
-                 border-bottom: 1px solid #cccccc;
+                
                .logo{
                 width: 44px;
                 height: 44px;

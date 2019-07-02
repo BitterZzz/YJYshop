@@ -147,12 +147,24 @@ const routes =[
   // 账户管理
   {
     path:'/mobile/account',
-    component:()=>import('../pages/account/root')
+    component:()=>import('../pages/account/root.vue'),
   },
-   {
+  {
+    path:'/mobile/password',
+    component:()=>import('../pages/account/children/channgePassword.vue')
+  },
+  {
+     path:'/mobile/formar',
+     component:()=>import('../pages/account/children/formar.vue')
+  },
+  {
+     path:'/mobile/bind',
+     component:()=>import('../pages/account/children/bind.vue')
+  },
+  {
     path:'*',
     redirect:'/mobile'
-   },
+  },
 ];
 const router = new Router({
   mode: 'hash',   

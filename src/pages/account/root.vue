@@ -1,22 +1,28 @@
 <template>
     <div id="account">
-         <div class="payment">
-             <p>
-                 支付密码
-                 <br/><br/>
-                 <span>建议定期修改密码以保护账户安全</span>
-             </p>
-             <van-icon name="arrow"/>
-         </div>
-         <div class="binding">
-             <span>绑定手机</span>
-             <i>已绑定 : 1346784512</i>
-         </div>
-         
+        <router-link to="/mobile/password">
+            <div class="payment">
+                <p>
+                    支付密码
+                    <br/><br/>
+                    <span>建议定期修改密码以保护账户安全</span>
+                </p>
+                <van-icon name="arrow"/>
+            </div>
+         </router-link>
+
+         <router-link to="/mobile/bind">
+            <div class="binding">
+                <span>绑定手机</span>
+                <i>已绑定 : 1346784512</i>
+            </div>
+         </router-link>
+
          <div class="drop">
              退出当前账号
          </div>
          <suspend></suspend>
+         <router-view></router-view>
     </div>
 </template>
 
