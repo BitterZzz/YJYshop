@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -148,6 +147,7 @@ const routes =[
   {
     path:'/mobile/account',
     component:()=>import('../pages/account/root.vue'),
+    
   },
   {
     path:'/mobile/password',
@@ -159,7 +159,22 @@ const routes =[
   },
   {
      path:'/mobile/bind',
-     component:()=>import('../pages/account/children/bind.vue')
+     component:()=>import('../pages/account/children/bind.vue'),
+  },
+  {
+    path:'/mobile/bindPhone',
+    component:()=>import('../pages/account/root.vue'),
+    beforeEnter: (to, from, next)  => {
+      if(sessionStorage.bindPhone !== 'null' && sessionStorage.bindPhone !=='' && sessionStorage.bindPhone){
+        next('/mobile/bindPhone');
+        return;
+      }
+      next();
+    }
+  },
+  {
+    path:'/mobile/remember',
+    component:()=>import('../pages/account/children/remember.vue')
   },
   {
     path:'*',

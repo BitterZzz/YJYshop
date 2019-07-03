@@ -84,6 +84,7 @@ export default {
     },
     //倒计时
     countDown() {
+      
       let val = document.querySelector(".auth-code");
       let countdown = 60;
       let _userVerity = this.dom._userVerity;
@@ -102,6 +103,7 @@ export default {
           settime(val);
         }, 1000);
         if (countdown === 0) {
+          
           val.removeAttribute("disabled");
           val.value = "发送验证码";
           countdown = 60;
