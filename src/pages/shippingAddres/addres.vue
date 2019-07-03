@@ -33,22 +33,7 @@
             <div class="van-field__body">
               <input
                 type="text"
-                placeholder="选择省 / 市 / 区"
-                readonly="readonly"
-                class="van-field__control area"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="van-cell van-field" @click="this.showPopup">
-          <div class="van-cell__title van-field__label">
-            <span>街道</span>
-          </div>
-          <div class="van-cell__value">
-            <div class="van-field__body">
-              <input
-                type="text"
-                placeholder="选择街道"
+                placeholder="选择省 / 市 / 区 / 街道"
                 readonly="readonly"
                 class="van-field__control area"
               />
@@ -137,6 +122,7 @@ export default {
       show: false,
       checked: false,
       dom: {
+        box: "",
         _btn: "",
         _userName: "",
         _telephone: "",
@@ -152,8 +138,10 @@ export default {
       },
       city: "",
       msg: "",
-      item:"",
-      index:""
+      item: "",
+      index: "",
+      a: false,
+      b: false
     };
   },
 
@@ -193,27 +181,53 @@ export default {
       this.cityDom.liThrid = document.querySelector(".li-thrid");
       this.cityDom.liFourth = document.querySelector(".li-fourth");
       this.cityDom._ul = document.querySelector(".content-title ul");
-      this.cityDom._ul.addEventListener("click", this.CityJudge, false);
+      // this.cityDom._ul.addEventListener("click", this.CityJudge, false);
+      this.CityJudge();
     },
     //城市信息判断
     CityJudge() {
       let val = "请选择";
-      console.log(this.cityDom.liThrid);
+      let getCity = 0;
+      this.dom.box = document.querySelector("#checkArea");
       if (this.cityDom.liName.innerHTML === val) {
         this.cityDom.liName.innerHTML = `${this.item.Name}`;
-      }
-      if (this.cityDom.liName.innerHTML !== val) {
-        this.city = JSON.parse(this.msg);
         this.cityDom.liSecond.style.display = "block";
         this.city = this.city[this.index].Sub;
-        console.log(this.city);
-        return;
-      }
-      if (this.cityDom.liSecond.innerHTML === val && this.cityDom) {
-        this.cityDom._ul.removeEventListener("click", this.CityJudge, false);
-      }
-      if(this.cityDom.liSecond.innerHTML !== val){
-        this.cityDom.liSecond.innerHTML = `${this.city[this.index].Name}`;
+      } else {
+        if (this.cityDom.liSecond.innerHTML === val) {
+          this.cityDom.liSecond.innerHTML = `${this.item.ShortName}`;
+          this.cityDom.liThrid.style.display = "block";
+          this.city = this.city[this.index].Sub;
+        } else {
+          if (this.cityDom.liThrid.innerHTML === val) {
+            this.cityDom.liThrid.innerHTML = `${this.item.ShortName}`;
+            this.cityDom.liFourth.style.display = "block";
+            this.city = this.city[this.index].Sub;
+          } else {
+            if (this.cityDom.liFourth.innerHTML === val) {
+              this.cityDom.liFourth.innerHTML = `${this.item.ShortName}`;
+              this.show = false;
+              this.dom._area.value =
+                this.cityDom.liName.innerHTML +
+                "/" +
+                this.cityDom.liSecond.innerHTML +
+                "/" +
+                this.cityDom.liThrid.innerHTML +
+                "/" +
+                this.cityDom.liFourth.innerHTML;
+              sessionStorage.setItem(
+                "addres",
+                this.cityDom.liName.innerHTML +
+                  "/" +
+                  this.cityDom.liSecond.innerHTML +
+                  "/" +
+                  this.cityDom.liThrid.innerHTML +
+                  "/" +
+                  this.cityDom.liFourth.innerHTML
+              );
+            }
+          }
+        }
       }
     }
   },
@@ -284,13 +298,16 @@ export default {
         ul {
           .li-style {
             float: left;
-            width: 50px;
+            width: 60px;
             height: 14px;
             margin-left: 28px;
             line-height: 14px;
             text-align: center;
             padding-bottom: 4px;
             font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
           .li-second {
             display: none;
@@ -324,6 +341,10 @@ export default {
           height: 354px;
           overflow-y: auto;
           li {
+            width: 50px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             margin-bottom: 26px;
           }
         }
