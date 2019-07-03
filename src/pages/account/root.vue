@@ -14,11 +14,12 @@
          <router-link to="/mobile/bind">
             <div class="binding">
                 <span>绑定手机</span>
-                <i>已绑定 : 1346784512</i>
+                <i>已绑定 :  {{this.phone}}</i>
             </div>
          </router-link>
-
-         <div class="drop">
+       
+       
+         <div class="drop" @click="dropActon()">
              退出当前账号
          </div>
          <suspend></suspend>
@@ -32,6 +33,27 @@ export default {
     name:'',
     components:{
         Suspend:suspend
+    },
+    data(){
+         return{
+             phone:'',
+         }
+    },
+    methods:{
+        getCode(){
+            this.phone = localStorage.bindPhone
+        //  console.log(this.phone)
+        },
+        dropActon(){
+               console.log("退出")
+               localStorage.clear()
+               this.$toast("退出登录")
+               this.$router.replace("/mobile/login")
+        }
+
+    },
+    created(){
+        this.getCode();
     }
 
 }

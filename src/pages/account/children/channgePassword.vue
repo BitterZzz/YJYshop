@@ -1,10 +1,12 @@
 <template>
     <div id="change">
-        <p>当前用户账号:</p>
+        <p>当前用户账号 :&nbsp; {{this.phone}}</p>
         <router-link tag="p" to="/mobile/formar">
            我记得原支付密码 <van-icon name="arrow"/>
         </router-link>
-        <p>我忘记支付密码了 <van-icon name="arrow"/></p>
+        <router-link tag="p" to="/mobile/remember">
+          我忘记支付密码了 <van-icon name="arrow"/>
+        </router-link>
     
     
       <suspend></suspend>
@@ -16,16 +18,25 @@ import suspend from '../../../components/suspend'
 export default {
    components:{
        Suspend:suspend,
+   },
+   data(){
+        return{
+             phone:'',
+        }
+   },
+   methods:{
+       getPhone(){
+            this.phone = localStorage.bindPhone
+       }
+   },
+   created(){
+       this.getPhone()
    }
 }
 </script>
 
 <style lang="scss" scoped>
 #change{
-        // width: 100%;
-        // height: 100%;
-        // position: fixed;
-        // background: #f5f5f5;
                 p{
                     width: 100%;
                     height: 45px;
