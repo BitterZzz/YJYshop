@@ -24,9 +24,14 @@ export default {
    methods:{
        getPhone(){
            let mobile = localStorage.bindPhone
-           mobile = "" + mobile;
-           this.phone = mobile.substr(0,3) + "****" + mobile.substr(7)
-           console.log(this.phone)
+           if(mobile === undefined){
+               return;
+           }else{
+                mobile = "" + mobile;
+                this.phone = mobile.substr(0,3) + "****" + mobile.substr(7)
+                console.log(this.phone)
+           }
+          
        }
    },
    created(){

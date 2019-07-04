@@ -3,13 +3,15 @@
     <div class="bindPhone">
       <h4>手机绑定</h4>
       <input type="text" class="txt" id="username" placeholder="请输入手机号" />
-      <router-link to="/mobile/bindPhone">
+      
       <input type="button"  class="auth-code countDown" value="获取验证码" @click="countDown()">
-      </router-link>
+      
       <br />
       <input type="text" class="text" id="password" placeholder="请输入验证码" />
       <br />
+      <!-- <router-link to="/mobile/bindPhone"> -->
       <button type="submit" class="btn" @click="binding()">立即绑定</button>
+      <!-- </router-link> -->
       <br />
       <span class="tips">提示：为了您的账户安全，请及时绑定手机</span>
     </div>
@@ -82,7 +84,7 @@ export default {
                phone:this.dom.phoneInput.value
            }
        }).then(res=>{
-           
+           localStorage.setItem("coding", res.data.code);
            console.log(res.data)
        })
      },
@@ -100,8 +102,9 @@ export default {
             }
          }
        ).then(res=>{
+           
            localStorage.setItem("bindPhone", this.dom.phoneInput.value);
-           console.log(localStorage.code)
+           console.log(localStorage.coding)
        })
      },
      binding(){
@@ -119,14 +122,15 @@ export default {
         if (
           _userVerity.test(phoneInput.value) &&
           _pwdVerity.test(pwdInput.value) &&
-          sessionStorage.code === "0"
+          localStorage.coding === "0"
         ) {
           this.trigger();
-          if (sessionStorage.code === "0") {
+          if (localStorage.coding === "0") {
             let value = "验证正确";
             that.showToast(value);
             var clearset = setInterval(() => {that.$router.push("/mobile/account")},2000);
             setInterval(() => {clearInterval(clearset)},2100);
+            localStorage.removeItem("coding")
             return
           }
           return true;
