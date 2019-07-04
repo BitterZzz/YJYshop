@@ -82,13 +82,13 @@
         <div class="header">
           <div class="header-top">
             <span class="title">配送至</span>
-            <i class="icon">
+            <i class="icon" @click="quit()">
               <van-icon name="close" size="16px" />
             </i>
           </div>
           <div class="header-bottom">
             <ul class="clearfix">
-              <li class="li-style li-change">请选择</li>
+              <li class="li-style li-frist li-change">请选择</li>
               <li class="li-style li-second">请选择</li>
               <li class="li-style li-thrid">请选择</li>
               <li class="li-style li-fourth">请选择</li>
@@ -136,6 +136,12 @@ export default {
         liFourth: "",
         _ul: ""
       },
+      cityID: {
+        provinceId: "",
+        cityId: "",
+        districtId: "",
+        streetId: ""
+      },
       city: "",
       msg: "",
       item: "",
@@ -175,12 +181,17 @@ export default {
     GetID(item, index) {
       this.item = item;
       this.index = index;
-      this.cityDom.liName = document.querySelector(".li-change");
+      this.cityDom.liName = document.querySelector(".li-frist");
       this.cityDom.liSecond = document.querySelector(".li-second");
       this.cityDom.liThrid = document.querySelector(".li-thrid");
       this.cityDom.liFourth = document.querySelector(".li-fourth");
       this.cityDom._ul = document.querySelector(".content-title ul");
-      // this.cityDom._ul.addEventListener("click", this.CityJudge, false);
+      if (this.show === false) {
+        this.cityDom.liName.classList.add("li-change");
+        this.cityDom.liSecond.classList.remove("li-change");
+        this.cityDom.liThrid.classList.remove("li-change");
+        this.cityDom.liFourth.classList.remove("li-change");
+      }
       this.CityJudge();
     },
     //城市信息判断
@@ -188,24 +199,80 @@ export default {
       let val = "请选择";
       let getCity = 0;
       this.dom.box = document.querySelector("#checkArea");
+      //省判断
       if (this.cityDom.liName.innerHTML === val) {
         this.cityDom.liName.innerHTML = `${this.item.Name}`;
+        this.cityID.provinceId = this.item.ID;
+        console.log(this.item);
         this.cityDom.liSecond.style.display = "block";
+        this.cityDom.liName.classList.remove("li-change");
+        this.cityDom.liSecond.classList.add("li-change");
         this.city = this.city[this.index].Sub;
       } else {
+        //市判断
         if (this.cityDom.liSecond.innerHTML === val) {
           this.cityDom.liSecond.innerHTML = `${this.item.ShortName}`;
-          this.cityDom.liThrid.style.display = "block";
+          this.cityID.cityId = this.item.ID;
+          console.log(this.item);
           this.city = this.city[this.index].Sub;
-        } else {
-          if (this.cityDom.liThrid.innerHTML === val) {
-            this.cityDom.liThrid.innerHTML = `${this.item.ShortName}`;
-            this.cityDom.liFourth.style.display = "block";
-            this.city = this.city[this.index].Sub;
+          //判断数据是否到市级结束
+          if (this.city !== undefined) {
+            this.cityDom.liThrid.style.display = "block";
+            this.cityDom.liSecond.classList.remove("li-change");
+            this.cityDom.liThrid.classList.add("li-change");
           } else {
+            this.show = false;
+            this.cityDom.liName.classList.add("li-change");
+            this.dom._area.value =
+              this.cityDom.liName.innerHTML +
+              "/" +
+              this.cityDom.liSecond.innerHTML;
+            sessionStorage.setItem(
+              "areaID",
+              this.cityID.provinceId + "_" + this.cityID.cityId
+            );
+            this.initialize(val);
+          }
+        } else {
+          //区级信息判断
+          if (
+            this.cityDom.liThrid.innerHTML === val &&
+            this.city !== undefined
+          ) {
+            this.cityDom.liThrid.innerHTML = `${this.item.ShortName}`;
+            this.cityID.districtId = this.item.ID;
+            this.city = this.city[this.index].Sub;
+            //判断数据是否到区级
+            if (this.city !== undefined) {
+              this.cityDom.liFourth.style.display = "block";
+              this.cityDom.liThrid.classList.remove("li-change");
+              this.cityDom.liFourth.classList.add("li-change");
+            } else {
+              this.show = false;
+              this.cityDom.liName.classList.add("li-change");
+              this.dom._area.value =
+                this.cityDom.liName.innerHTML +
+                "/" +
+                this.cityDom.liSecond.innerHTML +
+                "/" +
+                this.cityDom.liThrid.innerHTML;
+              sessionStorage.setItem(
+                "areaID",
+                this.cityID.provinceId +
+                  "_" +
+                  this.cityID.cityId +
+                  "_" +
+                  this.cityID.districtId
+              );
+              this.initialize(val);
+            }
+          } else {
+            //县级数据
             if (this.cityDom.liFourth.innerHTML === val) {
               this.cityDom.liFourth.innerHTML = `${this.item.ShortName}`;
+              this.cityID.streetId = this.item.ID;
               this.show = false;
+              this.cityDom.liName.classList.add("li-change");
               this.dom._area.value =
                 this.cityDom.liName.innerHTML +
                 "/" +
@@ -215,14 +282,14 @@ export default {
                 "/" +
                 this.cityDom.liFourth.innerHTML;
               sessionStorage.setItem(
-                "addres",
-                this.cityDom.liName.innerHTML +
-                  "/" +
-                  this.cityDom.liSecond.innerHTML +
-                  "/" +
-                  this.cityDom.liThrid.innerHTML +
-                  "/" +
-                  this.cityDom.liFourth.innerHTML
+                "areaID",
+                this.cityID.provinceId +
+                  "_" +
+                  this.cityID.cityId +
+                  "_" +
+                  this.cityID.districtId +
+                  "_" +
+                  this.cityID.streetId
               );
               this.initialize(val);
             }
@@ -240,6 +307,12 @@ export default {
       this.cityDom.liThrid.innerHTML = val;
       this.cityDom.liFourth.style.display = "none";
       this.cityDom.liFourth.innerHTML = val;
+    },
+    //退出地址选择栏
+    quit() {
+      let val = "请选择";
+      this.show = false;
+      this.initialize(val);
     }
   },
   created() {

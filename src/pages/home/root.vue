@@ -4,11 +4,17 @@
       <div class="login-input-group">
         <div class="login-input-group-box">
           <div class="input-item flex-center">
-            <input type="text" name id="username" class="form-control" placeholder="请输入手机号">
+            <input type="text" name id="username" class="form-control" placeholder="请输入手机号" />
           </div>
           <div class="input-item flex-center">
-            <input type="password" id="password" class="form-control" placeholder="请输入验证码" autocomplete="off">
-            <input type="button" class="auth-code" value="获取验证码" @click="countDown()">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="请输入验证码"
+              autocomplete="off"
+            />
+            <input type="button" class="auth-code" value="获取验证码" @click="countDown()" />
           </div>
         </div>
         <div class="loginBtn-box">
@@ -25,7 +31,7 @@
         <img
           src="https://www.eg-live.com/Areas/Mobile/Templates/Default/Images/icon-weixin-trust.png"
           @click="wxLogin()"
-        >
+        />
       </a>
     </div>
     <suspend></suspend>
@@ -84,7 +90,6 @@ export default {
     },
     //倒计时
     countDown() {
-      
       let val = document.querySelector(".auth-code");
       let countdown = 60;
       let _userVerity = this.dom._userVerity;
@@ -103,7 +108,6 @@ export default {
           settime(val);
         }, 1000);
         if (countdown === 0) {
-          
           val.removeAttribute("disabled");
           val.value = "发送验证码";
           countdown = 60;
@@ -143,6 +147,7 @@ export default {
           }
         }
       ).then(res => {
+        localStorage.setItem("code2", res.data.code);
         localStorage.setItem("token", res.data.data);
         console.log(res);
       });
@@ -167,15 +172,21 @@ export default {
           localStorage.code === "0"
         ) {
           this.loginCheck();
-          if (localStorage.code === "0") {
+          if (localStorage.code2 === "0") {
             let value = "验证正确";
             that.showToast(value);
-            var clearset = setInterval(() => {that.$router.replace("/mobile")},2000);
-            setInterval(() => {clearInterval(clearset)},2100);
-            return
+            var clearset = setInterval(() => {
+              that.$router.replace("/mobile");
+            }, 2000);
+            setInterval(() => {
+              clearInterval(clearset);
+            }, 2100);
+          } else {
+            let value = "验证码错误";
+            that.showToast(value);
           }
         }
-        let value = "手机号或密码错误";
+        let value = "用户名或密码错误";
         this.showToast(value);
       }
     },
@@ -201,41 +212,45 @@ export default {
       return "";
     },
     //点击微信登录
-    wxLogin(){
-    if (this.browser.versions.mobile) {
-      var ua = navigator.userAgent.toLowerCase();
-      console.log(navigator.userAgent)
-      let _wxLogin = document.querySelector("#wxlogin");
-      // if (ua.match(/MicroMessenger/i) === 'micromessenger') {
-      // _wxLogin.style.display = "none";
-      this.code = this.wxCodeJudge("code");
-      if (this.code === "" || this.code === null) {
-        var href = location.href;
-        if (href.indexOf("#") > -1) {
-        href = href.split("#").join("%23");
-        }
-        var url =
-          "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5a40afc5faa6acff&redirect_uri=" +
-          href +
-          "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
-        location.href = url; //指定跳转授权页面
-      } else {
-        Axios.get('http://192.168.1.24:8130/gateway/userInfoService/login/wxLoginH5',{
-          params:{
-            code: this.code,
-            appSecretId: 1
+    wxLogin() {
+      if (this.browser.versions.mobile) {
+        var ua = navigator.userAgent.toLowerCase();
+        console.log(navigator.userAgent);
+        let _wxLogin = document.querySelector("#wxlogin");
+        // if (ua.match(/MicroMessenger/i) === 'micromessenger') {
+        // _wxLogin.style.display = "none";
+        this.code = this.wxCodeJudge("code");
+        if (this.code === "" || this.code === null) {
+          var href = location.href;
+          if (href.indexOf("#") > -1) {
+            href = href.split("#").join("%23");
           }
-        }).then((res) => {
-          alert(res);
-        })
-        .catch((err) => {
-          alert(err);
-        })
+          var url =
+            "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5a40afc5faa6acff&redirect_uri=" +
+            href +
+            "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+          location.href = url; //指定跳转授权页面
+        } else {
+          Axios.get(
+            "http://192.168.1.24:8130/gateway/userInfoService/login/wxLoginH5",
+            {
+              params: {
+                code: this.code,
+                appSecretId: 1
+              }
+            }
+          )
+            .then(res => {
+              alert(res);
+            })
+            .catch(err => {
+              alert(err);
+            });
+        }
+        // } else {
+        //   _wxLogin.style.display = 'block';
+        // }
       }
-      // } else {
-      //   _wxLogin.style.display = 'block';
-      // }
-    }
     }
   },
   created() {},
@@ -333,7 +348,7 @@ export default {
         position: relative;
         min-width: 106px;
         text-align: center;
-        background-color: #F7F7F7;
+        background-color: #f7f7f7;
         // left: 127px;
         top: -9px;
         color: #494e52;

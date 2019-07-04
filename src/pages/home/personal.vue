@@ -2,7 +2,7 @@
   <div id="personal" class="page center">
     <div class="header">
       <div class="portrait">
-        <img src alt srcset>
+        <img src alt srcset />
         <div class="border"></div>
       </div>
       <p>{{this.telephone}}</p>
@@ -13,42 +13,50 @@
           <h5>全部订单</h5>
           <span>
             查看全部订单
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </span>
         </li>
       </router-link>
-      <li class="orderList" >
-
-        <router-link tag="a" to="/mobile/pay"> 
-          <p class="icon"><img src="../../assets/img/ico1.png" alt="" srcset=""></p>
+      <li class="orderList">
+        <router-link tag="a" to="/mobile/pay">
+          <p class="icon">
+            <img src="../../assets/img/ico1.png" alt srcset />
+          </p>
           <span>代付款</span>
           <i>{{ordersData.waitingPayCount}}</i>
         </router-link>
 
         <router-link tag="a" to="/mobile/deliver">
-          <p class="icon"><img src="../../assets/img/ico2.png" alt=""></p>
+          <p class="icon">
+            <img src="../../assets/img/ico2.png" alt />
+          </p>
           <span>代发货</span>
           <i>{{ordersData.waitingDeliveryCount}}</i>
         </router-link>
 
-         <router-link tag="a" to="/mobile/receive">
-           <p class="icon"><img src="../../assets/img/ico3.png" alt=""></p>
+        <router-link tag="a" to="/mobile/receive">
+          <p class="icon">
+            <img src="../../assets/img/ico3.png" alt />
+          </p>
           <span>代收货</span>
           <i>{{ordersData.waitingRecieveCount}}</i>
         </router-link>
 
-         <router-link tag="a" to="/mobile/evaluate">
-           <p class="icon"><img src="../../assets/img/ico4.png" alt=""></p>
+        <router-link tag="a" to="/mobile/evaluate">
+          <p class="icon">
+            <img src="../../assets/img/ico4.png" alt />
+          </p>
           <span>代评价</span>
           <i>{{ordersData.waitingCommentCount}}</i>
         </router-link>
 
         <router-link tag="a" class="refund" to="/mobile/refund">
-           <p class="icon"><img src="../../assets/img/ico5.png" alt=""></p>
+          <p class="icon">
+            <img src="../../assets/img/ico5.png" alt />
+          </p>
           <span>退款/售后</span>
           <i>{{ordersData.refundOrdersCount}}</i>
         </router-link>
-      
       </li>
     </div>
     <div class="meum">
@@ -57,7 +65,7 @@
           <a href="#">
             <em></em>
             <span>我的优惠卷</span>
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </a>
         </li>
       </router-link>
@@ -66,7 +74,7 @@
           <a href="#">
             <em class="eicon1"></em>
             <span>我的资产</span>
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </a>
         </li>
       </router-link>
@@ -75,7 +83,7 @@
           <a href="#">
             <em class="eicon2"></em>
             <span>我的收藏</span>
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </a>
         </li>
       </router-link>
@@ -86,7 +94,7 @@
           <a href="#">
             <em class="takeIcon"></em>
             <span>收货地址管理</span>
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </a>
         </li>
       </router-link>
@@ -95,7 +103,7 @@
           <a href="#">
             <em class="IDIcon"></em>
             <span>账号管理</span>
-            <van-icon name="arrow"/>
+            <van-icon name="arrow" />
           </a>
         </li>
       </router-link>
@@ -118,11 +126,35 @@ export default {
   data() {
     return {
       listGory: [
-        {id:11,pclass:'icon icon1',aClass:"",value:'',length:''},
-        {id:12,pclass:'icon icon2',aClass:"",value:'',length:'ordersData.waitingPayCount'},
-        {id:13,pclass:'icon icon3',aClass:"",value:'',length:'ordersData.waitingPayCount'},
-        {id:14,pclass:'icon icon4',aClass:"",value:'',length:'ordersData.waitingPayCount'},
-        {id:15,pclass:'icon icon5',aClass:'',value:'代退款',length:'ordersData.waitingPayCount'},
+        { id: 11, pclass: "icon icon1", aClass: "", value: "", length: "" },
+        {
+          id: 12,
+          pclass: "icon icon2",
+          aClass: "",
+          value: "",
+          length: "ordersData.waitingPayCount"
+        },
+        {
+          id: 13,
+          pclass: "icon icon3",
+          aClass: "",
+          value: "",
+          length: "ordersData.waitingPayCount"
+        },
+        {
+          id: 14,
+          pclass: "icon icon4",
+          aClass: "",
+          value: "",
+          length: "ordersData.waitingPayCount"
+        },
+        {
+          id: 15,
+          pclass: "icon icon5",
+          aClass: "",
+          value: "代退款",
+          length: "ordersData.waitingPayCount"
+        }
       ],
       tokengory: [],
       telephone: "",
@@ -142,20 +174,26 @@ export default {
         this.telephone = res.data.data.userName;
       });
     },
-    getOrdersCount(){
-       Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",{
-         params:{
-          egshopUserId:1797
-         }
-       }).then(res=>{
-         this.ordersData = res.data.data
-         console.log(this.ordersData)
-       })
+    getOrdersCount() {
+      Axios.get(
+        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",
+        {
+          params: {
+            egshopUserId: 1797
+          }
+        }
+      ).then(res => {
+        this.ordersData = res.data.data;
+        console.log(this.ordersData);
+      });
     }
   },
   created() {
     this.getToken();
     this.getOrdersCount();
+  },
+  mounted () {
+    
   }
 };
 </script>
@@ -248,18 +286,18 @@ export default {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      .refund i{
-            display: block;
-            width: 16px;
-            height: 16px;
-            line-height: 16px;
-            text-align: center;
-            border-radius: 50%;
-            background: #e3393c;
-            position: absolute;
-            color: #fff;
-            right: -3px;
-            top: -3px;
+      .refund i {
+        display: block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 50%;
+        background: #e3393c;
+        position: absolute;
+        color: #fff;
+        right: -3px;
+        top: -3px;
       }
       a {
         display: flex;
@@ -270,11 +308,10 @@ export default {
         .icon {
           width: 20px;
           height: 18px;
-            img{
-              width: 100%;
-              height: 100%;
-            }
-          
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
         span {
           display: block;
@@ -282,21 +319,20 @@ export default {
           color: #47474a;
           margin-top: 4px;
         }
-        i{
-            display: block;
-            width: 16px;
-            height: 16px;
-            line-height: 16px;
-            font-size: 6px;
-            text-align: center;
-            border-radius: 50%;
-            background: #e3393c;
-            position: absolute;
-            color: #fff;
-            right: -12px;
-            top: -5px;
+        i {
+          display: block;
+          width: 16px;
+          height: 16px;
+          line-height: 16px;
+          font-size: 6px;
+          text-align: center;
+          border-radius: 50%;
+          background: #e3393c;
+          position: absolute;
+          color: #fff;
+          right: -12px;
+          top: -5px;
         }
-
       }
     }
   }
