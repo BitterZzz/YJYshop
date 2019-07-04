@@ -7,7 +7,7 @@
             <input type="text" name id="username" class="form-control" placeholder="请输入手机号">
           </div>
           <div class="input-item flex-center">
-            <input type="password" id="password" class="form-control" placeholder="请输入验证码">
+            <input type="password" id="password" class="form-control" placeholder="请输入验证码" autocomplete="off">
             <input type="button" class="auth-code" value="获取验证码" @click="countDown()">
           </div>
         </div>
@@ -165,7 +165,7 @@ export default {
         if (
           _userVerity.test(phoneInput.value) &&
           _pwdVerity.test(pwdInput.value) &&
-          sessionStorage.code === "0"
+          localStorage.code === "0"
         ) {
           this.loginCheck();
           if (localStorage.code === "0") {
