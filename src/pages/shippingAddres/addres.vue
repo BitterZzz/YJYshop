@@ -140,8 +140,7 @@ export default {
       msg: "",
       item: "",
       index: "",
-      a: false,
-      b: false
+      copyCity: ""
     };
   },
 
@@ -225,16 +224,29 @@ export default {
                   "/" +
                   this.cityDom.liFourth.innerHTML
               );
+              this.initialize(val);
             }
           }
         }
       }
+    },
+    //区域选择栏初始化
+    initialize(val) {
+      this.city = this.copyCity;
+      this.cityDom.liName.innerHTML = val;
+      this.cityDom.liSecond.style.display = "none";
+      this.cityDom.liSecond.innerHTML = val;
+      this.cityDom.liThrid.style.display = "none";
+      this.cityDom.liThrid.innerHTML = val;
+      this.cityDom.liFourth.style.display = "none";
+      this.cityDom.liFourth.innerHTML = val;
     }
   },
   created() {
     sessionStorage.setItem("area", JSON.stringify(Region));
     this.msg = sessionStorage.getItem("area");
     this.city = JSON.parse(this.msg);
+    this.copyCity = this.city;
   },
   mounted() {
     let provinceList = [];

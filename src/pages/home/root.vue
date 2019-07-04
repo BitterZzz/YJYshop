@@ -144,7 +144,7 @@ export default {
         }
       ).then(res => {
         localStorage.setItem("token", res.data.data);
-        sessionStorage.code("code",res.data.code);
+        localStorage.code("code",res.data.code);
         console.log(res);
       });
     },
@@ -168,16 +168,15 @@ export default {
           sessionStorage.code === "0"
         ) {
           this.loginCheck();
-          if (sessionStorage.code === "0") {
+          if (localStorage.code === "0") {
             let value = "验证正确";
             that.showToast(value);
             var clearset = setInterval(() => {that.$router.replace("/mobile")},2000);
             setInterval(() => {clearInterval(clearset)},2100);
             return
           }
-          return true;
         }
-        let value = "用户名或密码错误";
+        let value = "手机号或密码错误";
         this.showToast(value);
       }
     },
@@ -222,12 +221,10 @@ export default {
           "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
         location.href = url; //指定跳转授权页面
       } else {
-        Axios.get('https://api.weixin.qq.com/sns/oauth2/access_token',{
+        Axios.get('http://192.168.1.24:8130/gateway/userInfoService/login/wxLoginH5',{
           params:{
-            appid:'wx5a40afc5faa6acff',
-            secret:'SECRET',
-            grant_type:'authorization_code',
-            code:this.code
+            code: this.code,
+            appSecretId: 1
           }
         }).then((res) => {
           alert(res);
