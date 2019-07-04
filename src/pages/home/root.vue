@@ -128,7 +128,7 @@ export default {
           }
         }
       ).then(res => {
-        sessionStorage.setItem("code", res.data.code);
+        localStorage.setItem("code", res.data.code);
         console.log(res.data);
       });
     },
@@ -144,7 +144,6 @@ export default {
         }
       ).then(res => {
         localStorage.setItem("token", res.data.data);
-        localStorage.code("code",res.data.code);
         console.log(res);
       });
     },
