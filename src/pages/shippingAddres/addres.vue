@@ -203,7 +203,6 @@ export default {
       if (this.cityDom.liName.innerHTML === val) {
         this.cityDom.liName.innerHTML = `${this.item.Name}`;
         this.cityID.provinceId = this.item.ID;
-        console.log(this.item);
         this.cityDom.liSecond.style.display = "block";
         this.cityDom.liName.classList.remove("li-change");
         this.cityDom.liSecond.classList.add("li-change");

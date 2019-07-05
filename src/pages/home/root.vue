@@ -147,9 +147,24 @@ export default {
           }
         }
       ).then(res => {
+        let that = this;
         localStorage.setItem("code2", res.data.code);
         localStorage.setItem("token", res.data.data);
-        console.log(res);
+        console.log("正在获取.then中的数据");
+        if (localStorage.code2 === "0") {
+          console.log("我是.the里面的判断语句");
+          let value = "验证正确";
+          that.showToast(value);
+          // var clearset = setInterval(() => {
+          that.$router.replace("/mobile");
+          // }, 2000);
+          // setInterval(() => {
+          //   clearInterval(clearset);
+          // }, 2100);
+        } else {
+          let value = "验证码错误";
+          that.showToast(value);
+        }
       });
     },
 
@@ -172,19 +187,7 @@ export default {
           localStorage.code === "0"
         ) {
           this.loginCheck();
-          if (localStorage.code2 === "0") {
-            let value = "验证正确";
-            that.showToast(value);
-            var clearset = setInterval(() => {
-              that.$router.replace("/mobile");
-            }, 2000);
-            setInterval(() => {
-              clearInterval(clearset);
-            }, 2100);
-          } else {
-            let value = "验证码错误";
-            that.showToast(value);
-          }
+          console.log("验证手机号和验证码是否正确");
         }
         let value = "用户名或密码错误";
         this.showToast(value);

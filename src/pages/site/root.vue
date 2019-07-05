@@ -4,9 +4,9 @@
       <span class="title">地址管理</span>
     </div>
     <div class="coco">
-      <div class="Adtitle">
+      <div class="Adtitle" v-for="item in msgList" :key="item.id">
         <div class="msg">
-          <span class="msg-name">陈华</span>
+          <span class="msg-name">{{item.name}}</span>
           <span class="msg-telephone">15979632782</span>
         </div>
         <div class="adr">
@@ -14,17 +14,17 @@
         </div>
         <div class="operation">
           <div class="check">
-            <van-checkbox v-model="checked" checked-color="red">
+            <van-checkbox v-model="item.checked" checked-color="red">
               <span class="check-title">默认地址</span>
             </van-checkbox>
           </div>
           <div class="redact">
             <router-link tag="div" to="/mobile/shippingAddres" class="redact-redact redact-commit">
-              <img src="../../assets/img/redax.png">
+              <img src="../../assets/img/redax.png" />
               <span>编辑</span>
             </router-link>
             <div class="redact-delete redact-commit" @click="delet">
-              <img src="../../assets/img/delete.png">
+              <img src="../../assets/img/delete.png" />
               <span>删除</span>
             </div>
           </div>
@@ -32,6 +32,11 @@
       </div>
     </div>
     <router-link to="/mobile/shippingAddres" tag="div" class="button">添加地址</router-link>
+    <van-popup v-model="show">
+      <div class="remove">
+        
+      </div>
+    </van-popup>
   </div>
 </template>
 
@@ -40,12 +45,17 @@ export default {
   name: "size",
   data() {
     return {
-      checked: true
+      checked: true,
+      show:false,
+      msgList: [
+        { id: 20, name: "张三", checked: false },
+        { id: 30, name: "李四", checked: true }
+      ]
     };
   },
   methods: {
     delet() {
-      console.log("删除");
+      this.show = true;
     }
   }
 };
@@ -59,7 +69,7 @@ export default {
     line-height: 45px;
     text-align: center;
     background-color: #ffffff;
-    border-bottom: solid 1px #CCCCCC;
+    border-bottom: solid 1px #cccccc;
     margin-bottom: 14px;
     .title {
       font-size: 18px;
@@ -86,6 +96,7 @@ export default {
     .Adtitle {
       box-sizing: border-box;
       padding: 0 15px;
+      margin-top: 10px;
       background-color: #ffffff;
       overflow: hidden;
       .msg {
