@@ -97,14 +97,29 @@ export default {
          }),
          {
             headers:{
-                'Content-Type': 'application/x-www-form-urlencoded',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
                 Authorization:localStorage.token
             }
          }
        ).then(res=>{
-           
+           let that = this
+           console.log(res)
            localStorage.setItem("bindPhone", this.dom.phoneInput.value);
            console.log(localStorage.coding)
+           let coding2 = res.data.code
+
+          if (coding2 === "0") {
+            let value = "验证正确";
+            that.showToast(value);
+            // var clearset = setInterval(() => {that.$router.push("/mobile/account")},2000);
+            // setInterval(() => {clearInterval(clearset)},2100);
+            that.$router.push("/mobile/account")
+            localStorage.removeItem("coding")
+            
+          }else{
+              let value = "账号或验证码错误";
+              that.showToast(value);
+          }
        })
      },
      binding(){
@@ -125,15 +140,7 @@ export default {
           localStorage.coding === "0"
         ) {
           this.trigger();
-          if (localStorage.coding === "0") {
-            let value = "验证正确";
-            that.showToast(value);
-            var clearset = setInterval(() => {that.$router.push("/mobile/account")},2000);
-            setInterval(() => {clearInterval(clearset)},2100);
-            localStorage.removeItem("coding")
-            return
-          }
-          return true;
+
         }
         let value = "用户名或密码错误";
         this.showToast(value);
