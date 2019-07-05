@@ -1,17 +1,31 @@
 <template>
     <div id="formar">
         <form action="" id="form">
-            <input type="text" placeholder="原支付密码"><br/>
-            <input type="text" placeholder="新支付密码"><br/>
-            <input type="text" placeholder="确认支付密码"><br/>
-            <button type="submit" id="btn">提交</button>
+            <input type="text" id="oldPassWord" placeholder="原支付密码"><br/>
+            <input type="text" id="newPassWord" placeholder="新支付密码"><br/>
+            <input type="text" id="notarize" placeholder="确认支付密码"><br/>
+            <button type="submit" id="submit" @click="btnAction()">提交</button>
         </form>
     </div>
 </template>
 
 <script>
 export default {
+   name:'',
+   data(){
+      return{
+          oldPwd:'',
+          newPwd:'',
+          notarizePwd:'',
+      }
+   },
+   methods:{
 
+   },
+   mounted(){
+        let that = this;
+        this.dom.oldPwd = document.querySelector("#oldPassWord")
+   }
 }
 </script>
 
