@@ -6,15 +6,15 @@
     <div class="coco">
       <div class="Adtitle" v-for="item in msgList" :key="item.id">
         <div class="msg">
-          <span class="msg-name">{{item.name}}</span>
-          <span class="msg-telephone">15979632782</span>
+          <span class="msg-name">{{item.shipTo}}</span>
+          <span class="msg-telephone"> {{item.phone}} </span>
         </div>
         <div class="adr">
-          <p class="adr-title">广东省深圳市广东省深圳市广东省深圳市广东省深圳市广东省深圳市</p>
+          <p class="adr-title"> {{item.fullName}} {{item.address}} </p>
         </div>
         <div class="operation">
           <div class="check">
-            <van-checkbox v-model="item.checked" checked-color="red">
+            <van-checkbox v-model="item.isDefault" checked-color="red" @click="check(item)">
               <span class="check-title">默认地址</span>
             </van-checkbox>
           </div>
@@ -49,16 +49,17 @@
 </template>
 
 <script>
+import Axios from "axios";
 export default {
   name: "size",
   data() {
     return {
       checked: true,
       show: false,
-      deletId:"",
+      deletId: "",
       msgList: [
-        { id: 20, name: "张三", checked: false },
-        { id: 30, name: "李四", checked: true }
+        {phoen:'15979632782'},
+        {phoen:'15979632782'}
       ]
     };
   },
@@ -67,12 +68,37 @@ export default {
       this.show = true;
       console.log(Id);
     },
-    confirm(){
-      console.log('确认删除');
+    confirm() {
+      console.log("确认删除");
     },
-    cancel(){
-      console.log('取消删除');
+    cancel() {
+      this.show = false;
+    },
+    check(item) {
+      if (item.checked !== true) {
+        item.checked = true;
+        for (var msg of this.msgList) {
+          if (item.id === msg.id) {
+            item.checked = true;
+          }
+          msg.checked = false;
+        }
+      }
     }
+  },
+  created() {
+    Axios.get(
+      "http://192.168.1.24:8130/gateway/mobileMemberCenterService/shippingAddress/getShippingAddress",
+      {
+        headers: { Authorization: localStorage.token }
+      }
+    ).then(res => {
+      console.log(res.data.data[0].isDefault);
+      this.msgList = res.data.data;
+    });
+  },
+  mounted() {
+    setTimeout(() => {console.log(this.msgList)},1000)
   }
 };
 </script>
@@ -170,7 +196,7 @@ export default {
     .remove-box {
       padding-top: 10px;
       box-sizing: border-box;
-      .remove-title{
+      .remove-title {
         display: flex;
         justify-content: center;
       }

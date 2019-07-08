@@ -188,9 +188,10 @@ export default {
         ) {
           this.loginCheck();
           console.log("验证手机号和验证码是否正确");
+        } else {
+          let value = "用户名或密码错误";
+          this.showToast(value);
         }
-        let value = "用户名或密码错误";
-        this.showToast(value);
       }
     },
     showToast(value) {
