@@ -176,6 +176,11 @@ const routes =[
     path:'/mobile/remember',
     component:()=>import('../pages/account/children/remember.vue')
   },
+  // 分类
+  {
+    path:'/mobile/classify',
+    component:()=>import('../pages/classify/root.vue')
+  },
   {
     path:'*',
     redirect:'/mobile'

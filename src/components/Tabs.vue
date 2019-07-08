@@ -36,12 +36,14 @@
            <!-- nav 分类 -->
            <div class="nav">
               <li>
-                <a href="#" class="list">
-                  <img src="../assets/img/classify.png" alt="" srcset="">
-                </a>
-                <a href="#">
-                  分类
-                </a>
+                <router-link to="/mobile/classify"> 
+                  <a href="#" class="list">
+                    <img src="../assets/img/classify.png" alt="" srcset="">
+                  </a>
+                  <a href="#">
+                    分类
+                  </a>
+                </router-link>
               </li>
               <li>
                 <a href="#" class="list">

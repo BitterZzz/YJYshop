@@ -64,8 +64,8 @@
           <div class="van-cell__title">
             <span>设为默认收货地址</span>
           </div>
-          <div class="van-cell__value">
-            <van-switch v-model="checked" />
+          <div class="van-cell__value" @click="saveCheck()" >
+            <van-switch v-model="checked"/>
           </div>
         </div>
         <div class="van-address-edit__buttons save" @click="save()">
@@ -153,6 +153,16 @@ export default {
   methods: {
     showPopup() {
       this.show = true;
+      // var startY = 0;
+      // this.cityDom._ul .addEventListener('touchstart',(e) => {
+      //   startY = e.changedTouches[0].clientY;
+      //   console.log(startY);
+      // })
+      // this.cityDom._ul.addEventListener('touchstart',(e) => {
+      //   var dy = e.changedTouches[0].clientY-startY;
+      //   this.cityDom._ul.style.transform = 'translateY' + dy + 'px)';
+      // })
+
     },
     //保存前判断
     save() {
@@ -311,7 +321,11 @@ export default {
     quit() {
       let val = "请选择";
       this.show = false;
+      this.cityDom.liName.classList.add("li-change");
       this.initialize(val);
+    },
+    saveCheck() {
+      console.log(this.checked);
     }
   },
   created() {

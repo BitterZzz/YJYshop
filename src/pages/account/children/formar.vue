@@ -20,12 +20,38 @@ export default {
       }
    },
    methods:{
-
+        btnAction(){
+           let that = this
+           let oldPwd = document.querySelector("#oldPassWord").value
+           let newPwd = document.querySelector("#newPassWord").value
+           let notarizePwd = document.querySelector("#notarize").value
+           if(oldPwd === "" || newPwd === "" || notarizePwd === ""){
+                   let value = "密码输入不能为空"
+                   that.showToast(value);
+                   return;
+           }else if(newPwd !== notarizePwd){
+                      let value = "两次密码不一样";
+                      that.showToast(value);
+                      return;
+                }else{
+                    console.log(oldPwd)
+                    console.log(newPwd)
+                    console.log(notarizePwd)
+                }
+           
+            
+        },
+        showToast(value) {
+           this.$toast(value);
+        }
    },
    mounted(){
         let that = this;
-        this.dom.oldPwd = document.querySelector("#oldPassWord")
-   }
+        // this.oldPwd = document.querySelector("#oldPassWord")
+        // this.newPwd = document.querySelector("#newPassWord")
+        // this.notarizePwd = document.querySelector("#notarize")
+   },
+ 
 }
 </script>
 

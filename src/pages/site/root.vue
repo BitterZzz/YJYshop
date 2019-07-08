@@ -6,15 +6,15 @@
     <div class="coco">
       <div class="Adtitle" v-for="item in msgList" :key="item.id">
         <div class="msg">
-          <span class="msg-name">{{item.name}}</span>
-          <span class="msg-telephone">15979632782</span>
+          <span class="msg-name">{{item.shipTo}}</span>
+          <span class="msg-telephone"> {{item.phone}} </span>
         </div>
         <div class="adr">
-          <p class="adr-title">广东省深圳市广东省深圳市广东省深圳市广东省深圳市广东省深圳市</p>
+          <p class="adr-title"> {{item.fullName}} {{item.address}} </p>
         </div>
         <div class="operation">
           <div class="check">
-            <van-checkbox v-model="item.checked" checked-color="red">
+            <van-checkbox v-model="item.isDefault" checked-color="red" @click="check(item)">
               <span class="check-title">默认地址</span>
             </van-checkbox>
           </div>
@@ -23,7 +23,7 @@
               <img src="../../assets/img/redax.png" />
               <span>编辑</span>
             </router-link>
-            <div class="redact-delete redact-commit" @click="delet">
+            <div class="redact-delete redact-commit" @click="delet(item.id)">
               <img src="../../assets/img/delete.png" />
               <span>删除</span>
             </div>
@@ -33,30 +33,72 @@
     </div>
     <router-link to="/mobile/shippingAddres" tag="div" class="button">添加地址</router-link>
     <van-popup v-model="show">
-      <div class="remove">
-        
+      <div id="remove">
+        <div class="remove-box">
+          <div class="remove-title">
+            <p>确定要删除吗?</p>
+          </div>
+          <div class="remove-btn">
+            <span class="btn-confirm btn-style" @click="confirm()">确定</span>
+            <span class="btn-cancel btn-style" @click="cancel()">取消</span>
+          </div>
+        </div>
       </div>
     </van-popup>
   </div>
 </template>
 
 <script>
+import Axios from "axios";
 export default {
   name: "size",
   data() {
     return {
       checked: true,
-      show:false,
+      show: false,
+      deletId: "",
       msgList: [
-        { id: 20, name: "张三", checked: false },
-        { id: 30, name: "李四", checked: true }
+        {phoen:'15979632782'},
+        {phoen:'15979632782'}
       ]
     };
   },
   methods: {
-    delet() {
+    delet(Id) {
       this.show = true;
+      console.log(Id);
+    },
+    confirm() {
+      console.log("确认删除");
+    },
+    cancel() {
+      this.show = false;
+    },
+    check(item) {
+      if (item.checked !== true) {
+        item.checked = true;
+        for (var msg of this.msgList) {
+          if (item.id === msg.id) {
+            item.checked = true;
+          }
+          msg.checked = false;
+        }
+      }
     }
+  },
+  created() {
+    Axios.get(
+      "http://192.168.1.24:8130/gateway/mobileMemberCenterService/shippingAddress/getShippingAddress",
+      {
+        headers: { Authorization: localStorage.token }
+      }
+    ).then(res => {
+      console.log(res.data.data[0].isDefault);
+      this.msgList = res.data.data;
+    });
+  },
+  mounted() {
+    setTimeout(() => {console.log(this.msgList)},1000)
   }
 };
 </script>
@@ -111,7 +153,7 @@ export default {
         width: 337px;
         font-size: 14px;
         color: #999999;
-        padding-top: 10px;
+        padding-top: 16px;
         padding-bottom: 12px;
         border-bottom: solid 1px #cccccc;
       }
@@ -143,6 +185,33 @@ export default {
             height: 18px;
             margin-right: 5px;
           }
+        }
+      }
+    }
+  }
+  #remove {
+    width: 160px;
+    height: 70px;
+    text-align: center;
+    .remove-box {
+      padding-top: 10px;
+      box-sizing: border-box;
+      .remove-title {
+        display: flex;
+        justify-content: center;
+      }
+      .remove-btn {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 14px;
+        .btn-style {
+          display: inline-block;
+          width: 32px;
+          height: 18px;
+          line-height: 18px;
+          border: solid 1px gray;
         }
       }
     }
