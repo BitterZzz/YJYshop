@@ -70,7 +70,7 @@ methods:{
           cursor: pointer;
           position: fixed;
           right:0px;
-          bottom: 100px;
+          bottom: 241px;
           z-index: 2;
          
          .hint{
@@ -85,7 +85,7 @@ methods:{
              border-radius: 5px 0px 0px 5px;
              position: fixed;
              right:0px;
-             bottom: 100px;
+             bottom: 241px;
 
               img{
                 width: 11px;

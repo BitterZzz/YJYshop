@@ -88,7 +88,7 @@ export default {
   },
   created() {
     Axios.get(
-      "http://192.168.1.24:8130/gateway/mobileMemberCenterService/shippingAddress/getShippingAddress",
+      "/mobileMemberCenterService/shippingAddress/getShippingAddress",
       {
         headers: { Authorization: localStorage.token }
       }

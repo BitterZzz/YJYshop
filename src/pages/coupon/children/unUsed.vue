@@ -36,7 +36,7 @@ export default {
   methods: {
     unUseData() {
       Axios.get(
-        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
+        "/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
         {
           headers: {
             Authorization: localStorage.token

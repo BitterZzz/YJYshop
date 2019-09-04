@@ -38,8 +38,6 @@ export default {
                     console.log(newPwd)
                     console.log(notarizePwd)
                 }
-           
-            
         },
         showToast(value) {
            this.$toast(value);

@@ -164,7 +164,7 @@ export default {
   methods: {
     getToken() {
       Axios.get(
-        "http://192.168.1.24:8080/gateway/userInfoService/userInfo/getUserBaseInfo",
+        "/gateway/userInfoService/userInfo/getUserBaseInfo",
         {
           headers: {
             Authorization: localStorage.token
@@ -176,7 +176,7 @@ export default {
     },
     getOrdersCount() {
       Axios.get(
-        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",
+        "/gateway/mobileMemberCenterService/memberCenter/getUserOrdersCount",
         {
           params: {
             egshopUserId: 1797

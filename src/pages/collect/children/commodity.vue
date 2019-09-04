@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     getShopData(){
-          Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserCollectionProduct",{
+          Axios.get("/gateway/mobileMemberCenterService/memberCenter/getUserCollectionProduct",{
             headers:{
                Authorization:"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzY1MSIsImlhdCI6MTU2MjA0NzIyMywiZXhwIjoxNTYyMTMzNjIzfQ.x15fIv5zdae5YCmNyM0cffQODUkbMeYSavgVNBRilG2nem5jXGewSymnHUbX91gEuoaYje72vbpIiKmb2dU8GA"
 
@@ -127,7 +127,7 @@ export default {
              this.showmenu = !this.showmenu;
              this.show = !this.show;
              console.log(this.vanCellList)
-             Axios.post("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionProduct",
+             Axios.post("gateway/mobileMemberCenterService/memberCenter/deleteUserCollectionProduct",
               QS.stringify({productId: sessionStorage.index})
               ,
                {

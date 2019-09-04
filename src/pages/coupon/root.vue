@@ -5,10 +5,8 @@
         <li
           v-for="(item,index) in list"
           :key="index"
-          v-on:click="addClass(index)"
-          v-bind:class="{ bgColors:index==current}"
         >
-          <router-link :to="item.path">
+          <router-link :to="item.path"  active-class="bgColors">
             <a href="#">{{item.name}}({{item.length}})</a>
           </router-link>
         </li>
@@ -21,7 +19,7 @@
 
 <script>
 import suspend from "../../components/suspend";
-import Axios from 'axios';
+import Axios from "axios";
 export default {
   name: "",
   components: {
@@ -29,7 +27,7 @@ export default {
   },
   data() {
     return {
-      current: "",
+  
       list: [
         {
           id: 1,
@@ -57,12 +55,9 @@ export default {
     };
   },
   methods: {
-    addClass: function(index) {
-      this.current = index;
-    },
     getList() {
       Axios.get(
-        "http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
+        "/gateway/mobileMemberCenterService/memberCenter/getAllUserCoupon",
         {
           headers: {
             Authorization: localStorage.token
@@ -100,7 +95,7 @@ export default {
       });
     }
   },
-  created(){
+  created() {
     this.getList();
   },
   mounted() {}

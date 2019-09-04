@@ -3,7 +3,7 @@
          <h1>{{balance}}</h1>
             <div class="list" v-for="item in balaList" :key="item.id">
                 <p>
-                    <span>{{item.sourceTypeDescription}}</span>
+                    <span>{{item.sourceTypeDescription}}</span>   
                     <span>{{item.createTime}}</span>
                 </p>
                 <p class="sum">{{item.amount}}</p>
@@ -23,7 +23,7 @@ export default {
       },
       methods:{
           balanData(){
-              Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserCapital",{
+              Axios.get("/gateway/mobileMemberCenterService/memberCenter/getUserCapital",{
                   headers:{
                       Authorization:localStorage.token
                   }

@@ -23,7 +23,7 @@ export default {
       },
             methods:{
           interData(){
-              Axios.get("http://192.168.1.24:8080/gateway/mobileMemberCenterService/memberCenter/getUserIntegral",{
+              Axios.get("/gateway/mobileMemberCenterService/memberCenter/getUserIntegral",{
                   headers:{
                       Authorization:localStorage.token
                   }

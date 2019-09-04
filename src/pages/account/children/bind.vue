@@ -79,7 +79,7 @@ export default {
       this.authCode()
     },
      authCode(){
-       Axios.get("http://192.168.1.24:8080/gateway/userEditService/userEdit/sendPhoneCode",{
+       Axios.get("/gateway/userEditService/userEdit/sendPhoneCode",{
            params:{
                phone:this.dom.phoneInput.value
            }
@@ -90,7 +90,7 @@ export default {
      },
     // 立即绑定
      trigger(){
-       Axios.post("http://192.168.1.24:8080/gateway/userEditService/userEdit/bindPhone",
+       Axios.post("/gateway/userEditService/userEdit/bindPhone",
          QS.stringify({
              phone:this.dom.phoneInput.value,
              code:this.dom.pwdInput.value

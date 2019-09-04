@@ -28,6 +28,17 @@ const routes =[
       next();
     }
   },
+  // 搜索框
+  {
+      path:"/mobile/search",
+      component:()=>import("../pages/search/root.vue"),
+       children:[
+         {
+           path:'/mobile/shop',
+           component:()=>import("../pages/search/shopStyle.vue")
+         }
+       ]
+  },
   // 个人中心
   {
     path:'/mobile/personal',
@@ -174,13 +185,42 @@ const routes =[
   },
   {
     path:'/mobile/remember',
-    component:()=>import('../pages/account/children/remember.vue')
+    component:()=>import('../pages/account/children/remember.vue'),
   },
   // 分类
   {
     path:'/mobile/classify',
-    component:()=>import('../pages/classify/root.vue')
+    component:()=>import('../pages/classify/root.vue'),
+    redirect:("/mobile/main"),
+    children:[
+      {
+        path:"/mobile/main",
+        name:'家用电器',
+        component:()=>import('../pages/classify/children/cate-main.vue')
+     },
+     {
+       path:'/mobile/fresh',
+       name:'生鲜',
+       component:()=>import('../pages/classify/children/cate-fresh.vue')
+     },
+     {
+      path:'/mobile/oil',
+      name:'粮油调味',
+      component:()=>import('../pages/classify/children/cate-oil.vue')
+    },
+    {
+      path:'/mobile/furniture',
+      name:'家具用品',
+      component:()=>import('../pages/classify/children/cate-furniture.vue')
+    },
+    {
+      path:'/mobile/liquor',
+      name:'酒类',
+      component:()=>import('../pages/classify/children/cate-liquor.vue')
+    },
+    ]
   },
+
   {
     path:'*',
     redirect:'/mobile'
