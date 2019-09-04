@@ -40,7 +40,6 @@
 </template>
 
 <script>
-import bus from "../../../../LanOu/src/js/bus";
 import shopStyle from "./shopStyle";
 import Axios from "axios";
 export default {

@@ -48,7 +48,6 @@
 <script>
 import Axios from "axios";
 import { setPriority } from "os";
-import bus from "../../../../LanOu/src/js/bus";
 import pOne from "../../assets/img/price_1.png";
 
 import pTwo from "../../assets/img/price_2.png";
